@@ -1,0 +1,101 @@
+/*导航结束*/
+/*banner开始*/
+.banner{
+	width: 100%;
+	min-width: 1200px;
+	height: 500px;
+	overflow: hidden;
+	position: relative;
+}
+.banner_ul li{
+	width: 100%;
+	height: 500px;
+	min-width: 1200px;
+}
+.banner_ul img{
+	width: 100%;
+	height: 500px;
+	min-width: 1200px;
+}
+.banner_ol{
+	width: 120px;
+	height: 30px;
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	cursor: pointer;
+}
+.banner_ol li{
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	border: 2px solid #FFF;
+	float: left;
+	margin-left: 10px;
+}
+.banner_ol li.active{
+	width: 26px;
+	height: 26px;
+	border-radius: 48%;
+	background: #fff;
+	border: 2px solid #FFF;
+	float: left;
+	margin-left: 10px;
+}
+/*banner结束*/
+/*中间内容部分开始*/
+.content_one{
+	width: 100%;
+	min-width: 1200px;
+	height: 605px;
+	background: #f8f6f6;
+}
+.con_head{
+	height: 50px;
+	padding-top: 30px;
+}
+.con_head_word,.con_head_word_two,.con_head_word_three{
+	line-height: 35px;
+	margin-left: 10px;
+}
+.con_head_word_two{
+	line-height: 30px;
+}
+.picture{	
+	height: 215px;
+}
+.picture ul li.one{margin-left: 0;}
+.picture ul li{width: 274px;height: 212px;border-radius: 10px;background: #000;overflow: hidden;float: left;margin-left: 33px;margin-top: 20px;}
+.picture ul li img{width: 274px;height: 212px;}
+.Both div.partenr_bor,.Both div.luyan_bor{margin: 0;}
+.content_two{
+	height: 364px;
+}
+.partenr{
+	width: 275px;
+	height: 290px;
+	background: #efeeeb;
+	border-radius: 10px 10px 0 0;
+	margin-left: 33px;
+}
+.partenr_img{width: 200px;height: 200px;border-radius: 50%;overflow: hidden;margin: 5px 0 5px 37px;background: #E3E3E3;}
+.partenr_img img{width: 200px;height: 200px;}
+.partenr_one{
+	text-align: center;
+}
+.partenr{line-height: 30px;}
+.content_three{
+	height: 345px;
+	margin-top: 30px;
+}
+.luyan{width: 275px;height: 320px;background: #efeeeb;border-radius: 10px 10px 0 0;margin-left: 33px;}
+.luyan a{color: #000;}
+.luyan_one{padding-left: 5px;}
+.luyan_one p{line-height: 30px;font-size: 14px;margin-top: 5px;}
+.luyan_img{width: 275px;height: 212px;border-radius: 10px;overflow: hidden;}
+.luyan_img img{width: 275px;height: 212px;}
+.luyan_img2 span{display: block;margin-right: 5px;}
+.shou{color: #ff0000;}
+/*中间内容部分结束*/
+
+.con_head_more a{color: #333;font-size: 22px;}

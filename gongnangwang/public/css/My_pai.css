@@ -1,0 +1,25 @@
+.My_pai_bg{height: 757px;background: #f7f7f7;margin-top: 30px;}
+.My_Auction{height: 60px;font-size: 20px;line-height: 60px;padding: 5px 30px;border-bottom: 1px solid #dcdcdc;}
+/*发明专利*/
+.patent{height: 540px;}
+.invent_patent{width: 436px;height: 114px;margin-left: 30px;padding-top: 40px;color: #626262;font-size: 16px;margin-right: 200px;/*border: 1px solid #dcdcdc;*/}
+.invent_patent_words_p{margin-top: 15px;}
+.invent_patent_img{width: 138px;height: 110px;}
+.invent_patent_img img{width: 138px;height: 110px;}
+.invent_patent_words{width: 250px;margin-left: 20px;}
+.invent_patent a{display: block;color: #656565;}
+.invent_patent_ul li{width: 80px;height: 25px;float: left;line-height: 25px;border-right: 2px solid #c8c8c8;text-align: center;}
+.invent_patent_ul{margin-top: 10px;}
+.invent_patent_ul li.newspeo_p_li{border: none;color: #FF0000;text-align: right;}
+.invent_patent_ul li.high{text-align: left;}
+/*分页*/
+
+.pagination{width: 570px;margin: 0 auto;margin-top: 30px;/*margin-left: 40px;*/}
+.pagination_ul{width: 290px;height: 28px;}
+.pagination_ul li{width: 32px;height: 28px;line-height: 28px;text-align: center;margin-left: 10px;float: left;cursor:pointer}
+.pagination_ul li:hover{background: #ecb700;color:#fff;}
+.pagination_active{background: #ecb700;color:#fff;}
+.pagination_ul li.pagination_ul_next{width: 62px;height: 28px;text-align: center;line-height: 28px;border: 1px solid #b3b3b3}
+.pagination p{margin-left: 15px;float: left;line-height: 30px;}
+.pagination p.que{width: 48px;height: 28px;text-align: center;border: 1px solid #b3b3b3;}
+.pagination p input{width: 48px;height: 28px;margin: 0 10px;outline: none;}

@@ -1,0 +1,24 @@
+/*pin*/
+
+.hands_on{width: 254px;height: 45px;border: 1px solid #b9b9b9;overflow: hidden;border-radius: 5px;margin-left: 20px;}
+/*.hands_on input{width: 244px;height: 30px;padding: 0px 5px;font-size: 14px;border: none;background: none;outline: none;}*/
+.hands_on select{width: 266px;height: 45px;color: #a9a9a9;font-size: 14px;outline: none;padding: 5px 5px;border: none;background: url('../images/bianji_biao.png') no-repeat 94% 1px;}
+.hands_on select option{color: #a9a9a9;}
+
+.single_form label{margin-left: 15px;}
+.note-editable {list-style-type: decimal !important;margin-left: 20px !important;height: 160px;}
+.ren_list_title{height: 920px;}
+.Editor_name_btn_pin{width: 350px;height:45px;margin:100px auto;font-size: 22px;}
+.Editor_name_btn_pin a{display: block;float: left;width: 155px;height: 40px;line-height: 40px;border: 1px solid #01A590;color: #01A590;text-align: center;}
+.Editor_name_btn_pin button{display: block;float: left;width: 155px;height: 42px;line-height: 42px;background: #FF0000;color: #fff;text-align: center;border: none;outline: none;margin-left: 33px;font-size: 20px;}
+.Editor_name_btn_pin span{display: block;float: left;width: 155px;height: 42px;line-height: 42px;background: #FF0000;color: #fff;text-align: center;border: none;outline: none;margin-left: 33px;font-size: 20px;}
+/*岗位职责*/
+.ren_list_responsibility{height: 150px;}
+/*富文本编辑*/
+.Rich_text{width: 580px;height: 150px;border: 1px solid #b9b9b9;border-radius:5px;overflow: hidden;}
+.Rich_text textarea{width: 570px;height: 140px;resize: none;border: none;background: none;outline: none;padding: 5px 5px;}
+.note-editor{height: 150px !important;border: none;}
+
+.wrap{position: relative;}
+.mask{position: absolute;display: none;margin: auto;width: 600px;left: 50%;margin: -50px 0 0 -300px;top: 160%;height: 100px;line-height: 100px;text-align: center;background: #eee;z-index: 9999 !important;}
+.mask p{color: #FF0000;}

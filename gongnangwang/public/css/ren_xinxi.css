@@ -1,0 +1,45 @@
+.Information_word{text-align: center;height: 80px;line-height: 80px;color: #01A590;}
+.Information p{height: 75px;line-height: 75px;font-size: 23px;}
+.Information_title p a{color: #333;}
+.content_head_Infor{height: 700px;border-bottom: 1px solid #969696;margin-bottom: 10px;}
+.ge_pic_icon_Infor{width: 435px;height: 550px;}
+.ge_pic_icon_Infor img{width: 435px;height: 550px;}
+.Infor_file input{outline: none;}
+.Infor_file,.Infor_inpt_word{margin-top: 25px;}
+
+.content_head_right{width: 740px;height: 550px;background: #eee;}
+
+.Infor_inpt{width: 330px;height: 30px;}
+.Infor_inpt button{width: 74px;height: 23px;text-align: center;line-height: 23px;border: 1px solid #8d8d8d;background: #cedfe8;border-radius: 4px;display: block;float: left;margin-left: 25px;outline: none;}
+.a-upload {width: 74px;height: 23px;text-align: center;line-height: 23px;border: 1px solid #8d8d8d;color:#000;position: relative;background: #cedfe8;float: left;border-radius: 4px; overflow: hidden;display: inline-block;*display: inline;*zoom: 1;margin-left: 20px;}
+.a-upload  input {position: absolute;font-size: 100px;right: 0;top: 0;opacity: 0;filter: alpha(opacity=0);cursor: pointer;outline: none;}
+.money{color: #FF0000;margin-left: 15px;font-size: 14px;}
+
+.Editor{}
+.Editor_name{height: 40px;margin-top: 30px;line-height: 40px;}
+.Editor_name input{width: 255px;height: 30px;outline: none;border: none;background: none;padding: 5px 5px;}
+.Editor_name_inpt{width: 255px;height: 40px; margin-left: 5px;border: 1px solid #b9b9b9;border-radius: 5px;overflow: hidden;}
+
+.Editor_name_textarea{height: 175px;line-height: 40px;margin-top: 30px;}
+.Editor_name_text{width: 555px;height: 175px;border: 1px solid #b9b9b9;border-radius: 5px;overflow: hidden;}
+.Editor_name_text textarea{width: 545px;height: 165px;padding: 5px 5px;border: none;outline: none;resize: none;}
+.Editor_name_file input{width: 150px;}
+.Editor_name_file span{color: #FF0000;}
+
+.Editor_name_btn{width: 350px;margin:100px auto;font-size: 23px;}
+.Editor_name_btn a{display: block;float: left;width: 155px;height: 40px;line-height: 40px;border: 1px solid #01A590;color: #01A590;text-align: center;}
+.Editor_name_btn button{display: block;float: left;width: 155px;height: 42px;line-height: 42px;background: #FF0000;color: #fff;text-align: center;border: none;outline: none;margin-left: 33px;font-size: 23px;}
+
+/*改*/
+.working_life{width: 255px;height: 45px; margin-left: 5px;border: 1px solid #b9b9b9;border-radius: 5px;overflow: hidden;}
+.working_life select{width: 275px;height: 45px;outline: none;padding: 5px 5px;border: none;background: url('../images/bianji_biao.png') no-repeat 91% 1px;}
+.working_life select option{width: 275px;height: 45px;line-height: 45px;}
+
+
+/**/
+.compay_name{margin-left: 20px;}
+.tian{font-size: 14px;color: #FF0000;line-height: 40px;margin-left: 10px;}
+.Editor_name_inpt_com{width: 300px;height: 40px; margin-left: 5px;border: 1px solid #b9b9b9;border-radius: 5px;overflow: hidden;}
+.Editor_name_inpt_com input{width: 290px;height: 30px; padding: 5px 5px;border: none;}
+.Editor_name_inpt_gang{width: 170px;height: 40px; margin-left: 5px;border: 1px solid #b9b9b9;border-radius: 5px;/*overflow: hidden;*/}
+.Editor_name_inpt_gang input{width: 160px;height: 30px; padding: 5px 5px;border: none;}

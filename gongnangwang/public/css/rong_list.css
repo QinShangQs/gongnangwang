@@ -1,0 +1,20 @@
+.Finance_Consultant_head{height: 60px;line-height: 60px;border-bottom: 2px solid #d6d6d6;margin-top: -10px;}
+.went{font-size: 20px;color: #01A590;padding-left: 40px;}
+.went_right a{display: block;color: #333;}
+.went_right img{float: left;margin: 18px 5px 0 0;}
+/*图标*/
+.rong_list_icon{height: 460px;border-bottom: 1px solid #c7c7c7;}
+.Official_dl{width: 33%;}
+.center_rong{margin: 0 auto;}
+.Official_dl dl{width: 165px;height: 200px;margin-top: 20px;}
+.Official_dl dl a{display: block;}
+.Official_dl dl dt img{width: 148px;height: 148px;border-radius: 50%;text-align: center;}
+.Official_dl dl dd{color: #01A590;margin-top: 10px;font-size: 12px;}
+/*展示*/
+.rong_list_nr{height: 2050px;}
+.Show{width: 368px;height:625px;margin-right: 48px;padding-top: 50px;}
+.Show a{display: block;}
+.Show_img{width: 368px;height: 301px;}
+.Show_ul{margin-top: 35px;}
+.Show_ul li{font-size: 22px;color: #818181;line-height: 35px;margin-top: 10px;}
+.Show_ul li.Show_li_last{color: #01A590;}

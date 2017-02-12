@@ -1,0 +1,41 @@
+.ren_list_con_p{color: #01A590;margin-top: 30px;height: 60px;line-height: 60px;border-bottom: 2px solid #d6d6d6;padding-left: 60px;}
+.ren_list_con_Mar{padding-left: 60px;}
+.ren_list_title{width: 780px;height: 900px;}
+
+/*标题*/
+.Font-siz{font-size: 16px !important;}
+.ren_list_title_comp{width: 100%;height: 330px;border-bottom: 1px solid #B9B9B9;}
+.ren_list_title_one{height: 55px;line-height: 40px;margin-top: 25px;font-size: 18px;}
+.ren_list_title_one_text{width: 550px;height: 40px;border: 1px solid #b9b9b9;overflow: hidden;border-radius: 5px;margin-left: 20px;}
+.ren_list_title_one_text input{width: 585px;height: 30px;border: none;background: none;outline: none;padding: 5px 5px;}
+.second{text-align: right;margin-right: 85px;color: #B9B9B9;font-size: 14px;}
+.ren_list_title_two_text{width: 270px;height: 40px;border: 1px solid #b9b9b9;overflow: hidden;border-radius: 5px;margin-left: 20px;}
+.ren_list_title_two_text input{width: 413px;height: 30px;border: none;background: none;outline: none;padding: 5px 5px;}
+.ren_list_title_two{width: 413px;height: 40px;border: 1px solid #b9b9b9;overflow: hidden;border-radius: 5px;margin-left: 20px;}
+.ren_list_title_two input{width: 413px;height: 30px;border: none;background: none;outline: none;padding: 5px 5px;}
+.single_form{line-height: 45px;font-size: 12px !important;}
+.single_form label{ float: left;line-height: 40px;}
+.single_form label span span{color: #FF0000;}
+/*团队*/
+.ren_list_team{height: 500px;border-bottom: 1px solid #B9B9B9;}
+.input_xm_team{width: 260px;height: 45px;border-radius: 5px;border: 1px solid #b9b9b9;overflow: hidden;margin-left: 15px;line-height: 40px;}
+.input_xm_team_select{width: 280px;height: 45px;outline: none;padding: 5px 5px;background: url('../images/bianji_biao.png') no-repeat 91% 1px;border: none;}
+.Equity{height: 45px;line-height: 45px;}
+.Equity label{margin-left: 15px;float: left;line-height: 40px;}
+
+/*合伙人*/
+.ren_list_partner{height:540px;border-bottom: 1px solid #B9B9B9;}
+.ren_list_partner_text{width: 510px;height: 40px;border: 1px solid #b9b9b9;overflow: hidden;border-radius: 5px;margin-left: 20px;}
+.ren_list_partner_text input{width: 500px;height: 30px;border: none;background: none;outline: none;padding: 5px 5px;}
+.ren_list_partner_img{width:140px;height: 30px;line-height: 30px;margin:0 auto;}
+.ren_list_partner_img a{display: block;color: #333;}
+.ren_list_partner_img img{margin: 5px 5px;}
+.single_form_ul li{height: 40px;}
+.single_form_ul li.full_time{margin: 0;}
+.single_form_ul li{margin-top: 30px;/*float: left;*/}
+.Monthly{width: 95px;height: 40px;border: 1px solid #B9B9B9;overflow: hidden;border-radius: 4px;}
+.Monthly input{width: 85px;height: 30px;padding: 5px 5px;border: none;outline: none;background: none;}
+.yearly{margin-left: 20px;line-height: 40px;}
+.Other{width: 220px;height: 40px;border: 1px solid #B9B9B9;overflow: hidden;border-radius: 4px;}
+.Other input{width: 210px;padding: 5px 5px;border: none;outline: none;background: none;}
+

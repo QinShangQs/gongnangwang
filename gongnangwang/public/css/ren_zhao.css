@@ -1,0 +1,41 @@
+.station_con{}
+/*头部列表*/
+.station_con_head{margin-top: 35px;height: 360px;}
+.tabulation{height: 40px;}
+.technique_p{font-size: 20px;color: #01A590;line-height: 38px;}
+.technique_p a{display: block;color: #01A590;}
+.technique_p img{margin: 5px 20px 0 0;}
+/*技术*/
+.tabulation_Mar{margin-top: 15px;}
+.tabulation_ul{margin-left: 30px;height: 38px;font-size: 16px;}
+.tabulation_ul li{float: left;margin-right: 35px;line-height: 38px;}
+.tabulation_ul li a{color: #000;display: block;}
+.tabulation_ul li a:hover{color: #01A590;}
+.technique_active{color: #01A590;}
+
+/*产品*/
+.industry_ul{margin-left: 30px;height: 38px;font-size: 16px;}
+.industry_ul li{float: left;margin-right: 30px;line-height: 38px;}
+.industry_ul li a{color: #000;display: block;}
+.industry_ul li a:hover{color: #01A590;}
+/*城市*/
+.tabulation_li_sec{margin-left: 70px;}
+/*招聘信息*/
+.recruitment{margin-top: 40px;height: 1380px}
+.recruitment_rows{height: 120px;margin-top: 35px;}
+.recruitment_list_Mar{margin-left: 160px;}
+.recruitment_list{width: 500px;height:120px;}
+/*招聘信息头*/
+.recruitment_list_head,.recruitment_list_con{height: 40px;}
+.recruitment_list_head a,.recruitment_list_con a{display: block;}
+.head_left_ul li{float: left;margin-right: 10px;line-height: 40px;}
+.head_title{color: #01A590;font-size: 20px;}
+.head_place{font-size: 14px;color: #ff0000;}
+.head_date{font-size: 14px;color: #9d9d9d;}
+.head_right{color: #01A590;line-height: 40px;font-size: 20px;}
+/*招聘信息中*/
+.con_title{font-size: 16px;color: #FF0000;}
+.con_right{color: #333;font-size: 14px;line-height: 40px;}
+/*招聘信息底*/
+.recruitment_list_bot{height: 40px;background: #f6f6f6;line-height: 40px;}
+.bot_words{color: #333;font-size: 16px;}

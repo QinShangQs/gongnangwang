@@ -1,0 +1,106 @@
+.Edit_all_right{margin-left: 15px;font-size: 16px;}
+.knowledge_con_head{height: 2250px;}
+/*活动时间*/
+.Mold_left p span{color: #FF0000;}
+.Edit_activity_time{height: 80px;}
+.Edit_activity_time_right_input{margin-top: 15px;}
+
+.Begin_time{width: 250px;height: 40px;line-height: 40px;border: 1px solid #b9b9b9;border-radius: 5px;overflow: hidden;}
+.Begin_time img{width: 27px;height: 29px;float: left;margin: 5px 0 0 5px;}
+.Begin_time input{width: 195px;height: 40px;cursor: pointer;line-height: 40px;padding: 5px 5px;outline: none;border: none;background: url('../images/edit_jian_icon.png') no-repeat right;}
+
+.Finish_time{width: 170px;height: 40px;margin-left: 15px;border: 1px solid #b9b9b9;border-radius: 5px;overflow: hidden;}
+.Finish_time img{width: 27px;height: 29px;float: left;margin: 5px 0 0 5px;}
+.Finish_time input{width: 131px;height: 40px;cursor: pointer;padding: 15px 5px;outline: none;border: none;background: url('../images/edit_jian_icon.png') no-repeat right;}
+/*填写名称*/
+.trade_name_right{width: 585px;height: 40px;border: 1px solid #b9b9b9;border-radius: 5px;overflow: hidden;}
+.trade_name_right input{width: 565px;height: 40px !important;padding: 5px 5px;border: none;background: none;outline: none;}
+
+/*地点*/
+.top{ margin:5px auto; color:#990000;}
+.s_province{width: 150px;height: 45px; border:1px #b9b9b9 solid;overflow: hidden;float: left;margin-right: 13px;border-radius: 5px;}
+.info select{width: 162px;height: 45px;outline: none;padding: 5px 5px;border: none;background: url('../images/bianji_biao.png') no-repeat 89% 1px;}
+.s_province option{width: 355px;height: 40px;line-height: 40px;}
+.info{ margin:5px; text-align:center;}
+.info #show{ color:#3399FF; }
+.bottom{ text-align:right; font-size:12px; color:#CCCCCC; width:1000px;}
+
+/*富文本编辑器*/
+.Detailed_content{height: 460px;}
+.Detailed_content_right{width: 933px;height: 460px;border: 1px solid #d4d4d4;border-radius: 5px;}
+.note-editor{width: 930px !important;height: 460px;border: none;background: none;}
+.note-editable{width: 930px !important;height: 410px !important;}
+/*设置报名表单*/
+.Enroll{width:1160px;height: 310px;border: 1px solid #bfbfbf;border-radius: 5px;}
+.Enroll_fit{width: 108px;height: 47px;background: url("../images/edit_bg_icon.png");margin-left: 20px;line-height: 45px;text-align: center;color: #fff;}
+.Enroll_add{margin-left: 250px;}
+.Enroll_add a{display: block;color: #707070;font-size: 13px;line-height: 60px;}
+.Enroll_add a img{float: left;margin: 20px 5px 0 0;}
+.Enroll_add a span{color: #01A590;}
+/*设置报名表单展开*/
+.Enroll_list_p{line-height:60px;height: 60px;margin: 0;border-bottom: 1px solid #b5b5b5;font-size: 18px;color: #333;padding-left: 25px;}
+.Enroll_list_p span{color: #FF0000;}
+.Enroll_list_con{height: 200px;background: #f4f4f4;padding-left: 35px;}
+.con_radio{padding-top: 30px;font-size: 14px;}
+.con_radio_radio{width: 180px;line-height: 40px;color: #333;}
+.con_radio_text{width: 390px;height: 40px;border: 1px solid #b9b9b9;border-radius: 5px;background: #fff;}
+.con_radio_text input{width: 380px;height: 40px;padding: 5px 5px;border: none;background: none;font-size: 14px;}
+
+.Enroll_list_btn{width: 170px;margin: 0 auto;padding-top: 25px;}
+.Enroll_list_btn a{width: 57px;height: 30px;display: block;float: left;border: 1px solid #01A590;color: #01A590;text-align: center;line-height: 30px;border-radius: 5px;}
+.Enroll_list_btn button{width: 57px;height: 30px;display: block;float: left;background: #FF0000;color: #fff;margin-left: 40px;text-align: center;line-height: 30px;border-radius: 5px;border: none;outline: none;}
+.Enroll_list_stop{width: 131px;margin: 0 auto;padding-top: 34px;}
+.Enroll_list_stop button{width: 131px;height: 30px;border: 1px solid #c9c9c9;background: #fff;outline: none;}
+/*设置活动票种*/
+.Enroll_fit_img img{float: left;margin: 15px 0 0 10px;}
+.Set_ticket{width: 100%;height: 565px;border: 1px solid #bfbfbf;}
+.Set_ticket_head{height: 60px;}
+.Set_ticket_add{text-align: right;line-height: 60px;color: #707070;font-size: 13px;}
+.ticket_free{height: 50px;}
+.ticket_free_dep{margin-top: 30px;}
+.ticket_free_p{width: 166px;height: 47px;margin-left: ;float: left;text-align: center;line-height: 45px;}
+.ticket_deploy{width: 992px;height: 340px;/*border: 1px solid #b9b9b9;*/z-index: 888;right:0;/*position: absolute;*/}
+.gratis a{display: block;width: 166px;height: 47px;line-height: 45px;text-align: center;background: #eeeeee;border: 1px solid #b9b9b9;color: #01A590;}
+.ticket_deploy_ul{height: 47px;background: #eee;line-height: 47px;border: 1px solid #c5c5c5;}
+.ticket_deploy_ul li{width: 110px;float: left;margin-left: 70px;color: #737373;text-align: center;}
+.ticket_deploy_ul li a,.ticket_deploy_ul_02 li a{color: #737373;}
+.ticket_deploy_ul_02{height: 47px;line-height: 47px;border: 1px solid #c5c5c5;margin-top: 20px;}
+.ticket_deploy_ul_02 li{width: 100px;float: left;margin-left: 85px;text-align: center;}
+.ticket_deploy_ul_02 li.shuzi{width: 95px;height:27px;line-height:27px;text-align: center;background: #01A590;border-radius: 20px;margin-top: 10px;}
+.ticket_deploy_ul_02 li.shuzi a{color: #fff;}
+.ticket_deploy_ul_02 li.handle img{width: 28px;height: 28px;margin-right: 15px;text-decoration: none;}
+
+.explain{margin-top: 20px;height: 45px;}
+.explain_two{margin-top: 20px;height: 30px;}
+.explain_p{width: 90px;height: 40px;line-height: 40px;font-size: 16px;}
+.explain_inpt{width: 900px;height: 45px;border: 1px solid #dcdcdc;}
+.explain_inpt input{width: 900px;height: 45px;padding: 5px 5px;border: none;background: none;outline: none;}
+
+.explain_sec{width: 138px;height: 45px;border: 1px solid #dcdcdc;overflow: hidden;}
+.explain_secaaa{width: 160px;height: 45px;padding: 5px 5px;border: none;outline: none;background: url('../images/bianji_02_icon.png') no-repeat 80% 15px;}
+.explain_p_02{line-height: 40px;font-size: 14px;margin: 0 20px;}
+.explain_two label{margin-top: 10px;font-size: 14px;color: #7e7e7e;}
+
+/*活动分类*/
+.product_type_right{position: relative;}
+.stretch_list{width: 930px;height: 85px;border:1px solid #e5e5e5;margin-left: 105px;position: absolute;z-index: 999;background: #fff;}
+.list_sub span{font-size: 14px;color: #000;font-weight: 200;line-height: 30px;margin-top: 10px;}
+.list_sub span span{color: #FF0000;}
+.list_sub li{height: 30px;float:left;line-height: 30px;border: 1px dashed #a0a0a0;padding: 0 20px;margin-left: 10px;margin-top: 10px;}
+.list_sub li a{color: #a0a0a0;}
+.list_sub li.list_active{border:  1px dashed #01A590;}
+.list_sub li.list_active a{color: #01A590;}
+
+.shape_sub{margin-top: 40px;}
+.stretch_list{display: none;}
+/*添加标签*/
+.add_list{width: 930px;height: 370px;border:1px solid #e5e5e5;margin-left: 105px;position: absolute;z-index: 999;background: #fff;}
+.list_sub{margin: 20px 20px;}
+.add_list_ul li{height: 30px;float:left;line-height: 30px;border: 1px dashed #a0a0a0;padding: 0 20px;margin-right: 10px;margin-top: 10px;}
+.add_list_ul li a{color: #a0a0a0;}
+.add_list_ul li.list_active{border:  1px dashed #01A590;color: #01A590;}
+.add_list_ul li.list_active a{color: #01A590;}
+.add_list{display: none;}
+.spease{color: #FF0000;text-align: center;}
+
+#chance span,#signContent span,#chance font{display:block; margin:10px 10px; padding: 0 10px; cursor: pointer; float:left; color: #01A590;border:  1px dashed #01A590;background: #eee;}

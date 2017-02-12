@@ -1,0 +1,48 @@
+.main_hhr{
+	width: 100%;
+	height: 800px;
+	background: #f7f7f7;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.main_hhr_div{width: 100%;height: 80px;border-bottom: 1px solid #dcdcdc;}
+.main_hhr_ul li{cursor: pointer;font-size: 24px;margin: 25px 0 0 25px;float: left;font-weight: normal;}
+.My_ren_active{color: #01a590;font-size: 24px;margin: 25px 0 0 25px;float: left;font-weight: normal;}
+.main_hhr_zhize{
+	width: 1138px;
+	height: 100px;
+	border-left: 4px solid #01a590;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+.main_hhr_zhize p{
+	font-size: 20px;
+	margin:10px 0 0 10px;
+}
+.main_hhr_zhize ul li{
+	font-size: 14px;
+	margin:5px 0 0 10px;
+}
+.main_hhr_zhize ul li span{
+	font-size: 14px;
+	color: #01A590;
+	float: right;
+	margin-left: 20px;
+}
+.wdgn{ 
+	display: none;
+}
+/*我的简历*/
+.jian{
+	width: 705px;
+	height: 40px;
+	margin-top: 15px;
+}
+.jian_ul{background: #e7e7e7;height: 40px;}
+.jian_ul li{float: left;width: 235px;height: 40px;text-align: center;color: #828282;line-height: 40px;}
+.jian_ul li span{display:block;width: 62px;height: 30px;border-radius: 5px;color: #fff;line-height: 30px;float: left;margin-right: 10px;margin-top: 5px;}
+.gai{background: #01A590;}
+.shan{background: #828282;}
+.jian_ul_ul{height: 40px;}
+.jian_ul_ul li{float: left;width: 235px;height: 40px;text-align: center;color: #828282;line-height: 40px;}
+.jian_ul_ul li span{display:block;width: 62px;height: 30px;border-radius: 5px;color: #fff;line-height: 30px;float: left;margin-left: 20px;margin-top: 5px;}

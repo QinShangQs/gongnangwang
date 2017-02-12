@@ -1,0 +1,47 @@
+.more_con{margin-top: 30px;}
+/**/
+.more_con_nr{display: none;}
+.more_con_nr_start{height: 1450px;}
+.more_con_head{height: 110px;}
+.more_con_left{width: 740px;}
+/*地区*/
+.more_place{height: 40px;border-bottom: 1px solid #bcbcbc;margin-top: 10px;}
+.more_place_p{line-height: 40px;}
+.more_place_ul{margin-left:20px;margin-top: 5px;font-size: 16px;}
+.more_place_ul li{float: left;line-height: 27px;color: #000;padding:0 5px;text-align: center;border-radius: 5px;margin-right: 6px;}
+.more_place_ul li a{color: #000;}
+.more_place_ul_active{background: #01A590;color: #fff;}
+.more_place_ul li.more_place_ul_active a{color: #fff;}
+/*类型*/
+.more_mold_ul{margin-left:5px;margin-top: 5px;font-size: 16px;}
+.more_mold_ul li{float: left;padding:0 5px;line-height: 27px;color: #000;text-align: center;border-radius: 5px;margin-right: 7px;}
+.more_mold_ul li a{color: #000;display: block;}
+.more_mold_ul li.more_place_ul_active a{color: #fff;}
+.more_mold_ul li.Margin_none{margin: none;}
+.more_place_all{width: 46px;height: 27px;line-height: 27px;color: #000;text-align: center;border-radius: 5px;margin-left: 20px;margin-top: 5px;}
+.more_place_all a{color: #fff;}
+.more_place_rong{padding:0 5px;font-size: 16px;line-height: 27px;text-align: center;margin-top: 5px;color: #000;}
+.more_place_rong a{color: #FF0000;display: block;}
+/*认证申请*/
+.more_con_right a{display: block;color: #333;}
+.more_con_right_img img{float: left;margin: 5px 5px 0 0;}
+.more_con_right p{line-height: 45px;}
+/*人数开始*/
+.more_numb{margin-top: 15px;}
+.more_numb_left{margin-left: 25px;}
+.more_founder_block{width: 120px;height: 50px;line-height: 50px;text-align: center;background: #01a590;font-size: 22px;color: #fff;border-radius: 3px;}
+.more_founder_start{color: #969696;font-size: 16px;margin-left: 10px;height: 50px;line-height: 50px;}
+/*分页*/
+.pagination{width: 600px;height: 30px;margin: 0 auto;margin-top: 30px;/*margin-left: 40px;*/}
+.pagination_ul{width: 290px;height: 28px;}
+.pagination_ul li{width: 32px;height: 28px;line-height: 28px;text-align: center;margin-left: 10px;float: left;cursor:pointer}
+.pagination_ul li:hover{width: 32px;height: 28px;background: #ecb700;color:#fff;line-height: 28px;text-align: center;margin-left: 10px;float: left;}
+.pagination_ul li.pagination_ul_next{width: 62px;height: 28px;text-align: center;line-height: 28px;border: 1px solid #b3b3b3}
+.pagination p{margin-left: 15px;float: left;line-height: 30px;}
+.pagination p.que{width: 48px;height: 28px;text-align: center;border: 1px solid #b3b3b3;cursor: pointer;}
+.pagination p input{width: 48px;height: 28px;margin: 0 10px;outline: none;}
+/*律师*/
+.newspeo_lv{line-height: 40px;}
+.newspeo_p_ul_lv{margin-top: 10px;font-weight: bold;}
+.newspeo_p_ul_lv li{width: 130px;height: 30px;float: left;text-align: center;line-height: 30px;border-right:2px solid #c8c8c8;}
+.newspeo_p_ul_lv li.newspeo_p_li{border: none;}

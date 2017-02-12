@@ -1,0 +1,13 @@
+.make_out_sub{width: 720px;height: 980px;}
+/*辅导方向*/
+.tutorship{height: 190px;}
+.tutorship_right{width: 585px;height: 186px;border: 1px solid #b9b9b9;border-radius: 5px;}
+/*起拍价格*/
+.Starting{height: 60px;}
+.no_avail{margin-right: 25px;color: #7d7d7d;font-size: 14px;}
+.Starting_right{width: 585px;height: 45px;border: 1px solid #b9b9b9;border-radius: 5px;overflow: hidden;}
+.Starting_right_input{width: 475px;height: 35px;}
+.Starting_right_input input{width: 465px;height: 35px;padding: 5px 5px;outline: none;border: none;background: none;}
+.Starting_right_sec{width: 85px;height: 45px;}
+.Starting_right_sec .Starting_right_care{width: 123px;height: 45px;background: url('../images/bianji_biao.png') no-repeat 83% 1px;outline: none;border: none;}
+.Starting_right_sec .Starting_right_care option{width: 85px;height: 45px;height: 45px;text-align: center;}

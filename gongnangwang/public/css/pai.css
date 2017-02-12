@@ -1,0 +1,254 @@
+.pai_content{margin-top: 55px;}
+.pai_content_head{height: 290px;overflow: hidden;}
+.pai_content_head_img{width: 488px;height: 290px;background: #a0a0a0;}
+.pai_content_head_img img{width: 488px;height: 290px;}
+
+.pai_content_head_right{margin-left: 35px;/*width: 676px;*/}
+.pai_content_head_right_ul li{clear: both;line-height: 40px;}
+.pai_content_head_right_ul li span{color: #01A590;}
+.pai_content_head_right_ul_img img{margin: 13px 12px 0 0;}
+.pai_content_head_right_ul_lang img{margin: 5px 12px 0 0;}
+.touch{border: none;background: none;outline: none;}
+.touch a{width: 103px;height: 35px;background: #FF0000;display: block;color: #fff;line-height: 35px;text-align: center;border-radius: 2px;font-size: 16px;}
+
+.pai_content_head_right_foot{margin-top: 55px;}
+.pai_content_head_right_foot_ul li{float: left;margin-right: 15px;text-align: center;line-height: 50px;border-radius: 2px;}
+
+.Sign_up{width: 137px;height: 50px;background: #01A590;}
+.Sign_up a{color: #fff;}
+.Collect{width: 137px;height: 50px;background: #f1f1f1;}
+.Collect img{margin: 10px -10px 0 10px;}
+.Collect a{color: #01A590;}
+.Look_through{width: 137px;height: 50px;background: #f1f1f1;}
+.Look_through a{color: #000;}
+
+.Share_ul{margin-top: 7px;}
+.Share_ul li{width: 40px;height: 35px;line-height: 35px;float: left;margin-right: 15px;}
+
+
+/**/
+.pai_content_con{margin-top: 50px;}
+.pai_content_con_ticket{width: 685px;}
+.pai_content_con_p{height: 35px;line-height: 35px;}
+.Refund img{margin: 10px 10px 0 0;}
+.pai_content_con_img{margin-top: 30px;height: 156px;}
+.pai_content_con_img_ul li{float: left;margin-right: 38px;}
+.pai_content_con_img_ul li.pai_Margin_none{margin: 0;}
+.pai_content_con_banner{margin-top:50px;width: 100%;height: 223px;}
+
+.pai_content_con_about{margin-top: 25px;height: 200px;border-bottom: 1px solid #7f7f7f;}
+.pai_content_con_about h3{text-align: center;margin-bottom: 5px;}
+.pai_content_con_about p{text-indent: 4em;line-height: 30px;font-size: 18px;}
+
+.pai_content_con_sub{border-top: 1px solid #999999;height: 180px;}
+.pai_content_con_sub_ol{padding-left: 35px;padding-top: 45px;font-size: 20px;}
+.pai_content_con_sub_ol li{width: 260px;height: 35px;line-height: 35px;list-style-type: decimal;margin-left: 20px;line-height: 25px;color: #01A590;float: left;}
+.pai_content_con_sub_ol li span{color: #000;}
+
+
+.ai_content_con_Guest{margin-top: 20px;}
+.ai_content_con_Guest_name{height: 38px;line-height: 38px;background: #01A590;color: #fff;}
+.ai_content_con_Guest_name h3{margin-left: 8px;}
+.ai_content_con_Guest_name span{margin-left: 20px;}
+
+.Resume{margin-top: 45px;height: 320px;}
+.Resume_list{width: 215px;height: 320px;margin-right: 20px;}
+.Resume_list_mar{margin: 0;}
+.Resume_list_img img{width: 215px;height: 199px;}
+.Resume_list_p{width: 195px;height: 95px;margin-top: 20px;margin: 0 auto;line-height: 30px;}
+.Resume_list_p p{text-align: center;}
+
+
+.Summit{margin-top: 60px;text-align: center;height: 660px;}
+.Summit h3{height: 60px;line-height: 60px;}
+.Summit_ul li{line-height: 35px;height: 35px;font-size: 18px;}
+.Summit_last{margin-top: 25px;}
+.contact_us{margin-top: 60px;}
+
+.money_foot{width:570px;height:50px;margin: 0 auto;margin-top: 60px;}
+.Collect_second{width: 137px;height: 50px;background: #01A590;line-height: 50px;}
+.Collect_second img{margin: 13px -10px 0 15px;}
+.Collect_second a{color: #fff;}
+.last_activity{margin-top: 25px;height: 35px;line-height: 35px;}
+
+
+.last_activity_enroll{height: 277px;background: #f1f1f1;margin-top: 20px;}
+.last_activity_enroll_ul{width: 165px;text-align: center;padding-top: 35px;}
+.last_activity_enroll_ul a{display: block;}
+.enlist{color: #01A590;}
+.black{color: #000;}
+
+
+.Question_p{height: 45px;line-height: 45px;font-size: 20px;margin-top: 25px;}
+.Question_button {width: 100%;height: 75px;margin-top: 20px;border-bottom: 1px solid #d2d2d2;}
+.Question_button a{width: 142px;height: 43px;background: #01A590;display: block;color: #fff;font-size: 20px;line-height: 43px;text-align: center;margin: 0 auto;}
+
+.Discuss_ul{width: 595px;margin-left: 15px;height: 35px;line-height: 35px;}
+.Discuss_jiao{color: #01A590;}
+.Discuss_time{color: #a0a0a0;}
+.Discuss_right_ul li{float: left;margin-right: 5px;}
+
+/*右侧*/
+.pai_content_con_sina{width: 476px;}
+.sina_head{height: 117px;}
+.sina_head_img{width: 117px;height: 117px;}
+.sina_head_img img{width: 117px;height: 117px;}
+.sina_head_word{width: 340px;margin-left: 13px;}
+.sina_head_word p{text-indent: 2em;margin-top: 5px;height:75px;line-height: 25px;}
+
+.sina_cont{margin-top: 15px;}
+.sina_side{width: 6px;height: 6px;background: #FF0000;margin-top: 10px;margin-right: 10px;}
+.sina_ul li{height: 25px;line-height: 25px;}
+.sina_ul li a{display: block;color: #000;}
+.pai_map_icon{width: 436px;height:473px;margin-top: 45px;}
+/*微信分享*/
+.WeChat{height: 180px;margin-top: 45px;}
+.WeChat_friends{width: 165px;height: 180px;margin-left: 30px;}
+.WeChat_Scan{color: #01A590;margin-left: 50px;margin-top: 25px;font-size: 18px;}
+.WeChat_Scan span{font-size: 16px;}
+
+.WeChat_Scan_sec{margin-top: 30px;font-size: 20px;}
+.WeChat_Scan_sec span{color: #FF0000;font-size: 28px;}
+.WeChat_Code{width: 207px;height: 175px;background: #969696;margin-right: 40px;}
+.WeChat_Code img{width: 207px;height: 175px;}
+
+
+/*日历插件*/
+#CalendarMain {
+	width: 455px;
+	height: 480px;
+	border: 3px solid #e3e3e3;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+#title {
+	width: 100%;
+	height: 60px;
+	line-height: 50px;
+	border: 1px solid #efefef;
+}
+.selectBtn {
+	font-weight: 900;
+	font-size: 15px;
+	color: #01A590;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 7px 10px 6px 10px;
+}
+.selectYear {
+	float: left;
+	margin-left: 50px;
+	position: absolute;
+}
+.selectMonth {
+	float: left;
+	margin-left: 120px;
+	position: absolute;
+}
+.month {
+	float: left;
+	position: absolute;
+}
+.nextMonth {
+	float: right;
+}
+.currentDay {
+	float: right;
+}
+#context {
+	background-color: #fff;
+	width: 100%;
+}
+.week {
+	width: 100%;
+	height: 30px;
+}
+.week h3 {
+	float: left;
+	color: #808080;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	margin-top: 5px;
+	font-size: 16px;
+}
+.dayItem {
+	float: left;
+}
+.lastItem {
+	color: #d1c7b7 !important;
+}
+.item {
+	color: #333;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	margin: 0;
+	font-family: "微软雅黑";
+	font-size: 20px;
+}
+.item:hover {
+	color: #b9121b;
+}
+.currentItem a {
+	background-color: #01A590;
+	width: 30px;
+	line-height: 30px;
+	float: left;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	color: #fff;
+}
+
+#Container {
+	overflow: hidden;
+	float: left;
+}
+#center {
+	width: 100%;
+	overflow: hidden;
+}
+#centerMain {
+	width: 300%;
+	margin-left: -100%;
+}
+#selectYearDiv {
+	float: left;
+	background-color: #fff;
+}
+#selectYearDiv div {
+	float: left;
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	border: 1px solid #ccc;
+	margin-left: -1px;
+	margin-top: -1px;
+	cursor: pointer;
+	color: #909090;
+}
+.currentYearSd, .currentMontSd {
+	color: #ff4400 !important;
+}
+#selectMonthDiv {
+	float: left;
+	background-color: #fff;
+}
+#selectMonthDiv>div {
+	color: #909090;
+	float: left;
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	border: 1px solid #ccc;
+	margin-left: -1px;
+	margin-top: -1px;
+	cursor: pointer;
+}
+#selectYearDiv div:hover, #selectMonthDiv>div:hover {
+	background-color: #efefef;
+}
+#centerCalendarMain {
+	float: left;
+}

@@ -1,0 +1,55 @@
+.content_ge{margin-top: 45px;}
+.nang{line-height: 30px;height: 30px;font-size: 24px;}
+.nang a{display: block;color: #000000;}
+.nang a.she{color: #01a590;}
+
+.content_head{height:940px;margin-top: 25px;}
+/*左侧*/
+.content_head_left{width: 415px;height:930px;background: #e5e5e5;}
+.ge_pic_icon{width: 415px;height: 600px;}
+.ge_pic_icon_words{margin-left: 85px;font-size: 24px;margin-top: 25px;line-height: 37px;}
+.ge_renz_icon img{margin-left: 35px;/*float: left;*/}
+
+.ge_redb_icon{height: 20px;margin-top: 10px;}
+.ge_redb_icon li{width: 35px;height: 20px;float: left;border-right: 1px solid #979797;}
+.ge_redb_icon li img{float: left;margin: 0 7px;}
+.ge_redb_icon li.ge_redb_icon_li{width: 35px;height: 20px;float: left;border: 0;}
+
+.ge_redb_icon-06{height: 20px;margin-left: 7px;margin-top: 10px;}
+.ge_redb_icon-06 li{width: 22px;height: 20px;float: left;margin-right: 5px;}
+.ge_redb_icon-06 li img{float: left;}
+
+/*右侧*/
+.nang_xuan{margin-top: 20px;}
+.content_head_right{width: 740px;}
+.Personal{line-height: 30px;margin-top: 35px;font-size: 18px;}
+/*红包*/
+.red_packet{height:56px;background: #fcffb2;border-bottom: 1px solid #cecece;margin-top: 5px;}
+.red_packet_one a{display: block;}
+.red_packet_img img{float: left;margin: 7px 5px 0 15px;}
+.red_packet_one a p{color: #a31c0b;line-height: 56px;font-size: 14px;}
+.red_packet_one a p.red_packet_jiu_p{width: 45px;line-height: 18px;margin-top: 10px;}
+.private_letter{width: 60px;height: 40px;margin: 10px 15px 0 10px;}
+.private_letter a{display: block;width: 60px;height: 40px;background: #01A590;text-align: center;line-height: 40px;color: #fff;}
+.feelings{width: 85px;line-height: 18px;font-size: 14px;margin-top: 10px;color: #616161;}
+/*底*/
+.nang_dong{margin-top: 5px;}
+/*左*/
+.content_center_left{width: 380px;height:485px;background: #E5E5E5;margin-right: 30px;}
+.content_center_both{height: 485px;margin-top: 25px;}
+.ge_shou_icon{width: 380px;height: 131px}
+.qiantu{height: 135px;border-bottom: 1px solid #838383;margin-top: 25px;}
+.qiantu p,.qiantu_2 p{margin-left: 50px;line-height: 35px;height: 35px;}
+.qiantu_2{margin-top: 20px;}
+.qiantu_2_ul{margin-top: 15px;margin-left: 15px;}
+.qiantu_2_ul li{float: left;margin-right: 5px;}
+/*中*/
+.ge_lagou_icon{height: 120px;border-bottom: 1px solid #c6c6c6;}
+.ge_lagou_icon a{display: block;height: 120px;color: #000;}
+.lagou_icon img{margin: 15px 15px;}
+
+.bian{width: 4px;height:75%;background: #01a590;margin: 15px 0;}
+.lagou_icon_ul{margin-top: 20px;margin-left: 10px;line-height: 28px;}
+.lagou_icon_ul span{color:#ff0000;}
+/*右*/
+.lagou_icon_ul_v{margin-top: 35px;margin-left: 10px;line-height: 28px;}

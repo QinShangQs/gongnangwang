@@ -1,0 +1,46 @@
+/*投资说明*/
+.Risk_con_Risk li{float: left;margin-right: 60px;}
+.Risk_con_Risk li a{color: #333;}
+.Risk_con_Risk li.risk_active a{color: #01A590;}
+.Risk_words{display: none;}
+
+
+/*风险提示*/
+.Risk_con_title{height: 50px;line-height: 50px;font-size: 18px;border-bottom: 2px solid #d6d6d6;margin-top: 30px;}
+.Risk_con_Risk{color: #01A590;}
+.Exit_mode a{display: block;color: #494949;}
+.Exit_mode img{float: left;margin: 12px 10px 0 0;}
+.Risk_words{height: 3200px;margin-top: 25px;color: #333333;}
+.Risk_words p{line-height: 25px;margin-top: 25px;}
+.Risk_words p span{color: #ff0000;}
+/*退出方式*/
+.out_conter{width: 820px;margin: 0 auto;}
+.Out_words{height: 650px;}
+.be_listed{width:530px;height: 345px;border: 1px solid #d8d8d8;margin-top: 50px;margin-right: 95px;text-align: center;}
+.be_listed a{display: block;color: #99a0a7;}
+.be_listed h3{margin-top: 55px;color: #333333;}
+.be_listed p{margin: 20px 35px 0 35px;}
+.Mar_right{margin-right: 0;}
+.Mar_top{margin-top: 100px;}
+
+
+
+/*服务条款*/
+.Service_title{height: 100px;line-height: 100px;text-align: center;color: #01A590;}
+.Service_con h3{height: 40px;line-height: 40px;}
+.Service_con{color: #3d3d3d;}
+.Service_con p{line-height: 25px;margin-top: 25px;}
+
+.Service_tab{width: 100%;height: 785px;border: 1px solid #bcbcbc;margin-top: 20px;}
+.Service_tab th{width: 65px;border: 1px solid #bcbcbc;}
+.Service_tab td{border: 1px solid #bcbcbc;padding: 0 15px;}
+.Service_tab table tr.table_row{height: 75px;line-height: 75px;text-align: center;}
+.Service_tab table tr.table_row_two{height: 75px;}
+
+/*
+.Service_tab_ul{width: 100%;height: 785px;border: 1px solid #BCBCBC;margin-top: 20px;}
+.Service_tab_ul li{float: left;}
+.Service_tab_ul li.tab_one{width: 15%;height: 75px;line-height: 75px;text-align: center;border: 1px solid #BCBCBC;font-weight: bold;}
+.Service_tab_ul li.tab_two{width: 82.8%;height: 75px;line-height: 75px;padding: 0 10px;border: 1px solid #BCBCBC;border-right: none;}
+.Service_tab_ul li.tab_two p{line-height: 25px;margin: 0 !important;padding: 20px 0;}
+*/

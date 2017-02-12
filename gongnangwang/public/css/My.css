@@ -1,0 +1,234 @@
+.My_conter_con{display: none;}
+/*我的共囊*/
+/*.per_con{height: 825px;}*/
+.My_item{height: 35px;margin-top: 30px;}
+.per_item{height: 315px;margin-top: 30px;}
+.compile{padding: 18px 10px 0 0;}
+.compile a{display: block;font-size: 14px;color: #797979;text-align: right;}
+/**/
+.per_content_nar{width: 280px;height: 315px;background: #e5e5e5;margin-right: 25px;}
+.per_content_nar a{display: block;}
+.per_user img{width:140px;height:140px;border-radius: 50%;margin: 10px 70px 10px 70px;}
+.per_content_nar p{text-align: center;}
+.per_newspeo{line-height: 30px;}
+.per_newspeo img{float: left;margin: 8px 15px 0 85px}
+.per_newspeo_p_ul{margin-top: 10px;}
+.per_newspeo_p_ul li{width: 90px;height: 30px;float: left;text-align: center;line-height: 30px;border-right:2px solid #c8c8c8;}
+.per_newspeo_p_ul li.per_newspeo_p_li{border: none;}
+.high{color: #01A590;}
+.Audit{color: #FF0000;}
+
+.per_item_p{margin-top: 25px;height: 25px;font-size: 20px;line-height: 25px;}
+
+.newspeo_p{color:#797979;margin-top: 10px;line-height: 30px;height: 30px;}
+.newspeo_p span{color:#01A590;}
+/*我的活动*/
+.main_gn_huodong{width: 1200px;height: 840px;background: #f7f7f7;margin: 0 auto;margin-top: 30px;/*display: none;*/}
+.p_top{border-bottom:1px solid #dcdcdc;height:65px;}
+.p_left{font-size: 24px;color:#333333;	margin-left: 30px;margin-top:28px;float:left;	}
+.p_right{font-size: 24px;color:#333333;margin-right: 30px;margin-top:28px;}
+.p_right a{color:#333333;}
+.huodong_main{width: 1199px;height:62px;margin: 0 auto;margin-top: 30px;border: 1px solid #DCDCDC;/*display: none;*/}
+.huodong_main ul{/*width:777px;*/height:62px;/*background: pink;*/margin-left:55px;}
+.huodong_main ul li{font-size:20px;float: left;width:135px;height:62px;line-height: 62px;text-align: center;margin-left:62px;}
+.huodong_main ul li a{color:#828282;font-size:20px;}
+.huodong_main ul li a:hover{color:#828282;font-size:20px;width:135px;height:62px;line-height: 62px;display: block;	border-bottom:1px solid #01a590;}
+.huodong_main_active{border-bottom:1px solid #01a590;}
+
+.fabu_1{height:122px;width:1200px;border-bottom:1px solid #DCDCDC;}
+.fabu_1_rz{width:1000px;height:95px;margin-left:48px;margin-top:25px;}
+.rz_p1{font-size:20px}
+.rz_p2 span{margin-top:22px;display: block;color: #a6a6a6;}
+.lq{float: left;margin-left:48px;width:115px;height:30px;text-indent: 28px;background: url('../images/sd_06.png') no-repeat;}
+.rz_right{height:30px;margin-top:22px;	}
+.p1{float: left;margin-right:15px;width:115px;height:30px;text-indent: 28px;background: url('../images/sd_06.png') no-repeat;}
+.exercise{background: url('../images/sd_03.png') no-repeat;}
+.name_list{background: url('../images/sd_06.png') no-repeat;}
+.copy{background: url('../images/sd_09.png') no-repeat;}
+.share{background: url('../images/sp_03.png') no-repeat;}
+.fabu_01{display: none;}
+.never_wei{margin-top: 150px;margin-left: 270px;}
+
+/*我的拍卖*/
+.My_pai_bg{height: 757px;background: #f7f7f7;margin-top: 30px;}
+.My_Auction{height: 60px;font-size: 20px;line-height: 60px;padding: 5px 30px;border-bottom: 1px solid #dcdcdc;}
+
+/*我的留言*/
+.My_message_con{margin-top: 15px;/*height: 1547px;*/}
+.My_Message_title{height: 60px;line-height: 60px;font-size: 20px;border-bottom: 1px solid #b6b6b6;color: #747474;}
+.My_Message_title ul li{float: left;margin-left: 15px;color: #747474;cursor: pointer;}
+.My_Message_title ul li:hover{color: #007ab0;}
+.My_Message_column{height: 220px;border-bottom: 1px solid #b6b6b6;}
+.My_Message_column a{display: block;padding-top: 25px;}
+.column_head{width: 115px;height: 115px;margin-left: 20px;}
+.column_head img{width: 115px;height: 115px;}
+.column_head_right{margin-left: 15px;}
+.column_name{color: #333;font-size: 18px;line-height: 35px;}
+.column_name span{color: #015ba3;font-size: 20px;margin-right: 15px;}
+.column_sub{height: 110px;margin-top: 10px;color: #333;}
+.column_date{height: 35px;font-size: 16px;color: #333;}
+.column_date li{float: left;margin-right: 20px;}
+.column_date li.answer{color: #015ba3;}
+
+.My_Message_discuss{height: 190px;border-bottom: 1px solid #b6b6b6;padding-left: 150px;}
+.discuss_title{height: 50px;padding-top: 12px;}
+.discuss_head{width: 50px;height: 50px;}
+.discuss_head img{width: 50px;height: 50px;}
+.discuss_right{margin-left: 15px;}
+.discuss_name{color: #333;font-size: 16px;margin-top: -5px;}
+.discuss_name span{color: #015ba3;font-size: 18px;margin-right: 10px;}
+.discuss_date{font-size: 16px;color: #333;margin-top: 10px;}
+.discuss_date li{float: left;margin-right: 20px;}
+
+.discuss_con{width: 355px;height: 40px;border: 1px solid #9b9b9b;background: #dedede;margin-top: 10px;}
+.discuss_con textarea{width: 345px;height: 30px;padding: 5px 5px;resize: none;border: none;outline: none;background: none;color: #333;}
+/*展开*/
+.discuss_con_open{width: 355px;display: none;}
+.open_text{width: 355px;height: 72px;border: 2px solid #f5b93c;background: #dedede;margin-top: 10px;border-radius: 3px;}
+.open_text textarea{width: 345px;height: 62px;padding: 5px 5px;resize: none;border: none;outline: none;background: none;color: #333;}
+.open_btn{margin-top: 5px;}
+.open_btn li{width: 50px;height: 25px;font-size: 14px;float: left;line-height: 25px;text-align: center;cursor: pointer;margin-right: 10px;}
+.open_btn li.sure{border: 1px solid #015ba3;color: #fff;background: #015ba3;}
+.open_btn li.cancel{border: 1px solid #949494;color: #333;}
+.open_word{color: #272727;margin-top: 5px;line-height: 20px;font-size: 14px;}
+
+/*发明专利*/
+.patent{height: 540px;}
+.invent_patent{width: 436px;height: 114px;/*border: 1px solid #dcdcdc;*/margin-left: 30px;padding-top: 40px;margin-right: 200px;}
+.invent_patent_words_p{margin-top: 15px;}
+.invent_patent_img{width: 138px;height: 110px;}
+.invent_patent_img img{width: 138px;height: 110px;}
+.invent_patent_words{width: 250px;margin-left: 20px;}
+.invent_patent{color: #626262;font-size: 16px;}
+.invent_patent_ul li{width: 80px;height: 25px;float: left;line-height: 25px;border-right: 2px solid #c8c8c8;text-align: center;}
+.invent_patent_ul{margin-top: 10px;}
+.invent_patent_ul li.newspeo_p_li{border: none;color: #FF0000;text-align: right;}
+.invent_patent_ul li.high{text-align: left;}
+/*分页*/
+.pagination{width: 585px;height: 30px;margin: 0 auto;margin-top: 30px;/*margin-left: 40px;*/}
+.pagination_ul{width: 290px;height: 28px;}
+.pagination_ul li{width: 32px;height: 28px;line-height: 28px;text-align: center;margin-left: 10px;float: left;cursor:pointer}
+.pagination_ul li:hover{background: #ecb700;color:#fff;}
+.pagination_active{background: #ecb700;color:#fff;}
+.pagination_ul li.pagination_ul_next{width: 62px;height: 28px;text-align: center;line-height: 28px;border: 1px solid #b3b3b3}
+.pagination p{margin-left: 15px;float: left;line-height: 30px;}
+.pagination p.que{width: 48px;height: 28px;text-align: center;border: 1px solid #b3b3b3;}
+.pagination p input{width: 48px;height: 28px;margin: 0 10px;outline: none;}
+
+/*合伙人*/
+.main_hhr{width: 100%;height: 800px;background: #f7f7f7;margin: 0 auto;margin-top: 30px;}
+.main_hhr_div{width: 100%;height: 80px;border-bottom: 1px solid #dcdcdc;}
+.main_hhr_ul li{cursor: pointer;font-size: 24px;margin: 25px 0 0 25px;float: left;font-weight: normal;}
+.partner{height: 80px;line-height: 80px;cursor:pointer;font-size: 24px;margin: 10px 25px 0 0;}
+.partner img{float: left;margin: 15px 15px;}
+.partner a{color: #333;}
+
+.My_ren_active{color: #01a590;font-size: 24px;margin: 25px 0 0 25px;float: left;font-weight: normal;}
+.main_hhr_zhize{width: 1138px;height: 100px;border-left: 4px solid #01a590;margin: 0 auto;margin-top: 40px;}
+.main_hhr_zhize p{font-size: 20px;margin:10px 0 0 10px;}
+.main_hhr_zhize ul li{font-size: 14px;margin:5px 0 0 10px;}
+.main_hhr_zhize ul li span{font-size: 14px;color: #01A590;float: right;margin-left: 20px;cursor: pointer;}
+.wdgn{display: none;}
+/*我的简历*/
+.jian{width: 705px;height: 40px;margin-top: 15px;}
+.jian_ul{background: #e7e7e7;height: 40px;}
+.jian_ul li{float: left;width: 235px;height: 40px;text-align: center;color: #828282;line-height: 40px;}
+.jian_ul li span{display:block;width: 62px;height: 30px;border-radius: 5px;color: #fff;line-height: 30px;float: left;margin-right: 10px;margin-top: 5px;text-align: center;margin:  0 auto;cursor: pointer;}
+.chou_upload{width: 83px;height:40px;margin: 0 auto;}
+.gai_shan{width: 165px;height: 40px;margin: 0 auto;}
+.gai{background: #01A590;}
+.shan{background: #828282;}
+.jian_ul_ul{height: 40px;}
+.jian_ul_ul li{float: left;width: 235px;height: 40px;text-align: center;color: #828282;line-height: 40px;}
+.jian_ul_ul li span{display:block;width: 62px;height: 30px;border-radius: 5px;color: #fff;line-height: 30px;float: left;margin-left: 20px;margin-top: 5px;}
+
+
+
+/*账户设置*/
+.My_deng{margin-top: 30px;}
+.My_deng_con{height: 1328px;border: 1px solid #bfbfbf;}
+.My_Deng_left{width: 457px;height: 350px;margin: 30px 0 0 30px;}
+.My_deng_head{width: 225px;height: 125px;border: 1px solid #bfbfbf;}
+.My_deng_head a{display: block;}
+.My_deng_head_tou{width: 75px;height: 75px;background: #d2d2d2;border-radius: 50%;overflow: hidden;margin: 25px 25px;}
+.My_deng_head_tou img{width: 75px;height: 75px;}
+.My_deng_head_name{height: 40px;margin-top: 45px;font-size: 18px;line-height: 40px;color: #333;}
+
+.My_deng_con_nav{width: 225px;height: 204px;border: 1px solid #bfbfbf;margin-top: 20px;}
+.My_deng_con_nav ul li{height:40px;text-align: center;line-height: 40px;cursor: pointer;border-bottom: 1px solid #BFBFBF;background: #efefef;}
+.My_deng_con_nav_active{color: #01A590;}
+.My_deng_con_nav ul li.Border_none{border: none;}
+.Oneself{height: 40px;line-height: 40px;background: #efefef;text-align: center;color: #000;}
+.Oneself a{color: #000;}
+.Oneself a:hover{color: #01A590;}
+/*账户设置右侧*/
+.My_Deng_right{margin-top: 25px;width: 700px;display: none;}
+.Black_figure_Alipay{display: none;}
+/*共币充值*/
+.Black_figure img{float: left;margin-right: 10px;margin-top: 5px;}
+.Black_figure{font-size: 40px;color: #FF0000;font-weight: 200;height: 60px;margin-left: 60px;}
+.Black_figure_p a{display: block;font-size: 30px;width: 110px;height: 60px;background: #01A590;color: #fff;line-height: 60px;text-align: center;border-radius: 10px;margin-left: 30px;}
+.Black_figure span{float: left;}
+.money{width: 120px;height: 40px;line-height: 40px;/*border: 1px solid #bfbfbf;*/margin-top: 5px;}
+
+.Recharge_Check{height: 80px;margin-top: 25px;margin-left: -20px;}
+.Recharge{width: 300px;height: 80px;background: #dcdcdc;font-size: 30px;color: #01A590;text-align: center;line-height: 80px;}
+.Recharge a{color: #01A590;}
+.Check{width: 300px;height: 78px;font-size: 30px;color: #fff;text-align: center;line-height: 80px;border: 1px solid #b4b4b4;}
+.Check a{color: #7c7c7c;}
+.promptly{margin-left: 60px;}
+.promptly_input{width: 427px;height: 40px;margin-top: 50px;border: 1px solid #bfbfbf;overflow: hidden;border-radius: 5px;}
+.promptly input{width: 417px;height: 30px;padding: 5px 5px;outline: none;background: none;border: none;}
+
+.Alipay{width: 427px;,height: 62px;line-height: 62px;background: #01A590;margin-top: 35px;border-radius: 5px;text-align: center;}
+.Alipay a{width: 150px;display: block;margin: 0 auto;color: #fff;font-size: 15px;}
+.Alipay img{float: left;margin-top: 10px;}
+/*共币提现*/
+.Black_figure_form{margin-top: 35px;}
+.withdraw_cash_line{height: 50px;margin-top: 25px;}
+.withdraw_cash_left{font-size: 24px;color: #747474;height: 50px;line-height: 50px;}
+.withdraw_cash_right{width: 404px;height: 50px;border: 1px solid #bfbfbf;border-radius: 5px;overflow: hidden;}
+.withdraw_cash_right input{width: 390px;height: 38px;padding: 5px 5px;font-size: 16px;border: none;background: none;outline: none;}
+
+.withdraw_cash_right_phone{width: 295px;height: 50px;border: 1px solid #bfbfbf;border-radius: 5px;overflow: hidden;}
+.withdraw_cash_right_phone input{width: 275px;height: 38px;padding: 5px 5px;border: none;background: none;outline: none;font-size: 16px;}
+.withdraw_cash_right_phone_btn{margin-left: 10px;}
+.withdraw_cash_right_phone_btn button{width: 100px;height: 50px;background: #01A590;border: none;color: #fff;font-size: 16px;border-radius: 5px;}
+.withdraw_cash_line_fastener{height: 60px;margin-top: 50px;margin-left: 85px;}
+.withdraw_cash_line_fastener button{font-size: 26px;width: 427px;height: 60px;background: #01A590;color: #fff;outline: none;border: none;border-radius: 5px;}
+.withdraw_cash_line_fastener button a{color: #fff;}
+/*修改密码*/
+.Modify_password{margin-top: 110px;}
+.Modify_password_yz{width: 176px;height: 50px;border: 1px solid #bfbfbf;border-radius: 5px;overflow: hidden;}
+.Modify_password_yz input{width: 160px;height: 35px;padding: 5px 5px;border: none;background: none;outline: none;}
+.Modify_password_yz_yanm img{float: left;margin:3px 0 0 30px;}
+.Modify_password_shua img{float: left;margin: 15px 0 0 10px;}
+/*帐号绑定*/
+.Bundling{margin-top: 65px;}
+.Wechat{height: 70px;/*border: 1px solid #BFBFBF;*/margin-top: 15px;}
+.WeChat_img{width: 63px;height: 68px;}
+.Bundling_words p{float: left;line-height: 70px;}
+.Bundling_wei{width: 112px;margin-left: 60px;cursor: pointer;}
+.Bundling_dian{margin-left: 120px;color: #01A590;}
+.Bundling_dian a{color: #01A590;}
+/*认证中心*/
+/*编辑*/
+.Group_center{display: none;}
+.Group_center  h1{color: #FF0000;}
+.upup input{width: 85px;height: 50px;background: #01a590;font-size: 16px;}
+.a-upload {width: 85px;height: 50px;font-size: 16px;text-align: center;line-height: 50px;position: relative;cursor: pointer;color: #fff;background: #01a590;border-radius: 5px; overflow: hidden;display: inline-block;*display: inline;*zoom: 1;margin-left: 20px;}
+.a-upload  input {position: absolute;font-size: 16px;right: 0;top: 0;opacity: 0;filter: alpha(opacity=0);cursor: pointer;outline: none;}
+/*展示*/
+.Group_center_title{height: 50px;}
+.Group_center_title_r img{float: left;margin: 5px 5px 0 0;}
+.Group_center_title_r{line-height: 40px;margin-right: 5px;}
+.withdraw_cash_right_img img{float: left;margin: 15px 0 0 10px;}
+.renZ{margin-left: 150px;margin-top: 10px;height: 150px;}
+.renZ_ul{margin-left: 30px;}
+.renZ_ul li{width: 70px;height: 40px;background: #bfe3ff;line-height: 40px;border-radius: 5px;margin-bottom: 14px;font-size: 14px;}
+.renZ_ul li a{display: block;color: #000;}
+.renZ_ul li a img{float: left;margin: 8px 3px 0 5px;}
+.renZ_word{width: 115px;margin-left: 30px;color: #5e5e5e;font-size: 14px;line-height: 20px;}
+/*保存按钮*/
+.keep_hold{margin-top: 100px;}
+.keep_hold input{width: 265px;height: 60px;background: #01A590;color: #fff;font-size: 32px;border: none;outline: none;}

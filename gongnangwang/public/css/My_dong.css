@@ -1,0 +1,124 @@
+.main_gn_huodong{
+	width: 1200px;
+	height: 840px;
+	background: #f7f7f7;
+	margin: 0 auto;
+	margin-top: 30px;
+	/*display: none;*/
+}
+.p_top{
+	border-bottom:1px solid #dcdcdc;
+	height:65px;
+}
+.p_left{
+	font-size: 24px;
+	color:#333333;	
+	margin-left: 30px;
+	margin-top:28px;
+	float:left;	
+}
+.p_right{
+	font-size: 24px;
+	color:#333333;
+	margin-right: 30px;
+	margin-top:28px;
+	float:right
+}
+.huodong_main{
+	width: 1199px;
+	height:62px;	
+	margin: 0 auto;
+	margin-top: 30px;
+	border: 1px solid #DCDCDC;
+	/*display: none;*/
+}
+.huodong_main ul{
+	/*width:777px;*/
+	height:62px;
+	/*background: pink;*/
+	margin-left:55px;
+}
+.huodong_main ul li{
+	font-size:20px;
+	float: left;
+	width:135px;
+	height:62px;
+	line-height: 62px;
+	text-align: center;
+	margin-left:62px;		
+}
+.huodong_main ul li a{
+	color:#828282;
+	font-size:20px;
+}
+.huodong_main ul li a:hover{
+	color:#828282;
+	font-size:20px;
+	width:135px;
+	height:62px;
+	line-height: 62px;
+	display: block;	
+	border-bottom:1px solid #01a590;
+}
+.huodong_main_active{
+	border-bottom:1px solid #01a590;
+}
+
+.fabu_1{
+	height:122px;
+	width:1200px;
+	/*background: red;*/
+	border-bottom:1px solid #DCDCDC
+}
+.fabu_1_rz{
+	width:858px;
+	height:67px;
+	margin-left:48px;
+	margin-top:25px;
+	
+}
+.rz_p1{
+	font-size:20px
+}
+.rz_p2{
+	float: left;
+}
+.rz_p2 span{
+	margin-top:22px;
+	display: block;
+	color: #a6a6a6;
+}
+.lq{
+	float: left;
+	margin-left:68px;
+	width:95px;
+	height:30px;
+	text-indent: 28px;
+	background: url('../images/sd_06.png') no-repeat;
+}
+.rz-right{
+	height:30px;
+	padding-top:22px;	
+}
+.p1{
+	float: left;
+	margin-right:18px;
+	width:95px;
+	height:30px;
+	text-indent: 28px;
+	background: url('../images/sd_06.png') no-repeat;
+}
+.exercise{
+	background: url('../images/sd_03.png') no-repeat;
+}
+.name_list{
+	background: url('../images/sd_06.png') no-repeat;
+}
+.copy{
+	background: url('../images/sd_09.png') no-repeat;
+}
+.share{
+	background: url('../images/sp_03.png') no-repeat;
+}
+.fabu_01{display: none;}
+.never_wei{margin-top: 150px;margin-left: 270px;}

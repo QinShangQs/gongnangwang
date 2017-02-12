@@ -1,0 +1,79 @@
+/*.ren_banner img{width: 100%;height: 402px;}*/
+.ren_banner{width: 100%;min-width: 1200px;height: 402px;background: url('../images/ren_banner_ico.png') no-repeat;background-size: cover;background-position: center center;}
+/*开头部分*/
+/*
+.ren_one_margin{margin-top: 40px;}
+.content_head{height: 308px;}
+.ren_one{width: 435px;height: 111px;}
+.imgg_word{width: 275px;margin-left: 30px;}
+.imgg_word p{line-height: 28px;}
+.imgg_word_img img{float: left;padding: 2px 5px;}
+
+.ren_one_two{margin-left: 260px;width: 435px;}*/
+
+
+/*内容开始*/
+.con_nav{width:100%;height:60px;min-width:1200px;background: #f2f2f2; margin-top: 30px;}
+.conter_con_ul{width: 420px;height: 60px;}
+.conter_con_ul li.conter_con_ul_z{margin: 0;}
+.conter_con_ul li{width: 100px;height: 58px;line-height: 60px;margin-left:60px;text-align:center;float: left;cursor:pointer}
+.conter_con_ul li:hover{border-bottom: 2px solid #01a590;}
+.partner img{float: left;margin: 15px 15px;}
+.partner{height: 60px;line-height: 60px;cursor:pointer;font-size: 24px;}
+.partner a{color: #333;}
+
+.ren_con{height: 670px;margin-top: 30px;}
+/*左侧*/
+.content_left{width: 695px;}
+.content_left_title{width:100%;height: 45px;border-bottom:1px solid #b9b9b9;}
+.zhaopin img{float: left;margin: 3px 10px;}
+.zhaopin span{line-height: 30px;font-size: 16px; margin-left: 10px;}
+.title_right a{display: block;line-height: 30px;color: #333;}
+
+.Left_One{width:100%;height: 87px;margin-top: 20px;}
+.Left_One_margin{margin-top: 50px;}
+.beij span{color: #FF0000;margin-left: 10px;}
+.search_text{color: #01a590;}
+.Left_One a{width:100%;height: 87px;display: block;color: #000000;}
+.Left_One_bor{width: 4px;height: 100%;background: #01a590;}
+.Left_One_wor{width:680px;line-height: 25px;padding: 10px 0px 0 10px;}
+/*分页*/
+.fenye{width:600px;height:30px;margin: 0 auto;margin-top: 30px;}
+.fenye_ul{width: 290px;height: 28px;}
+.fenye_ul li{width: 32px;height: 28px;line-height: 28px;text-align: center;margin-left: 10px;float: left;cursor:pointer}
+.fenye_ul li:hover{width: 32px;height: 28px;background: #ecb700;color:#fff;line-height: 28px;text-align: center;margin-left: 10px;float: left;}
+.fenye_ul li.fenye_ul_next{width: 62px;height: 28px;text-align: center;line-height: 28px;border: 1px solid #b3b3b3}
+.fenye p{margin-left: 15px;float: left;line-height: 30px;}
+.fenye p.que{width: 48px;height: 28px;text-align: center;border: 1px solid #b3b3b3;cursor: pointer;}
+.fenye p input{width: 48px;height: 28px;margin: 0 10px;outline: none;}
+/*右侧*/
+.content_right{width:450px;height:590px;background: #f2f2f2;}
+.content_right_bor{width: 414px;margin: 0 auto;}
+.People{margin-top: 20px;}
+.tuijian img{float: left;margin-top: 15px;margin-right: 10px;}
+.tuijian{height:60px;line-height: 60px;}
+.tuijian a{display: block;color: #000;}
+.More{line-height: 60px;}
+
+.Right_One{width:100%;height: 87px;margin-top: 20px;}
+.Right_One_margin{margin-top: 50px;}
+.beij span{color: #FF0000;margin-left: 10px;}
+.search_text{color: #01a590;}
+.Right_One a{width:100%;height: 87px;display: block;color: #000000;}
+.Right_One_bor{width: 4px;height: 100%;background: #01a590;}
+.Right_One_wor{width:400px;line-height: 25px;padding: 10px 0px 0 10px;}
+
+/*内容尾部*/
+.content_footer{width:100%;height: 760px;}
+.content_footer_nar{width: 280px;height: 320px;background: #e5e5e5;}\
+.content_footer_nar a{display: block;}
+.content_footer_mar_none{margin-top: 30px;}
+.content_footer_mar{margin-top: 30px;margin-left: 26px;}
+.user img{width:140px;height:140px;border-radius: 50%;margin: 50px 70px 10px 70px;}
+.content_footer_nar p{text-align: center;}
+.newspeo{line-height: 25px;color: #333;}
+.newspeo img{float: left;margin: 5px 15px 0 85px}
+.newspeo_p_ul{margin-top: 10px;color: #333;}
+.newspeo_p_ul li{width: 90px;height: 30px;float: left;text-align: center;line-height: 30px;border-right:2px solid #c8c8c8;}
+.newspeo_p_ul li.newspeo_p_li{border: none;}
+/*内容结束*/

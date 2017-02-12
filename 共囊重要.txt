@@ -1,0 +1,35 @@
+阿里云
+train100@qq.com
+jiba123.com
+
+182.92.217.239
+1234.com
+
+
+
+
+服务器
+139.196.50.245
+root
+Gongnang1
+
+
+数据库 密码
+root
+gongnang
+
+远程用户（数据库）
+gongnang
+gongnang
+
+
+合作者身份(PID)
+2088412505721942
+安全校验码(Key)
+默认加密： uffxzebsjrkw2conjwlo9kw51ihszt3p
+
+七牛云
+sale123@qq.com
+gong.nang123
+
+13146182306 a5141f7847f33cc4ff187fee9b67844b
