@@ -9,17 +9,19 @@ memory_limit = 128M
 ---------nginx.conf-----------
 client_max_body_size    1024m;
 
----------PHP¿ªÔ´¿ò¼ÜLaravelµÄ°²×°ÓëÅäÖÃ-----
+---------PHPå¼€æºæ¡†æ¶Laravelçš„å®‰è£…ä¸é…ç½®-----
 http://jingyan.baidu.com/article/154b463150ecb128ca8f41af.html
 
----------Windows 64Î»ÏÂ°²×°RedisÏêÏ¸½Ì³Ì------
+---------Windows 64ä½ä¸‹å®‰è£…Redisè¯¦ç»†æ•™ç¨‹------
 http://os.51cto.com/art/201403/431103.htm
 http://jingyan.baidu.com/article/f25ef2546119fd482c1b8214.html
 
----------redis ÏÂÔØ-----------
+---------redis ä¸‹è½½-----------
 https://raw.githubusercontent.com/ServiceStack/redis-windows/master/downloads/redis-64.3.0.503.zip
 
----------ÆßÅ£ÔÆÎÄµµ---------
+---------ä¸ƒç‰›äº‘æ–‡æ¡£---------
+https://github.com/zgldh/qiniu-laravel-storage
+
 https://segmentfault.com/q/1010000005268203
 http://wenda.golaravel.com/article/270
 http://www.itnose.net/detail/6485741.html
