@@ -1,4 +1,4 @@
-------php.ini------
+---------php.ini---------
 file_uploads = On
 post_max_size = 1024M
 upload_max_filesize = 1024M
@@ -7,6 +7,63 @@ max_input_time = 1800
 memory_limit = 128M
 
 ---------nginx.conf-----------
-location / {
-	client_max_body_size    1024m;
+client_max_body_size    1024m;
+
+---------PHP开源框架Laravel的安装与配置-----
+http://jingyan.baidu.com/article/154b463150ecb128ca8f41af.html
+
+---------Windows 64位下安装Redis详细教程------
+http://os.51cto.com/art/201403/431103.htm
+http://jingyan.baidu.com/article/f25ef2546119fd482c1b8214.html
+
+---------redis 下载-----------
+https://raw.githubusercontent.com/ServiceStack/redis-windows/master/downloads/redis-64.3.0.503.zip
+
+---------七牛云文档---------
+https://segmentfault.com/q/1010000005268203
+http://wenda.golaravel.com/article/270
+http://www.itnose.net/detail/6485741.html
+
+---------nginx vhost.conf---------
+server {
+    listen 8082;
+    server_name gongnang;
+    access_log gongnang.access_nginx.log combined;
+    #root /data/wwwroot/default/my_laravel/public;
+    root 'D:/WWW/gongnang/gongnangwang/public';
+    index index.html index.htm index.php;
+    
+    try_files $uri $uri/ @rewrite;
+
+    location @rewrite {
+               rewrite ^/(.*)$ /index.php?_url=/$1;
+    }
+    
+    location /nginx_status {
+        stub_status on;
+        access_log off;
+        allow 127.0.0.1;
+        deny all;
+    }
+    
+    location ~ [^/]\.php(/|$) {
+        fastcgi_pass 127.0.0.1:9000;
+        ##fastcgi_pass unix:/dev/shm/php-cgi.sock;
+       fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi.conf;
+    }
+    
+    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|flv|ico)$ {
+        expires 30d;
+        access_log off;
+    }
+    
+    location ~ .*\.(js|css)?$ {
+        expires 7d;
+        access_log off;
+    }
 }
+
+
+
