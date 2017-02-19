@@ -23,6 +23,21 @@ class Chou extends Model
         return $id;
     }
 
+    /**
+     *
+     * @项目select
+     * @author lizq
+     * @since 20170219
+     */
+    public function getByProjectId($project_id)
+    {
+    	$users = DB::table('gon_project')
+    	->join('gon_project_extend', 'gon_project.id', '=', 'gon_project_extend.pro_id')
+    	->join('gon_userinfo', 'gon_project.user_id', '=', 'gon_userinfo.id')
+    	->where('gon_project.id', '=', $project_id)
+    	->get();
+    	return $users;
+    }
 
     /**
      *
@@ -64,7 +79,7 @@ class Chou extends Model
         $users = DB::table('gon_project')
            // ->join('gon_project_extend', 'gon_project.id', '=', 'gon_project_extend.pro_id')
             ->join('gon_userinfo', 'gon_project.user_id', '=', 'gon_userinfo.id')
-            ->select('gon_project.pro_name','gon_project.pro_logo','gon_project.pro_target','gon_project.pro_state','gon_userinfo.nickname')
+            ->select('gon_project.id','gon_project.pro_name','gon_project.pro_logo','gon_project.pro_target','gon_project.pro_state','gon_userinfo.nickname')
             //->skip(2)
             ->take(8)
             ->get();
@@ -83,7 +98,7 @@ class Chou extends Model
         $users = DB::table('gon_userinfo')
              ->join('gon_user', 'gon_userinfo.user_id', '=', 'gon_user.id')
              ->join('gon_project', 'gon_project.user_id', '=', 'gon_userinfo.id')
-             ->select('gon_project.pro_name','gon_project.pro_logo','gon_userinfo.identity')
+             ->select('gon_project.id','gon_project.pro_name','gon_project.pro_logo','gon_userinfo.identity')
             ->where('gon_user.id', '=', $id)
              ->take(4)
              ->get();

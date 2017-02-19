@@ -40,6 +40,7 @@ class UserController extends Controller
 
             $ren = new Ren();
             $ren_data = $ren->UserIDpartnerPosition($id);
+            $sign_html = nl2br($data[0]->sign) ;
 
             return view('user/user',['data'=>$data,'chou_data'=>$chou_data,'ren_data'=>$ren_data]);
         }

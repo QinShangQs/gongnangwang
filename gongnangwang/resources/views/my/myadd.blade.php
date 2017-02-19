@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-        <link rel="shortcut icon" href="images/18.png">
-        <title>共囊网 股权众筹 合伙人 活动 拍卖 共囊</title>
-		<link rel="stylesheet" type="text/css" href="css/publick.css"/>
-		<link rel="stylesheet" type="text/css" href="css/ren_xinxi.css"/>
-		<link rel="stylesheet" type="text/css" href="css/chou_list.css"/>
-		<link rel="stylesheet" type="text/css" href="css/geren.css"/>
-	</head>
-	<body>
 <!--导航开始-->
-@include('header')
+@include('me_header')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/ren_xinxi.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/chou_list.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/geren.css') }}"/>
+
+<link rel="stylesheet" type="text/css" href="{{ asset('js/videojs/video-js.min.css') }}" />
+<script type="text/javascript" src="{{ asset('js/videojs/video.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/my.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/qiniu/my-main.js') }}"></script>
+<!--导航结束-->
+@include('qiniu.uploader_setter')
 <!--导航结束-->
 <!--内容部分开始-->
 <div class="Information_nr">
@@ -28,23 +27,23 @@
 					<img src="images/moren.jpg"/>
 				</div>
 				<div class="Infor_file">
-					<input type="file" name="uploadPicture" id="file" value="" title="上传照片" onchange="getPhoto(this)"/>
+					@include('qiniu.uploader',['number'=>2,'text'=>'上传照片','success_text'=>'照片上传成功'])
 				</div>
 			</div>
 			<!--右侧-->
 			<div class="content_head_right Right">
 				<div id="videoShow">
-                    <video id="example_video1" name="moren" class="video-js vjs-default-skin" controls preload="none" width="740" height="550" poster="images/fasou-03.png" data-setup="{}">
-				    <source src="video/1.mp4" type='video/mp4' />
-				</video></div>
+                    <video id="example_video1" name="moren"
+						class="video-js vjs-default-skin" controls preload="none"
+						width="740" height="550"  poster="" data-setup="{}">
+						<source src="video/1.mp4" type='video/mp4' />
+					</video>
+				</div>
 				<div class="Infor_inpt_word">
-					<div class="Infor_inpt Left">
-                        <a href="javascript:;" class="a-upload">选择
-                            <input type="file" id="uploadVideo" value="" onchange="getVideo(this)"/>
-                        </a>
-						<a href="javascript:;" class="a-upload" id="upload" onclick="uploadVideo()">上   传</a>
+					<div class="Infor_inpt">
+						@include('qiniu.uploader',['number'=>'','text'=>'上传个人视频','success_text'=>'视频上传成功'])
 					</div>
-					<p class="money Left">注：上传个人视频不能超过1分钟</p>
+					<p class="help-block money">注：上传个人视频（mp4）在500MB以内且不能超过1分钟。</p>
 				</div>
 			</div>
 		</div>
@@ -151,11 +150,17 @@
 				<div class="Editor_name Both">
 					<span class="Left">添加个人简历：</span>
 					<div class="Editor_name_file Left">
-						<input type="file" name="uploadResume" id="uploadResume" value="" title="上传简历"/>
-						<span>(注：此简历只用于合伙人招聘岗位投递、单位可查看不对外公开)</span>
+						@include('qiniu.uploader',
+							['number'=>3,'text'=>'选择文件','success_text'=>'简历上传成功'])
+						<!-- qiniu end -->
+						<p class="help-block" id="person_intro_name"></p>
+						<span class="desc">(注：此简历只用于合伙人招聘岗位投递、单位可查看不对外公开)</span>
 					</div>
 				</div>
 				<div class="Editor_name_btn Both">
+					<input type="hidden" name="person_video" id="person_video" /> 
+					<input type="hidden" name="person_photo" id="person_photo" /> 
+					<input type="hidden" name="person_intro" id="person_intro" />
 					<a href="javascript:;">预览</a>
 					<button id="btn">保存</button>
 				</div>
@@ -165,7 +170,6 @@
 	</div>
 </div>
 <!--内容部分结束-->
-	</body>
-</html>
-<script type="text/javascript" src="js/jquery1.9.1.min.js"></script>
-<script type="text/javascript" src="js/my.js"></script>
+<!-- 上传模态框 -->
+@include('qiniu.uploader_model')
+@include('footer')

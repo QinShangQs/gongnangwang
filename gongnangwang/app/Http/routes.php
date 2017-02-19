@@ -101,3 +101,7 @@ Route::get('rongadd', 'RongController@rongadd');
 
 //ceshi
 Route::get('redis', 'LoginController@redis');
+
+//七牛
+Route::get('uptoken', 'QiniuController@uptoken');
+Route::get('pfop_status', 'QiniuController@pfop_status');

@@ -129,7 +129,7 @@ var result = false;
 function nicknameVerify(){
     var nickname = $("#nickname").val();
     if(nickname){
-        $('.nick').removeClass("Out");
+        $('#nickname').removeClass("Out");
         $.get("/nicknameVerify", { nickname: nickname },
             function(data){
                 if(data==0){
@@ -141,32 +141,32 @@ function nicknameVerify(){
                 }
             });
     }else{
-        $('.nick').addClass("Out");
+        $('#nickname').addClass("Out");
         result = false;
     }
     return result;
 }
 
 //年龄区间为空验证
-function s_age(){
+function checkAge(){
     var s_age = $('#s_age').val();
     if(s_age=="0"){
-        $('.age').addClass("Out");
+        $('#s_age').addClass("Out");
         return false;
     }else{
-        $('.age').removeClass("Out");
+        $('#s_age').removeClass("Out");
         return true;
     }
 }
 
 //用户身份为空验证
-function s_identity(){
+function checkIdentity(){
     var s_identity = $('#s_identity').val();
     if(s_identity=="0"){
-        $('.identity').addClass("Out");
+        $('#s_identity').addClass("Out");
         return false;
     }else{
-        $('.identity').removeClass("Out");
+        $('#s_identity').removeClass("Out");
         return true;
     }
 }
@@ -175,10 +175,10 @@ function s_identity(){
 function companyVerify() {
     var company = $('#company').val();
     if(company=='' || company==undefined || company==null){
-        $('.company').addClass("Out");
+        $('#company').addClass("Out");
         return false;
     }else{
-        $('.company').removeClass("Out");
+        $('#company').removeClass("Out");
         return true;
     }
 }
@@ -187,89 +187,89 @@ function companyVerify() {
 function postsVerify() {
     var posts = $('#posts').val();
     if(posts=='' || posts==undefined || posts==null){
-        $('.posts').addClass("Out");
+        $('#posts').addClass("Out");
         return false;
     }else{
-        $('.posts').removeClass("Out");
+        $('#posts').removeClass("Out");
         return true;
     }
 }
 
 //个人宣言为空验证
-function sign(){
+function xuanyan(){
     var sign = $("#sign").val();
 
     if(sign){
-        $('.signup').removeClass("Out");
+        $("#sign").removeClass("Out");
         return true;
     }else{
-        $('.signup').addClass("Out");
+        $("#sign").addClass("Out");
         return false;
     }
 }
 
 //省份为空验证
-function s_province(){
+function checkProvince(){
     var s_province = $("#s_province").val();
 
     if(s_province=="省份"){
-        $('.province').addClass("Out");
+        $('#s_province').addClass("Out");
         return false;
     }else{
-        $('.province').removeClass("Out");
+        $('#s_province').removeClass("Out");
         return true;
     }
 }
 
 //市为空验证
-function s_city(){
+function checkCity(){
     var s_city = $("#s_city").val();
 
     if(s_city=="地级市"){
-        $('.city').addClass("Out");5
+    	 $("#s_city").addClass("Out");5
         return false;
     }else{
-        $('.city').removeClass("Out");
+    	 $("#s_city").removeClass("Out");
         return true;
     }
 }
 
 //县为空验证
-function s_county(){
+function checkCounty(){
     var s_county = $("#s_county").val();
 
     if(s_county=="市、县级市"){
-        $('.county').addClass("Out");
+    	$("#s_county").addClass("Out");
         return false;
     }else{
-        $('.county').removeClass("Out");
+    	$("#s_county").removeClass("Out");
         return true;
     }
 }
 
 //工作年限为空验证
-function working_life(){
+function checkWorkingLife(){
     var working_life = $('#working_life').val();
 
     if(working_life=="0"){
-        $('.worklife').addClass("Out");
+    	$('#working_life').addClass("Out");
         return false;
     }else{
-        $('.worklife').removeClass("Out");
+    	$('#working_life').removeClass("Out");
         return true;
     }
 }
 
 //提交
 function mySubmit(){
-    if(ImgState==false){
+    if(!$("#person_photo").val()){
         alert('请上传个人照片');
         return false;
-    }else if(state == false){
+    }else if(!$("#person_video").val()){
         alert('请上传个人视频');
         return false;
     }else{
-        if(nicknameVerify() & sign() & s_age() & s_identity() & companyVerify() & postsVerify() & working_life() & s_province() & s_city() & s_county()){
+        if(nicknameVerify() & xuanyan() & checkAge() & checkIdentity() & companyVerify() & postsVerify() & checkWorkingLife() & checkProvince() & checkCity() & checkCounty()){
             return true;
         }else{
             return false;

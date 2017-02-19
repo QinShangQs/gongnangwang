@@ -9,8 +9,8 @@
 .content_margin{margin-top: 30px;}
 .content_one_span{line-height: 45px;}
 .input_xm,.input_xm_three,.input_xmgz,.input_peo,.input_dao,.input_wen,.input_xm_money{margin-left: 10px;}
-.content_one .input_xm input{width: 354px;height: 30px;border-radius: 5px;border: 1px solid #b9b9b9;outline: none;padding: 5px 5px;}
-.content_two .input_xm input{width: 260px;height: 30px;border-radius: 5px;border: 1px solid #b9b9b9;outline: none;padding: 5px 5px;}
+.content_one .input_xm input{width: 354px;height: 42px;border-radius: 5px;border: 1px solid #b9b9b9;outline: none;padding: 5px 5px;}
+.content_two .input_xm input{width: 260px;height: 42px;border-radius: 5px;border: 1px solid #b9b9b9;outline: none;padding: 5px 5px;}
 .upup{margin-top: 15px;}
 .upup input{width: 75px;height: 40px;background: #01a590;}
 .a-upload {width: 74px;height: 40px;text-align: center;line-height: 40px;position: relative;cursor: pointer;color: #fff;background: #01a590;border-radius: 4px; overflow: hidden;display: inline-block;*display: inline;*zoom: 1;margin-left: 20px;}
@@ -27,7 +27,7 @@
 .select option{width: 355px;height: 40px;line-height: 40px;}
 
 .content_for .input_xmgz{width: 195px;height: 40px;border-radius: 5px;border: 1px solid #b9b9b9;overflow: hidden;}
-.content_for .input_xmgz input{width: 140px;height: 30px;outline: none;padding: 5px 5px;border: none;background: none;}
+.content_for .input_xmgz input{margin-top:4px;width: 140px;height: 30px;outline: none;padding: 5px 5px;border: none;background: none;}
 .content_for .input_xmgz p{width: 455px;height: 30px;outline: none;padding: 5px 5px;}
 .word{line-height: 40px;margin-left: 10px;color: #848484;font-size: 14px;}
 .word_02{line-height: 20px;margin-left: 10px;font-size: 14px;width: 65%;color: #848484;}
@@ -39,15 +39,15 @@
 .select_money{width: 170px;height: 45px;outline: none;padding: 5px 5px;background: url('../images/bianji_biao.png') no-repeat 87% 1px;}
 .select_money option{width: 155px;height: 40px;line-height: 40px;}
 /*商业模式*/
-.business_model{height: 200px;}
+.business_model{}
 .business_model_video{width: 300px;height: 200px;margin-left: 10px;background: url('../images/chou_list_bg.jpg') no-repeat;background-size:cover ;background-position: center center;border: 1px solid #b9b9b9;}
 .business_model_video video{background: #eee;}
 .time{color: #FF0000;}
 /*商业模式结束*/
 /*项目团队*/
-.content_one .input_xm_peo input{width: 350px;height: 30px;border-radius: 5px;border: 1px solid #b9b9b9;outline: none;padding: 5px 5px;}
-.input_xm_dao input{width: 335px;height: 30px;border-radius: 5px;border: 1px solid #b9b9b9;outline: none;padding: 5px 5px;}
-.input_xm_wen input{width: 305px;height: 30px;border-radius: 5px;border: 1px solid #b9b9b9;outline: none;padding: 5px 5px;}
+.content_one .input_xm_peo input{width: 350px;height: 42px;border-radius: 5px;border: 1px solid #b9b9b9;outline: none;padding: 5px 5px;}
+.input_xm_dao input{width: 335px;height: 42px;border-radius: 5px;border: 1px solid #b9b9b9;outline: none;padding: 5px 5px;}
+.input_xm_wen input{width: 305px;height: 42px;border-radius: 5px;border: 1px solid #b9b9b9;outline: none;padding: 5px 5px;}
 /*项目团队结束*/
 
 /*附件资料*/
@@ -73,5 +73,5 @@
 .work_life select{width: 65px;height: 45px;outline: none;padding: 5px 5px;border: none;}
 .work_life select option{width: 65px;height: 45px;line-height: 45px;}
 .ncial_advisor{width: 115px;height: 40px;border:1px #b9b9b9 solid;border-radius: 5px;margin-left: 10px;}
-.ncial_advisor input{width: 100px;height: 28px;padding: 5px 5px;border: none;background: none;outline: none;}
+.ncial_advisor input{margin-top:4px;width: 100px;height: 28px;padding: 5px 5px;border: none;background: none;outline: none;}
 .ncial_advisor_p{color: #FF0000;margin-left: 15px;line-height: 40px;}

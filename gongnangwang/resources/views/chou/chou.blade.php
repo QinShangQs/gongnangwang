@@ -129,8 +129,8 @@
                             @else
                                 <div class="main_list">
                             @endif
-							<a href="/chou_m/{{$val->pro_name}}"><img src="{{$val->pro_logo}}" width="274px" height="212px"></a>
-                             <a href="/chou_m/{{$val->pro_name}}"><h3>{{$val->pro_name}}</h3></a>
+							<a href="/chou_m/{{$val->id}}"><img src="{{$val->pro_logo}}" width="274px" height="212px"></a>
+                            <a href="/chou_m/{{$val->id}}"><h3>{{$val->pro_name}}</h3></a>
 							<div class="span_header">
 								<p class="p_head red Left">融资目标:{{$val->pro_target}}万</p>
 								<p class="p_over Right">已完成0.00万元</p>

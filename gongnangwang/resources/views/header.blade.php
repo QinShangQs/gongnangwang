@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>头 部</title>
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/publick.css') }}"/>
-	</head>
-	<body>
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="{{ asset('images/18.png') }}">
+	<title>共囊网 股权众筹 合伙人 活动 拍卖 共囊</title>
+	
+
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/publick.css') }}"/>
+	<script type="text/javascript" src="{{ asset('js/jquery1.9.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/head.js') }}" ></script>	
+	<script type="text/javascript" src="{{ asset('js/common.js') }}" ></script>	
+</head>
+<body>
 	<!--导航开始-->
     @if(!Session::get('user_name'))
     <!--================用户未登录=============================-->
@@ -83,7 +89,3 @@
     @endif
 <!--导航结束-->
 
-	</body>
-</html>
-<script type="text/javascript" src="{{ asset('js/jquery1.9.1.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/head.js') }}" ></script>

@@ -1,27 +1,18 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-        <link rel="shortcut icon" href="{{ asset('images/18.png') }}">
-        <title>共囊网 股权众筹 合伙人 活动 拍卖 共囊</title>
-		<link rel="stylesheet" href="{{ asset('css/publick.css') }}" />
-		<link rel="stylesheet" href="{{ asset('css/chou_list.css') }}" />
-	</head>
-    <script type="text/javascript" src="{{ asset('js/jquery1.9.1.min.js') }}"></script>
-	<script type="text/javascript" charset="utf-8">
+@include('me_header')
+<link rel="stylesheet" href="{{ asset('css/chou_list.css') }}" />
+<script type="text/javascript" charset="utf-8">
     $(document).ready(function(){
         $(".chou_nav_ul li").click(function(){
             var index=$(this).index();
             $(this).addClass("active").siblings().removeClass("active");
             $(".content").eq(index).css("display","block").siblings().css("display","none");
         });
+    });
+</script>
+<link rel="stylesheet" type="text/css" href="{{ asset('js/videojs/video-js.min.css') }}" />
+<script type="text/javascript" src="{{ asset('js/videojs/video.min.js') }}"></script>
 
-    })
-
-	</script>
-	<body>
-<!--导航开始-->
-@include('header')
+@include('qiniu.uploader_setter')
 <!--导航结束-->
 	<section>
 		<nav class="chou_nav">
@@ -51,14 +42,11 @@
 				<div class="content_two Both content_margin">
 					<span class="content_one_span Left">项目logo：</span>
 					<div class="input_xm Left s_logo">
-						<input type="text" name="logo" id="logo" />
+						@include('qiniu.uploader', ['number'=>'','text'=>'选择文件','success_text'=>'上传成功'])
+						<input type="hidden" name="pro_logo" id="pro_logo" />
+						<span id="pro_logo_name"></span>
 					</div>
-					<div class="upup">
-						<a href="javascript:;" class="a-upload" id="proLogoChange">选   择
-							<input type="file" name="pro_logo" id="pro_logo" value="" title="上传图片"/>
-						</a>
-                        <span id="s_pro_logo"></span>
-					</div>
+					
 				</div>
 				<div class="content_three Both content_margin">
 					<span class="content_one_span Left">资料介绍：</span>
@@ -176,15 +164,11 @@
 					</div>
 				</div>
 				<div class="content_two Both content_margin">
-					<span class="content_one_span Left">上传图片：</span>
-					<div class="input_xm Left s_pic">
-						<input type="text" name="pic" id="pic"/>
-					</div>
-					<div class="upup">
-						<a href="javascript:;" class="a-upload" id="proPictureChange">选   择
-							<input type="file" name="pro_picture" id="pro_picture" value="" />
-						</a>
-                        <span id="s_pro_pic"></span>
+					<span class="content_one_span Left">项目图片：</span>
+					<div class="input_xm Left s_pic">						
+						@include('qiniu.uploader', ['number'=>'2','text'=>'选择文件','success_text'=>'上传成功'])
+						<input type="hidden" name="pro_picture" id="pro_picture" />
+						<span id="pro_picture_name"></span>
 					</div>
 				</div>
 				<div class="content_two Both content_margin">
@@ -215,17 +199,30 @@
 						<span class="time">限制最长时间为3分钟</span>
 					</p>
 				</div>
-				<div class="business_model Both content_margin">
+				<div class="business_model Both content_margin" style="width:inherit;">
 					<span class="content_one_span Left">上传视频：</span>
-					<div class="bus_v bus_video business_model_video Left"></div>
-					<div class="upup">
-						<a href="javascript:;" class="a-upload">选   择
-							<input type="file" id="bus_video" value="" onchange="busVideo(this)"/>
-						</a>
-					</div>
-					<div class="upup">
-						<a href="javascript:;" class="a-upload" id="busButton" onclick="busVideoUpload()">上    传</a>
-					</div>
+					
+					<table>
+						<tr>
+							<td>
+								<img id="bus_video_pre" src="/images/play46.jpg" width="450"	height="300">
+								<div id="bus_video_show" style="display: none">
+										<video id="bus_video_vj" name="moren"
+											class="video-js vjs-default-skin" controls preload="none"
+											width="450" height="300" poster="" data-setup="{}">
+											<source src="video/1.mp4" type='video/mp4' />
+										</video>
+								</div>	
+							</td>
+							
+						</tr>
+						<tr>
+							<td valign="top">
+								@include('qiniu.uploader', ['number'=>'3','text'=>'选择文件','success_text'=>'上传成功'])
+							</td>
+						</tr>
+					</table>													
+					<input type="hidden" name="bus_video" id="bus_video" />
 				</div>
 				<div class="content_one content_margin">
 					<span class="content_one_span Left">用户数据：</span>
@@ -270,15 +267,29 @@
 				</div>
 				<div class="business_model Both content_margin">
 					<span class="content_one_span Left">上传视频：</span>
-					<div class="tea_v business_model_video Left"></div>
-					<div class="upup">
-						<a href="javascript:;" class="a-upload">选   择
-							<input type="file" id="tea_video" value="" onchange="teaVideo(this)"/>
-						</a>
-					</div>
-					<div class="upup">
-						<a href="javascript:;" class="a-upload" id="teaButton" onclick="teaVideoUpload()">上    传</a>
-					</div>
+					
+					<table>
+						<tr>
+							<td>
+								<img id="tea_video_pre" src="/images/play46.jpg" width="450"	height="300">
+								<div id="tea_video_show" style="display: none">
+										<video id="tea_video_vj" name="moren"
+											class="video-js vjs-default-skin" controls preload="none"
+											width="450" height="300" poster="" data-setup="{}">
+											<source src="video/1.mp4" type='video/mp4' />
+										</video>
+								</div>	
+							</td>
+							
+						</tr>
+						<tr>
+							<td valign="top">
+								@include('qiniu.uploader', ['number'=>'4','text'=>'选择文件','success_text'=>'上传成功'])
+							</td>
+						</tr>
+					</table>													
+					<input type="hidden" name="tea_video" id="tea_video" />
+
 				</div>
 				<div class="content_one content_margin">
 					<span class="content_one_span Left">核心团队：</span>
@@ -322,15 +333,28 @@
 				</div>
 				<div class="business_model Both content_margin">
 					<span class="content_one_span Left">上传视频：</span>
-					<div class="roa_v business_model_video Left"></div>
-					<div class="upup">
-						<a href="javascript:;" class="a-upload">选   择
-							<input type="file" id="roa_video" value="" onchange="roaVideo(this)"/>
-						</a>
-					</div>
-					<div class="upup">
-						<a href="javascript:;" class="a-upload" id="roaButton" onclick="roaVideoUpload()">上    传</a>
-					</div>
+					
+					<table>
+						<tr>
+							<td>
+								<img id="roa_video_pre" src="/images/play46.jpg" width="450"	height="300">
+								<div id="roa_video_show" style="display: none">
+										<video id="roa_video_vj" name="moren"
+											class="video-js vjs-default-skin" controls preload="none"
+											width="450" height="300" poster="" data-setup="{}">
+											<source src="video/1.mp4" type='video/mp4' />
+										</video>
+								</div>	
+							</td>
+							
+						</tr>
+						<tr>
+							<td valign="top">
+								@include('qiniu.uploader', ['number'=>'5','text'=>'选择文件','success_text'=>'上传成功'])
+							</td>
+						</tr>
+					</table>													
+					<input type="hidden" name="roa_video" id="roa_video" />
 				</div>
 				<div class="content_one content_margin">
 					<span class="content_one_span Left">现场投资嘉宾：</span>
@@ -352,10 +376,11 @@
 				<div class="content_one_fj Both content_margin">
 					<p class="content_one_span">添加附件：</p>
 					<p class="content_one_span">附件：<en id="s_att_name"></en></p>
-					<div class="upup_fj">
-						<input type="file" name="att_name" id="att_name" value="" />
-					</div>
-                    <span id="s_att"></span>
+                    
+                    @include('qiniu.uploader', ['number'=>'6','text'=>'选择文件','success_text'=>'上传成功'])
+					<input type="hidden" name="att_name" id="att_name" />
+					<span id="att_name_name"></span>
+                    
 				</div>
 				<div class="Editor_name_btn Both">
 					<a href="javascript:;">预览</a>
@@ -367,12 +392,14 @@
             </form>
 		</div>
 		<!--底部开始-->
-        @include('footer')
+      
 	<!--底部结束-->
 	</section>
+	
+<!-- 上传模态框 -->
+@include('qiniu.uploader_model')
 
-	</body>
-
-</html>
+@include('footer')
 
 <script type="text/javascript" src="{{ asset('js/chou.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/qiniu/chou-main.js') }}"></script>

@@ -24,7 +24,7 @@
 .Editor_name_text{width: 555px;height: 175px;border: 1px solid #b9b9b9;border-radius: 5px;overflow: hidden;}
 .Editor_name_text textarea{width: 545px;height: 165px;padding: 5px 5px;border: none;outline: none;resize: none;}
 .Editor_name_file input{width: 150px;}
-.Editor_name_file span{color: #FF0000;}
+.Editor_name_file .desc{color: #FF0000;}
 
 .Editor_name_btn{width: 350px;margin:100px auto;font-size: 23px;}
 .Editor_name_btn a{display: block;float: left;width: 155px;height: 40px;line-height: 40px;border: 1px solid #01A590;color: #01A590;text-align: center;}

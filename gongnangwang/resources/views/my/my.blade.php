@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<link rel="shortcut icon" href="{{ asset('images/18.png') }}">
-		<title>共囊网 股权众筹 合伙人 活动 拍卖 共囊</title>
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/My.css') }}"/>
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/ren.css') }}"/>
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/publick.css') }}"/>
-	</head>
-	<body>
+
 <!--导航开始-->
 	@include('myheader')
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/My.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/ren.css') }}"/>
 <!--导航结束-->
 
 <!--我的共囊-->
@@ -29,7 +21,7 @@
 			<div class="per_content_nar per_content_nar_none Left">
 				<p class="compile"><a href="/chouedit/{{$val->pro_name}}" target="_blank"><img src="images/per_bian_icon.png"/>编辑</a></p>
 				<div class="per_user Both">
-					<a href="/chou_m/{{$val->pro_name}}"><img src="{{$val->pro_logo}}" width="140px" height="140px" /></a>
+					<a href="/chou_m/{{$val->id}}"><img src="{{$val->pro_logo}}" width="140px" height="140px" /></a>
 				</div>
 				<p class="per_newspeo"><img src="images/main_icon_right_18.png" /><span class="Left">
                         @if($val->identity==1)
@@ -61,7 +53,7 @@
                                                                             @endif
 
                     </span></p>
-				<p class="per_newspeo Both"><a href="/chou_m/{{$val->pro_name}}" style="color: #333">项目：{{$val->pro_name}}</a></p>
+				<p class="per_newspeo Both"><a href="/chou_m/{{$val->id}}" style="color: #333">项目：{{$val->pro_name}}</a></p>
 				<div class="per_newspeo_p">
 					<ul class="per_newspeo_p_ul">
 						<li class="high">已上线</li>

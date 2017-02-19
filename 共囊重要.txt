@@ -1,3 +1,13 @@
+服务器路径：/data/wwwroot/default/my_laravel
+
+
+composer require qiniu/php-sdk  
+
+php /usr/local/bin/composer/composer.phar require qiniu/php-sdk
+
+cp -R /data/wwwroot/default/my_laravel 20170219/
+
+
 阿里云
 train100@qq.com
 jiba123.com

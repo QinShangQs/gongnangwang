@@ -1,6 +1,7 @@
 *{padding: 0;margin: 0;text-decoration: none;list-style: none;font-family: "微软雅黑";}
 .conter_con{width: 1200px;margin: 0 auto;}
 .My_conter_con{width: 1200px;margin: 0 auto;}
+.my_content {width:800px;margin:auto;}
 .Left{float: left;}
 .Right{float: right;}
 .Both{clear: both;}
@@ -61,3 +62,5 @@ img {border-width: 0;}
 .bang_head_nav li a{font-size: 22px;color:#fff;}
 .bang_moren{border-bottom:2px solid #fff;}
 /*个人页面开头导航结束*/
+
+

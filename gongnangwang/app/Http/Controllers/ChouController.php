@@ -232,15 +232,6 @@ class ChouController extends Controller
      */
     public function choudo(Request $request)
     {
-/*        //laravel 自动验证
-        $validator = Validator::make($request->all(), [
-            'pro_name' => 'bail|required|min:1|regex:[[\x{4e00}-\x{9fa5}A-Za-z0-9_]+]',
-        ]);
-        if ($validator->fails()) {
-            $messages = $validator->messages();
-            return $messages;
-        }*/
-
         $input = $request->all();
         /*=================项目资料======================*/
         $data['pro_name'] = $input['pro_name'];
@@ -255,40 +246,11 @@ class ChouController extends Controller
         $data['pro_type'] = $input['pro_type'];
         $data['pro_advisor'] = $input['pro_advisor'];
         $data['pro_advisornum'] = $input['pro_advisornum'];
-
-        //项目logo
-        if($request->hasFile('pro_logo')){
-            $file = $request->file('pro_logo');
-            $allowed_extensions = ["png", "jpg", "gif","JPG" , "PNG" , "GIF"];
-            $extension = $file->getClientOriginalExtension();
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage png, jpg or gif.'];
-            }
-            $picturePath = 'picture/chou/logo/';
-            $picName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $pictureName = 'picture/chou/logo/'.$picName.'.'.$extension;
-            $file->move($picturePath,$pictureName);
-            $data['pro_logo'] = $pictureName;
-        }
-        //项目图片
-        if($request->hasFile('pro_picture')){
-            $file = $request->file('pro_picture');
-            $allowed_extensions = ["png", "jpg", "gif","JPG" , "PNG" , "GIF"];
-            $extension = $file->getClientOriginalExtension();
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage png, jpg or gif.'];
-            }
-            $picturePath = 'picture/chou/picture/';
-            $picName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $pictureName = 'picture/chou/picture/'.$picName.'.'.$extension;
-            $file->move($picturePath,$pictureName);
-            $data['pro_picture'] = $pictureName;
-        }
+        $data['pro_logo'] = $input['pro_logo'];//项目logo
+        $data['pro_picture'] = $input['pro_picture'];//项目图片
+        
         $User = new User();
         $user_id = $User->userinfoID(Session::get('user_id')) ;
-
         $data['user_id'] =  $user_id[0]->id;
 
         $chou = new Chou();
@@ -300,7 +262,7 @@ class ChouController extends Controller
         $extent['bus_profit'] = $input['bus_profit'];
         $extent['bus_other'] = $input['bus_other'];
         $extent['bus_operate'] = $input['bus_operate'];
-        $extent['bus_video'] = Redis::get(Session::get('user_id').'bus');
+        $extent['bus_video'] = $input['bus_video'];
 
 
         /*众筹项目团队*/
@@ -308,28 +270,15 @@ class ChouController extends Controller
         $extent['tea_num'] = $input['tea_num'];
         $extent['tea_tutor'] = $input['tea_tutor'];
         $extent['tea_adviser'] = $input['tea_adviser'];
-        $extent['tea_video'] = Redis::get(Session::get('user_id').'tea');
+        $extent['tea_video'] = $input['tea_video'];
 
 
         /*==========================路演==========================*/
         $extent['roa_guest'] = $input['roa_guest'];
-        $extent['roa_video'] = Redis::get(Session::get('user_id').'road');
+        $extent['roa_video'] = $input['roa_video'];
 
         /*附件资料*/
-        if($request->hasFile('att_name')){
-            $file = $request->file('att_name');
-            $allowed_extensions = ["doc", "docx", "pdf"];
-            $extension = $file->getClientOriginalExtension();
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage doc, docx or pdf.'];
-            }
-            $attachPath = 'file/attachment/';
-            $attName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $attachName = 'file/attachment/'.$attName.'.'.$extension;
-            $file->move($attachPath,$attachName);
-            $extent['att_name'] = $attachName;
-        }
+        $extent['att_name'] =  $input['att_name'];
         $extent['pro_datetime'] = date('Y-m-d H:i:s',time());
         $extent['pro_id'] = $res;
         $chou = new Chou();
@@ -350,23 +299,15 @@ class ChouController extends Controller
     public function chou_m()
     {
         $input = $_SERVER["REQUEST_URI"];
-        $pro_name = substr(urldecode($input),strrpos(urldecode($input),"/")+1);
+        $pro_par = substr(urldecode($input),strrpos(urldecode($input),"/")+1);
 
         $chou = new Chou();
-        $data = $chou->projectSelect($pro_name);
-//        print_r($data);
-//        die;
-
-
-      /*  $myfile = fopen($data[0]->att_name,"r");
-        $name = fread($myfile,filesize($data[0]->att_name));
-        echo $name;
-
-        fclose($myfile);
-
-        die;*/
-
-
+        if(is_numeric($pro_par)){
+        	$data = $chou->getByProjectId($pro_par);        	
+        }else{
+        	$data = $chou->projectSelect($pro_par);
+        }
+        
 
         return view('chou/chou_m',['data'=>$data]);
     }
@@ -419,50 +360,13 @@ class ChouController extends Controller
         $data['pro_advisornum'] = $input['pro_advisornum'];
 
         //项目logo
-        if($request->hasFile('pro_logo')){
-            $file = $request->file('pro_logo');
-            $allowed_extensions = ["png", "jpg", "gif","JPG" , "PNG" , "GIF"];
-            $extension = $file->getClientOriginalExtension();
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage png, jpg or gif.'];
-            }
-            $picturePath = 'picture/chou/logo/';
-            $picName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $pictureName = 'picture/chou/logo/'.$picName.'.'.$extension;
-            $file->move($picturePath,$pictureName);
-            $data['pro_logo'] = $pictureName;
-            if(isset($chou_data[0]->pro_logo)){
-                unlink($chou_data[0]->pro_logo);
-            }
-        }else{
-            $data['pro_logo'] = $chou_data[0]->pro_logo;
-        }
+        $data['pro_logo'] = $input['pro_logo'];
         //项目图片
-        if($request->hasFile('pro_picture')){
-            $file = $request->file('pro_picture');
-            $allowed_extensions = ["png", "jpg", "gif","JPG" , "PNG" , "GIF"];
-            $extension = $file->getClientOriginalExtension();
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage png, jpg or gif.'];
-            }
-            $picturePath = 'picture/chou/picture/';
-            $picName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $pictureName = 'picture/chou/picture/'.$picName.'.'.$extension;
-            $file->move($picturePath,$pictureName);
-            $data['pro_picture'] = $pictureName;
-
-            if(isset($chou_data[0]->pro_picture)){
-                unlink($chou_data[0]->pro_picture);
-            }
-        }else{
-            $data['pro_picture'] = $chou_data[0]->pro_picture;
-        }
+        $data['pro_picture'] = $input['pro_picture'];
+        
 
         $User = new User();
         $user_id = $User->userinfoID(Session::get('user_id')) ;
-
         $data['user_id'] =  $user_id[0]->id;
 
         /*=============================商业模式===============================*/
@@ -470,8 +374,8 @@ class ChouController extends Controller
         $data['bus_profit'] = $input['bus_profit'];
         $data['bus_other'] = $input['bus_other'];
         $data['bus_operate'] = $input['bus_operate'];
-
-        $data['bus_video'] = Redis::get(Session::get('user_id').'bus');
+		//商业模式视频
+        $data['bus_video'] = $input['bus_video'];
 
 
         /*众筹项目团队*/
@@ -480,36 +384,16 @@ class ChouController extends Controller
         $data['tea_tutor'] = $input['tea_tutor'];
         $data['tea_adviser'] = $input['tea_adviser'];
         //项目团队模式下的视频
-        $data['tea_video'] = Redis::get(Session::get('user_id').'tea');
+        $data['tea_video'] = $input['tea_video'];
 
 
         /*==========================路演==========================*/
         $data['roa_guest'] = $input['roa_guest'];
         //路演下的视频
-        $data['roa_video'] = Redis::get(Session::get('user_id').'road');
+        $data['roa_video'] = $input['roa_video'];
 
         /*附件资料*/
-        if($request->hasFile('att_name')){
-            $file = $request->file('att_name');
-            $allowed_extensions = ["doc", "docx", "pdf"];
-            $extension = $file->getClientOriginalExtension();
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage doc, docx or pdf.'];
-            }
-            $attachPath = 'file/attachment/';
-            $attName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $attachName = 'file/attachment/'.$attName.'.'.$extension;
-            $file->move($attachPath,$attachName);
-            $data['att_name'] = $attachName;
-
-            if(isset($chou_data[0]->att_name)){
-                unlink($chou_data[0]->att_name);
-            }
-        }else{
-            $data['att_name'] = $chou_data[0]->att_name;
-        }
-
+        $data['att_name'] = $input['att_name'];
         $data['pro_datetime'] = date('Y-m-d H:i:s',time());
         $data['pro_id'] = $input['pro_id'];
 

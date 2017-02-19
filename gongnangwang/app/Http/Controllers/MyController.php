@@ -152,12 +152,9 @@ class MyController extends Controller
      */
     public function my()
     {
-
         $name =  substr($_SERVER['REQUEST_URI'],1);
         $id =Session::get('user_id');
-
-
-
+        
         $user = new User();
         $user_data = $user->userSelect($id);
 
@@ -259,61 +256,36 @@ class MyController extends Controller
      */
     public function mydo(Request $request)
     {
-        $input = $request->all();
-        $data['nickname'] = $input['nickname'];
-        $data['age'] = $input['s_age'];
-        $data['identity'] = $input['identity'];
-        $data['company'] = $input['company'];
-        $data['posts'] = $input['posts'];
-        $data['address'] = $input['s_province'].','.$input['s_city'].','.$input['s_county'];
-        $data['worklife'] = $input['worklife'];
-        $data['sign'] = $input['sign'];
+    	
+    	$input = $request->all();
+    	$data['nickname'] = $input['nickname'];
+    	$data['age'] = $input['s_age'];
+    	$data['identity'] = $input['identity'];
+    	$data['company'] = $input['company'];
+    	$data['posts'] = $input['posts'];
+    	$data['address'] = $input['s_province'].','.$input['s_city'].','.$input['s_county'];
+    	$data['worklife'] = $input['worklife'];
+    	$data['sign'] = $input['sign'];
+    	
+    	$data['photo'] = $input['person_photo'];
+    	$data['video'] = $input['person_video'];
+    	$data['resume'] =  $input['person_intro'];
+    	
+    	//判断是否上传照片
+    	if(!empty($data['photo'])){
+    		Session::put('user_photo',$data['photo']);
+    	}
+    	
+    	$data['datetime'] = date('Y-m-d H:i:s',time());
+    	$data['user_id'] = Session::get('user_id');
+    	$User = new User();
+    	$res = $User->userinfo($data);
+    	if ($res)
+    	{
+    		Session::put('user_nickname',$data['nickname']);
+    		return redirect('/user');
+    	}
 
-        //判断是否上传照片
-        if($request->hasFile('uploadPicture')){
-            $file = $request->file('uploadPicture');
-            $allowed_extensions = ["png", "jpg", "gif","JPG", "PNG" , "GIF"];
-            $extension = $file->getClientOriginalExtension();
-
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage png, jpg or gif.'];
-            }
-
-            $picturePath = 'picture/my/';
-            $picName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $pictureName = 'picture/my/'.$picName.'.'.$extension;
-            $file->move($picturePath,$pictureName);
-            $data['photo'] = $pictureName;
-            Session::put('user_photo',$data['photo']);
-        }
-
-        $data['video'] = Redis::get(Session::get('user_id').'my');
-
-        //判断是否上传简历
-        if($request->hasFile('uploadResume')){
-            $file = $request->file('uploadResume');
-            $allowed_extensions = ["doc", "docx", "pdf"];
-            $extension = $file->getClientOriginalExtension();
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only doc, docx or pdf.'];
-            }
-            $resumePath = 'file/resume/';
-            $resName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $resumeName = 'file/resume/'.$resName.'.'.$extension;
-            $file->move($resumePath,$resumeName);
-            $data['resume'] = $resumeName;
-        }
-        $data['datetime'] = date('Y-m-d H:i:s',time());
-        $data['user_id'] = Session::get('user_id');
-        $User = new User();
-        $res = $User->userinfo($data);
-        if ($res)
-        {
-            Session::put('user_nickname',$data['nickname']);
-            return redirect('/user');
-        }
 
     }
 
@@ -350,59 +322,25 @@ class MyController extends Controller
         $address = $input['s_province'].','.$input['s_city'].','.$input['s_county'];
         $worklife = $input['worklife'];
         $sign = $input['sign'];
-
+        
+        $photo = $input['person_photo'];
+        $video = $input['person_video'];
+        $resume =  $input['person_intro'];
+         
         //判断是否上传照片
-        if($request->hasFile('uploadPicture')){
-            $file = $request->file('uploadPicture');
-            $allowed_extensions = ["png", "jpg", "gif","JPG"  , "PNG" , "GIF"];
-            $extension = $file->getClientOriginalExtension();
-            //如果上传出错,返回错误信息
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage png, jpg or gif.'];
-            }
-
-            $picturePath = 'picture/my/';
-            $picName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $pictureName = 'picture/my/'.$picName.'.'.$extension;
-            $file->move($picturePath,$pictureName);
-            $photo = $pictureName;
-            if(isset($user_data[0]->photo)){
-                unlink($user_data[0]->photo);
-            }
-            Session::put('user_photo',$pictureName);
-
+        if(!empty($photo)){
+        	Session::put('user_photo',$photo);
         }else{
-            $photo = $user_data[0]->photo;
+        	$photo = $user_data[0]->photo;
         }
-
-        //判断是否上传视频
-
-     /*   if(isset($user_data[0]->video)){
-            unlink($user_data[0]->video);
-        }*/
-        $video = Redis::get(Session::get('user_id').'my');
-
+        
+        if(empty($video)){
+        	$video = $user_data[0]->video;
+        }
+        
         //判断是否上传简历
-        if($request->hasFile('uploadResume')){
-            $file = $request->file('uploadResume');
-            $allowed_extensions = ["doc", "docx", "pdf"];
-            $extension = $file->getClientOriginalExtension();
-            //如果上传出错,返回错误信息
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only doc, docx or pdf.'];
-            }
-            $resumePath = 'file/resume/';
-            $resName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $resumeName = 'file/resume/'.$resName.'.'.$extension;
-            $file->move($resumePath,$resumeName);
-            $resume = $resumeName;
-            if(isset($user_data[0]->resume)){
-                unlink($user_data[0]->resume);
-            }
-        }else{
-            $resume = $user_data[0]->resume;
+        if(empty($resume)){
+        	$resume = $user_data[0]->resume;
         }
         $datetime = date('Y-m-d H:i:s',time());
         $res = $User->updateUserinfo($nickname,$age,$identity,$company,$posts,$address,$worklife,$sign,$photo,$video,$resume,$datetime,$user_id);

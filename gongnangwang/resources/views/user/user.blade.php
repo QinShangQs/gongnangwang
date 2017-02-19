@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-        <link rel="shortcut icon" href="{{ asset('images/18.png') }}">
-        <title>共囊网 股权众筹 合伙人 活动 拍卖 共囊</title>
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}"/>
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/publick.css') }}" />
-	</head>
-	<body>
-<div class="wrap">
+
 	<!--导航开始-->
 @include('header')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('js/videojs/video-js.min.css') }}" />
+<script type="text/javascript" src="{{ asset('js/videojs/video.min.js') }}"></script>
+
 	<!--导航结束-->
 	<!--内容部分-->
 	<div class="content_ge">
@@ -124,9 +118,11 @@
 				</div>
 				<!--右侧-->
 				<div class="content_head_right Right">
-                    <video src="{{ asset($val->video) }}" controls="controls" width="740" height="550" poster="" data-setup="{}">
-
-                    </video>
+                    <video id="example_video1" 
+								class="video-js vjs-default-skin" controls preload="none"
+								width="740" height="550" poster="{{ asset($val->video) }}?vframe/jpg/offset/1" data-setup="{}">
+								<source src="{{ asset($val->video) }}" type='video/mp4' />
+					</video>
 					<div class="red_packet">
 						<div class="red_packet_one Left">
 							<a href="javascript:;" class="Left">
@@ -196,9 +192,7 @@
 								共囊宣言
 							</a>
 						</p>
-						<p class="Personal Both">
-                            {{$val->sign}}
-						</p>
+						<p class="Personal Both">{!! nl2br($val->sign) !!}</p>
 					</div>
 				</div>
 			</div>
@@ -331,9 +325,7 @@
 	<!--底部开始-->
 @include('footer')
 	<!--底部结束-->
-</div>		
-	</body>
-</html>
+
 <script type="text/javascript" src="{{ asset('js/jquery1.9.1.min.js') }}"></script>
 <script type="text/javascript">
     $('#private_letter').click(function () {

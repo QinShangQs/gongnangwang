@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>底 部</title>
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/publick.css') }}"/>
-	</head>
-	<body>
+
 <!--底部开始-->
 	<div class="footer Both">
 		<div class="conter_con_foot">

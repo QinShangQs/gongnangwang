@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<link rel="shortcut icon" href="{{ asset('images/18.png') }}">
-		<title>共囊网 股权众筹 合伙人 活动 拍卖 共囊</title>
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/chou_m.css') }}"/>
-		<link rel="stylesheet" type="text/css" href="{{ asset('css/publick.css') }}" />
-		<script src="{{ asset('js/jquery-1.4.min.js') }}" type="text/javascript" charset="utf-8"></script>
-		<script src="{{ asset('js/echarts.js') }}"  type="text/javascript"></script>
-	</head>
-	<body>
-	<!--导航开始-->
-	@include('header')
+<!--导航开始-->
+@include('header')
+
+<link rel="stylesheet" type="text/css" href="/js/videojs/video-js.min.css" />
+<script type="text/javascript" src="/js/videojs/video.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/chou_m.css') }}"/>
+<script src="{{ asset('js/echarts.js') }}"  type="text/javascript"></script>
+
 <!--导航结束-->
 	<!--内容开始-->
 	<div class="content">
@@ -39,10 +33,12 @@
                 </div>
 
                 <div class="tab_list Both" style="display: block;">
-                    <div class="radio">
-                        <video src="{{ asset($val->bus_video) }}" id="example_video1" class="video-js vjs-default-skin" controls preload="controls" width="780" height="550" poster="" data-setup="{}">
-
-                        </video>
+                    <div class="radio">                       
+                        <video  name="bus_video_vj" class="video-js vjs-default-skin" 
+								width="780" height="550"
+								poster="{{ asset($val->bus_video) }}?vframe/jpg/offset/1" data-setup="{}">
+								<source src="{{ asset($val->bus_video) }}" type='video/mp4' />
+						</video>  
                     </div>
                     <div class="show">
                         <ul class="show01_ul Both">
@@ -87,10 +83,12 @@
                     </div>
                 </div>
                 <div class="tab_list Both">
-                    <div class="radio">
-                        <video src="{{ asset($val->tea_video) }}" id="example_video1" class="video-js vjs-default-skin" controls preload="controls" width="780" height="550" poster="" data-setup="{}">
-
-                        </video>
+                    <div class="radio">                        
+                        <video name="tea_video_vj" class="video-js vjs-default-skin" 
+								width="780" height="550"
+								poster="{{ asset($val->tea_video) }}?vframe/jpg/offset/1" data-setup="{}">
+								<source src="{{ asset($val->tea_video) }}" type='video/mp4' />
+						</video> 
                     </div>
                     <div class="show">
                         <ul class="show01_ul Both">
@@ -124,9 +122,11 @@
                 </div>
                 <div class="tab_list Both">
                     <div class="radio">
-                        <video src="{{ asset($val->roa_video) }}" id="example_video1" class="video-js vjs-default-skin" controls preload="controls" width="780" height="550" poster="" data-setup="{}">
-
-                        </video>
+                        <video id="example_video1" name="roa_video_vj" class="video-js vjs-default-skin" 
+								width="780" height="550"
+								poster="{{ asset($val->roa_video) }}?vframe/jpg/offset/1" data-setup="{}">
+								<source src="{{ asset($val->roa_video) }}" type='video/mp4' />
+						</video> 
                     </div>
                     <div class="show">
                         <div class="shou_xcjb">
@@ -159,16 +159,20 @@
                     <div class="tab_list_jian">
                         <div class="jian">
                             <ul class="jian_ul Both">
-                                <li>文件名称</li>
-                                <li>上传时间</li>
-                                <li>操作</li>
+                                <li style="width:72%;">文件名称</li>
+                                <li style="width:15%;">上传时间</li>
+                                <li style="width:13%">操作</li>
                             </ul>
                             <ul class="jian_ul_ul Both">
-                                <li>个人资料</li>
-                                <li>{{ substr($val->pro_datetime,0,strpos($val->pro_datetime," ")) }}</li>
-                                <li class="">
+                                <li style="width:72%;">
+                                <?php 
+                                	$att_names = explode("/", $val->att_name);
+                                	echo $att_names[count($att_names) -1];
+                                ?></li>
+                                <li style="width:15%">{{ substr($val->pro_datetime,0,strpos($val->pro_datetime," ")) }}</li>
+                                <li style="width:13%">
                                     <div class="chou_upload">
-                                        <span class="gai">阅览</span>
+                                        <a href="{{$val->att_name}}" target="_blank"><span class="gai">阅览</span></a>
                                     </div>
                                 </li>
 
@@ -279,13 +283,22 @@
         </div>
     </div>
         <!--内容结束-->
-	<!--底部开始-->
-	@include('footer')
-	<!--底部结束-->
+	
+	
 </div>
-	</body>
-	<script type="text/javascript">
+<!--底部开始-->
+@include('footer')
+<!--底部结束-->
+<script type="text/javascript">
+	$(document).ready(function(){
+		setTimeout(function(){
+			$(".video-js").removeClass("vjs-controls-disabled");
+		}, 1000);
+		
+	});
+</script>
 
+	<script type="text/javascript">
         function KeyP(v){
             var line = $('#line').val();
             var onlineMoney = $('#onlineMoney').val() * 10000;
@@ -393,4 +406,3 @@ tab(ul03,'tab_list','ul03_active')
 myChart.setOption(option);
 
 	</script>
-</html>
