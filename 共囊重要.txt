@@ -1,12 +1,16 @@
 服务器路径：/data/wwwroot/default/my_laravel
 
+cp -R /data/wwwroot/default/my_laravel 20170219/
 
+#安装七牛sdk#
 composer require qiniu/php-sdk  
 
 php /usr/local/bin/composer/composer.phar require qiniu/php-sdk
 
 cp -R /data/wwwroot/default/my_laravel 20170219/
 
+
+http://oh8ny9g1a.bkt.clouddn.com/
 
 阿里云
 train100@qq.com

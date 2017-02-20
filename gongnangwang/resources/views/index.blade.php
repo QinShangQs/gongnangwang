@@ -48,9 +48,9 @@
                     @foreach($pro as $k=>$v)
 
                         @if($k==0 || $k==4)
-						<li class="one"><a href="/chou_m/{{$v->pro_name}}"><img src="{{$v->pro_logo}}" width="274px" height="212px"/></a></li>
+						<li class="one"><a href="/chou_m/{{$v->id}}"><img src="{{$v->pro_logo}}" width="274px" height="212px"/></a></li>
                         @else
-						<li><a href="/chou_m/{{$v->pro_name}}"><img src="{{$v->pro_logo}}" width="274px" height="212px"/></a></li>
+						<li><a href="/chou_m/{{$v->id}}"><img src="{{$v->pro_logo}}" width="274px" height="212px"/></a></li>
                         @endif
 
                         @endforeach

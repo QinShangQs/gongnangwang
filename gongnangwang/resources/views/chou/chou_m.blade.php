@@ -172,7 +172,7 @@
                                 <li style="width:15%">{{ substr($val->pro_datetime,0,strpos($val->pro_datetime," ")) }}</li>
                                 <li style="width:13%">
                                     <div class="chou_upload">
-                                        <a href="{{$val->att_name}}" target="_blank"><span class="gai">阅览</span></a>
+                                        <a href="{{$val->att_name}}" target="_blank"><span class="gai">公开阅览</span></a>
                                     </div>
                                 </li>
 

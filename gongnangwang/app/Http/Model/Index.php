@@ -22,7 +22,7 @@ class Index extends Model
             ->join('gon_project_extend', 'gon_project.id', '=', 'gon_project_extend.pro_id')
             //->skip(2)
             ->take(8)
-            ->select('gon_project.pro_name','gon_project.pro_logo')
+            ->select('gon_project.id','gon_project.pro_name','gon_project.pro_logo')
             ->get();
         return $users;
     }

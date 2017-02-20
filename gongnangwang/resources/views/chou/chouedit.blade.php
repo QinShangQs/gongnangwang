@@ -238,7 +238,7 @@
                     <table>
 						<tr>
 							<td>
-								<img id="bus_video_pre" style="display: none" src="/images/play46.jpg" width="450"	height="300">
+								<img id="bus_video_pre" style="display: none" src="/images/chou/play-preview.jpg" width="450"	height="300">
 								<div id="bus_video_show" >
 										<video id="bus_video_vj" name="moren"
 											class="video-js vjs-default-skin" controls preload="none"
@@ -303,7 +303,7 @@
                     <table>
 						<tr>
 							<td>
-								<img id="tea_video_pre" style="display: none" src="/images/play46.jpg" width="450"	height="300">
+								<img id="tea_video_pre" style="display: none" src="/images/chou/play-preview.jpg" width="450"	height="300">
 								<div id="tea_video_show" >
 										<video id="tea_video_vj" name="moren"
 											class="video-js vjs-default-skin" controls preload="none"
@@ -367,7 +367,7 @@
                     <table>
 						<tr>
 							<td>
-								<img id="roa_video_pre" style="display: none" src="/images/play46.jpg" width="450"	height="300">
+								<img id="roa_video_pre" style="display: none" src="/images/chou/play-preview.jpg" width="450"	height="300">
 								<div id="roa_video_show">
 										<video id="roa_video_vj" name="moren"
 											class="video-js vjs-default-skin" controls preload="none"
@@ -410,6 +410,9 @@
 					<input type="hidden" name="att_name" id="att_name" value="{{$val->att_name}}"/>
 					<span id="att_name_name">{{$val->att_name}}</span>
                 </div>
+                <br/>
+                <br/>
+				<span class="label label-info">仅限认证投资人阅读</span>
                 <div class="Editor_name_btn Both">
                     <a href="/chou_m/{{$val->pro_name}}">返回</a>
                     <button onclick="form5_sub()">修改</button>

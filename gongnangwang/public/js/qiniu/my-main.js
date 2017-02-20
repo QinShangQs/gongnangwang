@@ -179,7 +179,7 @@ $(function() {
                 max_file_size : '10mb',
                 prevent_duplicates: true,
                 mime_types: [                   
-                    {title : "Word files", extensions : "doc,docx,pdf"}
+                    {title : "Word files", extensions : "doc,docx,ppt,pptx,pdf"}
                 ]
             },
             init: {

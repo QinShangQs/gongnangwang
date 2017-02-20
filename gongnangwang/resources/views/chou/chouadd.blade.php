@@ -205,7 +205,7 @@
 					<table>
 						<tr>
 							<td>
-								<img id="bus_video_pre" src="/images/play46.jpg" width="450"	height="300">
+								<img id="bus_video_pre" src="/images/chou/play-preview.jpg" width="450"	height="300">
 								<div id="bus_video_show" style="display: none">
 										<video id="bus_video_vj" name="moren"
 											class="video-js vjs-default-skin" controls preload="none"
@@ -271,7 +271,7 @@
 					<table>
 						<tr>
 							<td>
-								<img id="tea_video_pre" src="/images/play46.jpg" width="450"	height="300">
+								<img id="tea_video_pre" src="/images/chou/play-preview.jpg" width="450"	height="300">
 								<div id="tea_video_show" style="display: none">
 										<video id="tea_video_vj" name="moren"
 											class="video-js vjs-default-skin" controls preload="none"
@@ -337,7 +337,7 @@
 					<table>
 						<tr>
 							<td>
-								<img id="roa_video_pre" src="/images/play46.jpg" width="450"	height="300">
+								<img id="roa_video_pre" src="/images/chou/play-preview.jpg" width="450"	height="300">
 								<div id="roa_video_show" style="display: none">
 										<video id="roa_video_vj" name="moren"
 											class="video-js vjs-default-skin" controls preload="none"
@@ -382,6 +382,9 @@
 					<span id="att_name_name"></span>
                     
 				</div>
+				<br/>
+				<br/>
+				<span class="label label-info">仅限认证投资人阅读</span>
 				<div class="Editor_name_btn Both">
 					<a href="javascript:;">预览</a>
 					<button onclick="form5_sub()">保存</button>

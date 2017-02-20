@@ -1,4 +1,4 @@
-﻿cp -R /data/wwwroot/default/my_laravel 20170219/
+﻿
 
 ---------php.ini---------
 file_uploads = On
