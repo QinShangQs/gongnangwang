@@ -1,0 +1,60 @@
+<extend name="./template" />
+<block name="content">
+<style>
+body {
+ 	<php>
+    	if(C('BG_COLOR')){
+    		echo 'background-color:'.C('BG_COLOR');
+    	}else{
+        	echo 'background-color: #afb3ba;';
+        }
+    </php>     
+}
+</style>
+<center style=" position:absolute; top:40%; left:50%; margin-top:-69px; margin-left:-200px">
+  <form id="form1" action="__URL__/login" method="post">
+    <div class="easyui-panel" 
+    <php>
+    	if(C('BG_COLOR')){
+    		echo 'title="测试后台"';
+    	}else{
+        	echo '';
+        }
+    </php>  
+      style="width:400px; border:0px; background:none; margin:auto">
+      <div style="margin-bottom: 10px">
+        <input class="easyui-textbox" id="userName" name="userName" required=true missingMessage="填写您的账号"	data-options="prompt:'您的账号',iconCls:'icon-man',iconWidth:48" style="width: 100%; height: 40px; padding: 12px">
+      </div>
+      <div style="margin-bottom: 10px">
+        <input class="easyui-textbox" id="password" name="password" required=true missingMessage="填写您的密码" type="password" data-options="prompt:'*********',iconCls:'icon-lock',iconWidth:48" style="width: 100%; height: 40px; padding: 12px">
+      </div>
+      <div style="margin-bottom: 10px; overflow:hidden">
+        <div class="l">
+          <input name="code" prompt='验证码' class="easyui-textbox" missingMessage="填写验证码"  required=true style="width:150px; height:40px; padding:12px"/>
+        </div>
+        <div class="r"><a href="javascript:changeVerify()" title="看不清再换一张？"><img id="verify_img" src="__URL__/verfiy?t=<php>echo time()</php>" valign="middle"/></a></div>
+      </div>
+      <div> <a id="login" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-redo'" style="padding:5px 0px; width:100%;"> <span style="font-size: 14px;">登录KUNER K2B SYSTEM</span> </a> </div>
+    </div>
+  </form>
+</center>
+<script type="text/javascript">
+	function changeVerify(){
+		$("#verify_img").attr('src','__URL__/verfiy?t='+Math.random());
+	}
+	$(document).ready(function() {		
+		changeVerify();
+		$("#login").click(function() {
+			if ($("#form1").form('validate')) {
+				document.getElementById("form1").submit();
+			}
+		});
+		 $(document).keypress(function(e) {  
+			 // 回车键事件  
+			 if(e.which == 13) {  
+				$("#login").click();
+			 }  
+		 }); 
+	});
+</script>
+</block>
