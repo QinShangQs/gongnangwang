@@ -22,10 +22,10 @@ class IndexController extends Controller
      */
     public function Index()
     {
+    	
         $index = new Index();
         $pro = $index->proSelect();
         $par = $index->parSelect();
-
-        return view('index',['pro'=>$pro,'par'=>$par]);
+        return view('index2',['pro'=>$pro,'par'=>$par]);
     }
 }
