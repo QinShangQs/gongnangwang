@@ -34,7 +34,7 @@
 
                 <div class="tab_list Both" style="display: block;">
                     <div class="radio">                       
-                        <video  name="bus_video_vj" class="video-js vjs-default-skin" 
+                        <video id="bus_video_vj"  name="bus_video_vj" class="video-js vjs-default-skin" 
 								width="780" height="550"
 								poster="{{ asset($val->bus_video) }}?vframe/jpg/offset/1" data-setup="{}">
 								<source src="{{ asset($val->bus_video) }}" type='video/mp4' />
@@ -84,7 +84,7 @@
                 </div>
                 <div class="tab_list Both">
                     <div class="radio">                        
-                        <video name="tea_video_vj" class="video-js vjs-default-skin" 
+                        <video id="tea_video_vj" name="tea_video_vj" class="video-js vjs-default-skin" 
 								width="780" height="550"
 								poster="{{ asset($val->tea_video) }}?vframe/jpg/offset/1" data-setup="{}">
 								<source src="{{ asset($val->tea_video) }}" type='video/mp4' />
@@ -122,7 +122,7 @@
                 </div>
                 <div class="tab_list Both">
                     <div class="radio">
-                        <video id="example_video1" name="roa_video_vj" class="video-js vjs-default-skin" 
+                        <video id="roa_video_vj" name="roa_video_vj" class="video-js vjs-default-skin" 
 								width="780" height="550"
 								poster="{{ asset($val->roa_video) }}?vframe/jpg/offset/1" data-setup="{}">
 								<source src="{{ asset($val->roa_video) }}" type='video/mp4' />
@@ -294,6 +294,26 @@
 		setTimeout(function(){
 			$(".video-js").removeClass("vjs-controls-disabled");
 		}, 1000);
+
+		var teaPlayer = videojs('tea_video_vj');
+		var roaPlayer = videojs('roa_video_vj');
+		var busPlayer = videojs('bus_video_vj');
+		// 开始或恢复播放
+		teaPlayer.on('play', function() {  
+			roaPlayer.pause();
+			busPlayer.pause();
+			console.log('roaPlayer,busPlayer停止播放');
+		});
+		roaPlayer.on('play', function() {  
+			teaPlayer.pause();
+			busPlayer.pause();
+			console.log('teaPlayer,busPlayer停止播放');
+		});
+		busPlayer.on('play', function() {  
+			teaPlayer.pause();
+			roaPlayer.pause();
+			console.log('roaPlayer,busPlayer停止播放');
+		});
 		
 	});
 </script>
