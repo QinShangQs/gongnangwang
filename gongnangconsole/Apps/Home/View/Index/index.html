@@ -1,60 +1,51 @@
-<extend name="./template" />
-<block name="content">
-<style>
-body {
- 	<php>
-    	if(C('BG_COLOR')){
-    		echo 'background-color:'.C('BG_COLOR');
-    	}else{
-        	echo 'background-color: #afb3ba;';
-        }
-    </php>     
-}
-</style>
-<center style=" position:absolute; top:40%; left:50%; margin-top:-69px; margin-left:-200px">
-  <form id="form1" action="__URL__/login" method="post">
-    <div class="easyui-panel" 
-    <php>
-    	if(C('BG_COLOR')){
-    		echo 'title="测试后台"';
-    	}else{
-        	echo '';
-        }
-    </php>  
-      style="width:400px; border:0px; background:none; margin:auto">
-      <div style="margin-bottom: 10px">
-        <input class="easyui-textbox" id="userName" name="userName" required=true missingMessage="填写您的账号"	data-options="prompt:'您的账号',iconCls:'icon-man',iconWidth:48" style="width: 100%; height: 40px; padding: 12px">
-      </div>
-      <div style="margin-bottom: 10px">
-        <input class="easyui-textbox" id="password" name="password" required=true missingMessage="填写您的密码" type="password" data-options="prompt:'*********',iconCls:'icon-lock',iconWidth:48" style="width: 100%; height: 40px; padding: 12px">
-      </div>
-      <div style="margin-bottom: 10px; overflow:hidden">
-        <div class="l">
-          <input name="code" prompt='验证码' class="easyui-textbox" missingMessage="填写验证码"  required=true style="width:150px; height:40px; padding:12px"/>
-        </div>
-        <div class="r"><a href="javascript:changeVerify()" title="看不清再换一张？"><img id="verify_img" src="__URL__/verfiy?t=<php>echo time()</php>" valign="middle"/></a></div>
-      </div>
-      <div> <a id="login" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-redo'" style="padding:5px 0px; width:100%;"> <span style="font-size: 14px;">登录KUNER K2B SYSTEM</span> </a> </div>
-    </div>
-  </form>
-</center>
-<script type="text/javascript">
-	function changeVerify(){
-		$("#verify_img").attr('src','__URL__/verfiy?t='+Math.random());
-	}
-	$(document).ready(function() {		
-		changeVerify();
-		$("#login").click(function() {
-			if ($("#form1").form('validate')) {
-				document.getElementById("form1").submit();
-			}
-		});
-		 $(document).keypress(function(e) {  
-			 // 回车键事件  
-			 if(e.which == 13) {  
-				$("#login").click();
-			 }  
-		 }); 
-	});
-</script>
+<extend name="./_template" />
+<block name="content"> <input type="hidden" id="TenantId"
+	name="TenantId" value="" />
+<div class="header"></div>
+<div class="loginWraper">
+	<div id="loginform" class="loginBox">
+		<form class="form form-horizontal" action="index.html" method="post">
+			<div class="row cl">
+				<label class="form-label col-3"><i class="Hui-iconfont">&#xe60d;</i></label>
+				<div class="formControls col-8">
+					<input id="" name="" type="text" placeholder="账户"
+						class="input-text size-L">
+				</div>
+			</div>
+			<div class="row cl">
+				<label class="form-label col-3"><i class="Hui-iconfont">&#xe60e;</i></label>
+				<div class="formControls col-8">
+					<input id="" name="" type="password" placeholder="密码"
+						class="input-text size-L">
+				</div>
+			</div>
+			<div class="row cl">
+				<div class="formControls col-8 col-offset-3">
+					<input class="input-text size-L" type="text" placeholder="验证码"
+						onblur="if(this.value==''){this.value='验证码:'}"
+						onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:"
+						style="width: 150px;"> <img
+						src="images/VerifyCode.aspx.png"> <a id="kanbuq"
+						href="javascript:;">看不清，换一张</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="formControls col-8 col-offset-3">
+					<label for="online"> <input type="checkbox" name="online"
+						id="online" value=""> 使我保持登录状态
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="formControls col-8 col-offset-3">
+					<input name="" type="submit" class="btn btn-success radius size-L"
+						value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;"> <input
+						name="" type="reset" class="btn btn-default radius size-L"
+						value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="footer">Copyright 你的公司名称 by H-ui.admin.v2.3</div>
 </block>
