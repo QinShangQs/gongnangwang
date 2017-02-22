@@ -53,7 +53,9 @@ class BaseLogic {
 			$data = array ();
 		$result = array (
 				'total' => $count,
-				'rows' => $data 
+				'data' => $data ,
+				'page' => $page,
+				'limit' => $rows
 		);
 		
 		return $result;
