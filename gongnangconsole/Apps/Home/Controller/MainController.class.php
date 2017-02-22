@@ -7,7 +7,7 @@ use Think\Controller;
 class MainController extends BaseController {
 	public function index() {
 		if (! isset ( $_SESSION ['username'] )) {
-			$this->redirect ( '/' );
+			$this->redirect ( '/login' );
 		} else {
 			$this->assign ( 'username', $_SESSION ['username'] );
 			

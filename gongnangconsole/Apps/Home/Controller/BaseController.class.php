@@ -13,7 +13,7 @@ class BaseController extends Controller {
 	protected static $_USER_NAME = '';
 	public function _initialize() {
 		if (! isset ( $_SESSION ['username'] )) {
-			$this->error ( '请重新登录', U ( 'Index/index' ) );
+			$this->error ( '请重新登录', '/');
 		}
 		
 		static::$_USER_NAME = $_SESSION ['username'];

@@ -1,33 +1,60 @@
-<extend name="./_template" />
-<block name="content"> <input type="hidden" id="TenantId"
-	name="TenantId" value="" />
+<extend name="Public:_template" />
+<block name="css">
+	<link href="__PUBLIC__/css/H-ui.login.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+	.form-horizontal .Validform_checktip {
+	    margin-top:10px;
+	}
+	
+	.col-3 {
+	    width: 18%;
+	}
+	.col-8 {
+	    width: 62.66667%;
+	}
+	.col-offset-3 {
+	    margin-left: 18%;
+	}
+	</style>
+</block>
+<block name="content">
+
+<input type="hidden" id="TenantId" name="TenantId" value="" />
 <div class="header"></div>
 <div class="loginWraper">
 	<div id="loginform" class="loginBox">
-		<form class="form form-horizontal" action="index.html" method="post">
+		<form id="myLoginForm" class="form form-horizontal" action="{:U('doLogin')}" method="post">
 			<div class="row cl">
 				<label class="form-label col-3"><i class="Hui-iconfont">&#xe60d;</i></label>
 				<div class="formControls col-8">
-					<input id="" name="" type="text" placeholder="账户"
-						class="input-text size-L">
+					<input id="username" name="username" type="text" placeholder="账户"
+						class="input-text size-L" 
+						datatype="*"  nullmsg="请填写账户">
 				</div>
+				<div class=""> </div>
 			</div>
 			<div class="row cl">
 				<label class="form-label col-3"><i class="Hui-iconfont">&#xe60e;</i></label>
 				<div class="formControls col-8">
-					<input id="" name="" type="password" placeholder="密码"
-						class="input-text size-L">
+					<input id="password" name="password" type="password" placeholder="密码"
+						class="input-text size-L" value="" 
+						datatype="*" nullmsg="请填写密码">
 				</div>
+				<div class=""> </div>
 			</div>
 			<div class="row cl">
 				<div class="formControls col-8 col-offset-3">
-					<input class="input-text size-L" type="text" placeholder="验证码"
+					<input id="code" name="code" class="input-text size-L" type="text" placeholder="验证码"
 						onblur="if(this.value==''){this.value='验证码:'}"
-						onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:"
-						style="width: 150px;"> <img
-						src="images/VerifyCode.aspx.png"> <a id="kanbuq"
-						href="javascript:;">看不清，换一张</a>
+						onclick="if(this.value=='验证码:'){this.value='';}" value=""
+						style="width: 150px;"
+						ajaxurl="{:U('checkVerfiy')}"
+						datatype="*"  nullmsg="请填写验证码"> 
+						<img id="codeImg"	src="{:U('verfiy')}"> <a id="kanbuq"
+						href="javascript:;" style="font-size:10px">看不清，换一张</a>
+						
 				</div>
+				<div > </div>
 			</div>
 			<div class="row">
 				<div class="formControls col-8 col-offset-3">
@@ -48,4 +75,25 @@
 	</div>
 </div>
 <div class="footer">Copyright 你的公司名称 by H-ui.admin.v2.3</div>
+</block>
+
+<block name="js">
+<script type="text/javascript">
+$(function(){
+    $("#kanbuq").click(function(){
+        $("#codeImg").attr('src', $("#codeImg").attr('src')+"?r="+Math.random());
+    });
+    
+    $("#myLoginForm").Validform({
+        tiptype:2,
+        showAllError:true,
+        ajaxPost:true,
+        callback:function(data){
+              if(data.status == 'y'){
+                  location.href = "center";
+              }
+        }
+    });
+});
+</script>
 </block>

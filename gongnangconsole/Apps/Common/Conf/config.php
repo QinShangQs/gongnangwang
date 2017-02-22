@@ -19,6 +19,12 @@ return array (
 		'URL_ROUTER_ON' => true,
 		
 		'URL_ROUTE_RULES' => array (
-			'login' => 'Index/index' 
-		) 
+			'login' => 'Index/index',
+			'logout' => 'Index/logout',
+			'verfiy' => 'Index/verfiy',
+			'checkVerfiy' => 'Index/checkVerfiy',
+			'center'=>'Main/index'
+		), 
+		
+		'SITE_ZH_NAME' => '共囊网'
 );
