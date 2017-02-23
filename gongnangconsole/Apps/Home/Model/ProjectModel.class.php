@@ -11,6 +11,12 @@ class ProjectModel extends RelationModel {
 					'mapping_name' => "extend",
 					'class_name' => 'ProjectExtend',
 					'foreign_key' => 'pro_id' 
-			) 
+			) ,
+			'user_info' => array (
+					'mapping_type' => self::BELONGS_TO,
+					'mapping_name' => "user_info",
+					'class_name' => 'Userinfo',
+					'foreign_key' => 'user_id'
+			)
 	);
 }

@@ -7,7 +7,7 @@
 	<div class="text-c"> 关键字：
 		
 		<input type="text" class="input-text" style="width:250px" placeholder="项目名称、电话、邮箱" id="key" name="key">
-		<button type="submit" class="btn btn-success radius" id="" name="btnSearch"><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
+		<button type="submit" class="btn btn-success radius" id="" name="btnSearch"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 	</div>
 	<div class="mt-20">
 	<table id="example"  class="table table-border table-bordered table-hover table-bg table-sort">
@@ -106,20 +106,26 @@ $(function () {
             { "data": "id","title":"ID"},
             { "data": "pro_name","title":"项目名称",
                 "render": function ( data, type, full, meta ) {  
-                    return '<u style="cursor:pointer" class="text-primary" onclick="location.href=\'{:U('project/detail')}?id='+full.id+'\'">'+data+'</u>';  
+                    return '<u style="cursor:pointer" class="text-primary" onclick="detail(\'众筹明细\',\'{:U('project/detail')}?id='+full.id+'\',1000,800)">'+data+'</u>';  
                 }   
             },
             { "data": "pro_content" ,"title":"资料介绍"},
-            { "data": "user_id" ,"title":"账号"},
-            { "data": "pro_state" ,"title":"项目状态"},
+            { "data": "user_info.nickname" ,"title":"昵称"},
+            { "data": "pro_stage_txt" ,"title":"项目阶段"},
+            { "data": "pro_state_txt" ,"title":"项目状态"},
+            { "data": "pro_type_txt" ,"title":"项目类型"},
             { "data": "pro_address" ,"title":"地点"},
-            { "data": "pro_valuation" ,"title":"项目估值"},
+            { "data": "pro_valuation" ,"title":"项目估值",
+                "render": function ( data, type, full, meta ) {  
+                    return data + "万元";
+                    }   
+                },
             { "data": "extend.pro_datetime" ,"title":"创建时间"},
             { "data": "id" ,"title":"发布状态",
                 "render": function ( data, type, full, meta ) {  
                     return '<span class="label label-success radius">'+data+'</span>';
-                }   
-            },
+                    }   
+                },
             { "data": "extend.pro_id", "title":"操作",
                 "render": function ( data, type, full, meta ) {  
                     return '<a style="text-decoration:none" onclick="article_shenhe(this,\''+data+'\')" href="javascript:;" title="审核">审核</a>';
@@ -133,6 +139,11 @@ $(function () {
         table.draw();
     });
 });
+
+function detail(title,url,w,h){
+    layer_show(title,url,w,h);
+}
+
 </script>
 </script>
 </block>
