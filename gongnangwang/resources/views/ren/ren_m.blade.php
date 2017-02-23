@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-    <link rel="shortcut icon" href="{{ asset('images/18.png') }}">
-    <title>共囊网 股权众筹 合伙人 活动 拍卖 共囊</title>
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/publick.css') }}"/>
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/ren_pin.css') }}"/>
-</head>
-<body>
+
 <!--导航开始-->
 @include('header')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/ren_pin.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('/js/videojs/video-js.min.css') }}" />
+<script type="text/javascript" src="{{ asset('/js/videojs/video.min.js') }}"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	setTimeout(function(){
+		$(".video-js").removeClass("vjs-controls-disabled");
+	}, 1000);
+});
+</script>
 	<!--导航结束-->
 <!-- 内容开始 -->
 <div class="content_nr">
@@ -22,7 +23,11 @@
 				<h2 class="Marriage">{{$data[0]->par_title}}</h2>
 				<div class="side"></div>
 				<div class="Marriage_video">
-					<video src="{{ asset($data[0]->par_video) }}" id="example_video1" class="video-js vjs-default-skin" controls preload="controls" width="705" height="442" data-setup="{}"></video>
+					<video id="example_video1"  name="example_video1" class="video-js vjs-default-skin" 
+							width="705" height="442"
+							poster="{{ asset($data[0]->par_video) }}?vframe/jpg/offset/1" data-setup="{}">
+							<source src="{{ asset($data[0]->par_video) }}" type='video/mp4' />
+					</video>  
 				</div>
 
 				<div class="Marriage_word">

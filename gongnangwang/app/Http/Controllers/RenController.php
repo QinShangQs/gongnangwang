@@ -89,22 +89,10 @@ class RenController extends Controller
         $data['par_team'] = $input['par_team'];
         $data['par_finance'] = $input['trading'];
         $data['par_address'] = $input['s_province'].','.$input['s_city'].','.$input['s_county'];
-        //合伙人下的logo上传
-        if($request->hasFile('par_logo')){
-            $file = $request->file('par_logo');
-            $allowed_extensions = ["png", "jpg", "gif","JPG" , "PNG" , "GIF"];
-            $extension = $file->getClientOriginalExtension();
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage png, jpg or gif.'];
-            }
-            $picturePath = 'picture/ren/';
-            $picName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $pictureName = 'picture/ren/'.$picName.'.'.$extension;
-            $file->move($picturePath,$pictureName);
-            $data['par_logo'] = $pictureName;
-        }
-        $data['par_video'] = Redis::get(Session::get('user_id').'ren');
+        //合伙人logo
+        $data['par_logo'] = $input['par_logo'];
+        //合伙人视频
+        $data['par_video'] = $input['par_video'];
         $data['par_datetime'] = date('Y-m-d H:i:s',time());
 
         $User = new User();
@@ -119,32 +107,6 @@ class RenController extends Controller
             echo "<script>alert('请继续添加合伙人岗位');location.href='/pinadd'</script>";
         }
     }
-
-
-    //合伙人视频单独上传
-    public function renUpload(Request $request)
-    {
-        //合伙人下的视频上传
-        if($request->hasFile('upfile')){
-            $file = $request->file('upfile');
-            $allowed_extensions = ["mp4" , "MP4"];
-            $extension = $file->getClientOriginalExtension();
-
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage mp4.'];
-            }
-            $videoPath = 'video/ren/';
-            $vioName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $videoName = "video/ren/".$vioName.'.'.$extension;
-            $file->move($videoPath,$videoName);
-            Redis::set(Session::get('user_id').'ren',$videoName);
-            echo 1;
-           // echo Redis::get(Session::get('user_id').'ren');
-        }
-
-    }
-
 
     //渲染合伙人修改页面
     public function renedit()
@@ -174,28 +136,10 @@ class RenController extends Controller
         $data['par_team'] = $input['par_team'];
         $data['par_finance'] = $input['trading'];
         $data['par_address'] = $input['s_province'].','.$input['s_city'].','.$input['s_county'];
-        //合伙人下的logo上传
-        if($request->hasFile('par_logo')){
-            $file = $request->file('par_logo');
-            $allowed_extensions = ["png", "jpg", "gif","JPG" , "PNG" , "GIF"];
-            $extension = $file->getClientOriginalExtension();
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage png, jpg or gif.'];
-            }
-            $picturePath = 'picture/ren/';
-            $picName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $pictureName = 'picture/ren/'.$picName.'.'.$extension;
-            $file->move($picturePath,$pictureName);
-            $data['par_logo'] = $pictureName;
-
-            if(isset($ren_data[0]->par_logo)){
-                unlink($ren_data[0]->par_logo);
-            }
-        }else{
-            $data['par_logo'] = $ren_data[0]->par_logo;
-        }
-        $data['par_video'] = Redis::get(Session::get('user_id').'ren');
+        //合伙人logo
+        $data['par_logo'] = $input['par_logo'];
+        //合伙人视频
+        $data['par_video'] = $input['par_video'];
         $data['par_datetime'] = date('Y-m-d H:i:s',time());
 
         $User = new User();
@@ -208,33 +152,6 @@ class RenController extends Controller
             return redirect('/my1');
         }
     }
-
-
-    //合伙人上传视频修改
-    public function renUploadUpdate(Request $request)
-    {
-        if($request->hasFile('upfile')){
-            $file = $request->file('upfile');
-            $allowed_extensions = ["mp4" , "MP4"];
-            $extension = $file->getClientOriginalExtension();
-
-            if ($extension && !in_array($extension, $allowed_extensions))
-            {
-                return ['error' => 'You may only storage mp4.'];
-            }
-            $videoPath = 'video/ren/';
-            $vioName = md5(Session::get('user_id').date('YmdHis',time()).rand(1000,9999));
-            $videoName = "video/ren/".$vioName.'.'.$extension;
-            $file->move($videoPath,$videoName);
-            $renVideo = Redis::get(Session::get('user_id').'ren');
-            if(isset($renVideo)){
-                unlink($renVideo);
-            }
-            Redis::set(Session::get('user_id').'ren',$videoName);
-            echo 1;
-        }
-    }
-
 
     /**
      *
