@@ -19,4 +19,10 @@ class ProjectController extends BaseController {
 		$result = $this->_service->search ($conditions, $limit, $page );
 		$this->ajaxReturn ( $result );
 	}
+	
+	public function detail($id){
+		$inst = $this->_service->getById($id);
+		$this->assign('inst', $inst);
+		$this->display();
+	}
 }

@@ -6,21 +6,38 @@ use Think\Model;
 
 class BaseService {
 	protected $_logic = null;
+	protected $_mapper = null;
 	const _SUCCESS = 0;
 	const _FAILED = 1;
 	public function __construct() {
 	}
 	public function getById($id) {
-		return $this->_logic->getById ( $id );
+		$inst = $this->_logic->getById ( $id );
+		if(!empty($this->_mapper)){
+			$inst = $this->_mapper->tranlate($inst,false);
+		}
+		return $inst;
 	}
 	public function search(array $conditions, $rows, $page, $order = 'id desc') {
-		return $this->_logic->pagein ( $conditions, $rows, $page, $order );
+		$result = $this->_logic->pagein ( $conditions, $rows, $page, $order );
+		if(!empty($this->_mapper)){
+			$result['data'] = $this->_mapper->tranlate($result['data'],true);
+		}
+		return $result;
 	}
 	public function findBy(array $conditions) {
-		return $this->_logic->findAll ( $conditions );
+		$result = $this->_logic->findAll ( $conditions );
+		if(!empty($this->_mapper)){
+			$result = $this->_mapper->tranlate($result,true);
+		}
+		return $result;
 	}
 	public function findAll() {
-		return $this->_logic->findAll ();
+		$result = $this->_logic->findAll ();
+		if(!empty($this->_mapper)){
+			$result = $this->_mapper->tranlate($result,true);
+		}
+		return $result;
 	}
 	protected function result($code, $msg, $data = array()) {
 		$std = new \stdClass ();

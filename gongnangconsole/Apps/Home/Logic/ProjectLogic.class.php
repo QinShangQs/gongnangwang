@@ -9,4 +9,6 @@ class ProjectLogic extends BaseLogic {
 	public function __construct() {
 		$this->_repository = new ProjectModel ();
 	}
+	
+
 }

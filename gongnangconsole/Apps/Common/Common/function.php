@@ -605,8 +605,113 @@ function getFileDomainUrl($path){
 }
 
 
+/**
+ * 项目状态列表
+ * @return multitype:string
+ */
+function _getProStates(){
+	$arr = array();
+	$arr[0] = "请选择方向";
+	$arr[1] = "未上线";
+	$arr[2] = "概念阶段";
+	$arr[3] = "已上线";
+	$arr[4] = "已盈利";
+	$arr[5] = "IPO阶段";
+	return $arr;	
+}
+/**
+ * 当前项目状态名称
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getProStateById($id){
+	$arr = _getProStates();
+	return $arr[$id];
+}
 
+/**
+ * 项目阶段列表
+ * @return multitype:string
+ */
+function _getProStages(){
+	$arr = array();
+	$arr[0] = '请选择类型';
+	$arr[1] = '融资阶段';
+	$arr[2] = '天使轮';
+	$arr[3] = 'A轮';
+	$arr[4] = 'B轮';
+	$arr[5] = 'C轮';
+	$arr[6] = 'D轮';
+	$arr[7] = '上市公司';
+	return $arr;	
+}
 
+/**
+ * 获取当前项目阶段名称
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getProStageById($id){
+	$arr = _getProStages();
+	return $arr[$id];
+}
+
+/**
+ * 项目分类列表
+ */
+function _getProtypes(){
+	$arr = array();
+	$arr[0] = '请选择方向';
+	$arr[1] = '移动互联网';
+	$arr[2] = '电子商务';
+	$arr[3] = 'O2O';
+	$arr[4] = '互联网金融';
+	$arr[5] = '网络社区';
+	$arr[6] = '旅游';
+	$arr[7] = '娱乐';
+	$arr[8] = '网络游戏';
+	$arr[9] = '信息技术';
+	$arr[10] = '硬件';
+	$arr[11] = '工具软件';
+	$arr[12] = '企业服务';
+	$arr[13] = '农业相关';
+	
+	return $arr;
+}
+
+/**
+ * 获取当前项目分类名称名称
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getProtypeById($id){
+	$arr = _getProtypes();
+	return $arr[$id];
+}
+
+/**
+ * 项目金额设置列表
+ * @return multitype:string
+ */
+function _getProValues(){
+	$arr = array();
+	$arr[1] = '百元';
+	$arr[2] = '千元';
+	$arr[3] = '万元';
+	$arr[4] = '十万元';
+
+	return $arr;
+}
+
+/**
+ * 获取当前项目金额设置名称
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getProValueById($id){
+	$arr = _getProValues();
+	return $arr[$id];
+}
 
 
 
