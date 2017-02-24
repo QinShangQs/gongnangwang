@@ -17,6 +17,13 @@ class ProjectModel extends RelationModel {
 					'mapping_name' => "user_info",
 					'class_name' => 'Userinfo',
 					'foreign_key' => 'user_id'
-			)
+ 			)
+//,
+// 			'audits' => array (
+// 					'mapping_type' => self::HAS_MANY,
+// 					'mapping_name' => "audits",
+// 					'class_name' => 'ProjectAudit',
+// 					'foreign_key' => 'pro_id'
+// 			)
 	);
 }

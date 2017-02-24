@@ -22,10 +22,6 @@ class IndexController extends Controller {
 		$username = I ( 'username', '' );
 		$password = I ( 'password', '' );
 		$code = I('code','');
-		
-// 		if(!check_verify($code)){
-// 			$this->ajaxReturn(array('info'=>'验证码错误！','status'=>'n'));
-// 		}
 
 		$result = $this->_service->login ( $username, $password );
 		if (! $result->success) {

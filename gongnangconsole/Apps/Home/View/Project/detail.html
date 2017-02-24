@@ -2,23 +2,32 @@
 <block name="css">
 </block>
 <block name="content">
-<div class="pd-20">
+
+<div >
     <table>
         <tr>
-            <td>
-                     <div class="panel panel-default">
+            <td  valign=top>
+                   <div class="panel panel-default">
 					        <div class="panel-header">项目资料</div>
 					        <div class="panel-body">
 					               <table class="table table-border">
 					                        <tbody>
 					                          <tr>
-					                            <th class="text-r" width="80">项目名称：</th>
+					                            <th class="text-r" width="100">项目名称：</th>
 					                            <td>{$inst.pro_name}</td>
 					                          </tr>
+					                           <tr>
+                                                <th class="text-r" width="100">审核状态：</th>
+                                                <td>{$inst.pro_publish_status_txt}</td>
+                                          </tr>
 					                          <tr>
 					                            <th class="text-r">项目logo：</th>
 					                            <td>{$inst.pro_logo}</td>
 					                          </tr>
+					                          <tr>
+                                              <th class="text-r"></th>
+                                              <td><img src="{$inst.pro_logo}" width="300"/></td>
+                                          </tr>
 					                          <tr>
 					                            <th class="text-r">资料介绍：</th>
 					                            <td>{$inst.pro_content}</td>
@@ -56,6 +65,10 @@
 					                            <td>{$inst.pro_picture}</td>
 					                          </tr>
 					                          <tr>
+                                              <th class="text-r"></th>
+                                              <td><img src="{$inst.pro_picture}" width="300"/></td>
+                                         </tr>
+					                          <tr>
 					                            <th class="text-r">融资顾问：</th>
 					                            <td>{$inst.pro_advisor} - {$inst.pro_advisornum} </td>
 					                          </tr>
@@ -64,7 +77,7 @@
 					        </div>
 					    </div>
             </td>
-            <td style="width:50%" valign="top">
+            <td style="width:45%" valign="top">
                    <div class="panel panel-default">
 					        <div class="panel-header">商业模式</div>
 					        <div class="panel-body">
@@ -102,19 +115,14 @@
                       </table>
 				        </div>
 				    </div>
-     
-            </td>
-        </tr>
-        
-           <tr>
-                <td style="width:50%" valign="top">                        
-                   <div class="panel panel-default">
+                        
+                    <div class="panel panel-default">
                             <div class="panel-header">项目团队</div>
                             <div class="panel-body">
                         <table class="table table-border">
                         <tbody>
                           <tr>
-                            <th class="text-r" width="100" valign='top'>视频播放：</th>
+                            <th class="text-r" width="80" valign='top'>视频播放：</th>
                             <td>
                                 <video src="{$inst.extend.tea_video}" preload="auto"
                                             width="100%" controls="controls"
@@ -144,34 +152,34 @@
                         </tbody>
                       </table>
                         </div>
-                    </div>     
-                </td>
-                <td valign="top">
-                        <div class="panel panel-default">
+                    </div>    
+                    
+                    <div class="panel panel-default">
                             <div class="panel-header">路演活动</div>
                             <div class="panel-body">
-	                        <table class="table table-border">
-	                        <tbody>
-	                          <tr>
-	                            <th class="text-r" width="100" valign='top'>视频播放：</th>
-	                            <td>
-	                                <video src="{$inst.extend.roa_video}" preload="auto"
-	                                            width="100%" controls="controls"
-	                                ></video>
-	                            </td>
-	                          </tr>
-	                          <tr>
-	                            <th class="text-r">视频地址：</th>
-	                            <td>{$inst.extend.roa_video}</td>
-	                          </tr>
-	                          <tr>
-	                            <th class="text-r">现场投资嘉宾：</th>
-	                            <td>{$inst.extend.roa_guest}</td>
-	                          </tr>
-	                            
-	                      </table>
+                            <table class="table table-border">
+                            <tbody>
+                              <tr>
+                                <th class="text-r" width="100" valign='top'>视频播放：</th>
+                                <td>
+                                    <video src="{$inst.extend.roa_video}" preload="auto"
+                                                width="100%" controls="controls"
+                                    ></video>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th class="text-r">视频地址：</th>
+                                <td>{$inst.extend.roa_video}</td>
+                              </tr>
+                              <tr>
+                                <th class="text-r">现场投资嘉宾：</th>
+                                <td>{$inst.extend.roa_guest}</td>
+                              </tr>
+                                
+                          </table>
                         </div>
                     </div>
+                    
                     <div class="panel panel-default">
                             <div class="panel-header">附件资料</div>
                             <div class="panel-body">
@@ -182,9 +190,10 @@
                               </tr>                                
                           </table>
                         </div>
-                    </div>
-                </td>
-           </tr>
+                    </div> 
+            </td>
+        </tr>
+        
     </table>
 
 </div>

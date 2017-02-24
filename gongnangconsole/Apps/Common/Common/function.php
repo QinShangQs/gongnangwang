@@ -713,7 +713,26 @@ function _getProValueById($id){
 	return $arr[$id];
 }
 
-
-
-
+/**
+ * 项目发布状态列表
+ * @return multitype:string
+ */
+function _getProPublishStatus(){
+	$arr = array();
+	$arr[0] = "请选择发布状态";
+	$arr[1] = "已申请";
+	$arr[2] = "审核成功";
+	$arr[3] = "审核失败";
+	$arr[4] = "重新申请";
+	return $arr;
+}
+/**
+ * 获取当前项目的发布状态
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getProPublishStatusById($id){
+	$arr = _getProPublishStatus();
+	return $arr[$id];
+}
 

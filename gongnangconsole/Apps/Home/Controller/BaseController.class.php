@@ -25,17 +25,15 @@ class BaseController extends Controller {
 		$this->display ( 'Index:404' );
 		exit ();
 	}
-	protected function _success($redirct = '', $msg = ':) 操作成功！', $code = 0) {
-		$msg = empty ( $msg ) ? ':) 操作成功！' : $msg;
-		$this->assign ( 'msg', nl2br ( $msg ) );
-		$this->assign ( 'redirct', $redirct ? str_replace ( '.html', '', U ( $redirct ) ) : '' );
-		$this->assign ( "code", $code );
-		$this->display ( 'Main:result' );
-		// $this->redirect('main/result');
-		exit ();
+	
+	public function _ajax_success($info = '操作成功！', $extend_data = array() , $status='y'){
+		 $result = array('info'=>$info ,'status'=>$status);
+		 $result['extend_data'] = $extend_data;
+		 $this->ajaxReturn($result);
 	}
-	protected function _failed($msg = ':( 操作失败!', $redirct = '') {
-		$this->_success ( $redirct, $msg, 1 );
+	
+	protected function _ajax_failed($info = ':( 操作失败!',  $extend_data = array() , $status='n') {
+		$this->_ajax_success($info,$extend_data, $status);
 	}
 	/**
 	 * 获取POST的请求数据转换为对象

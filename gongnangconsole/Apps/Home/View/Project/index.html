@@ -1,13 +1,32 @@
 <extend name="Public:_template" />
 <block name="css">
+<style type="text/css">
+    .select-box {
+        width:inherit;
+        }
+   .pd-20 {
+    text-align: center
+    }
+</style>
 </block>
 <block name="content">
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 众筹管理 <span class="c-gray en">&gt;</span> 众筹列表 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
-<div class="pd-20">
-	<div class="text-c"> 关键字：
-		
-		<input type="text" class="input-text" style="width:250px" placeholder="项目名称、电话、邮箱" id="key" name="key">
-		<button type="submit" class="btn btn-success radius" id="" name="btnSearch"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+<div class="pd-20" >
+    <div class="text-c">
+	    <span class="select-box">
+		  <select class="select" size="1" id="publish_status">
+		    <php>$publishStatuses = _getProPublishStatus();</php>
+		    <php>foreach($publishStatuses as $k=>$v){</php>
+		          <option value="{$k}"
+		              <php>if($k == 0){</php>
+		                      selected
+		              <php>}</php>		          
+		          >{$v}</option>
+		    <php>}</php>
+		  </select>
+        </span>
+		<input type="text" class="input-text" style="width:250px" placeholder="项目名称、资料介绍、地点" id="key" name="key">
+		<button type="submit" class="btn btn-success radius" id="btnSearch" name="btnSearch"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 	</div>
 	<div class="mt-20">
 	<table id="example"  class="table table-border table-bordered table-hover table-bg table-sort">
@@ -67,7 +86,7 @@ $(function () {
             	"orderable": false    //包含上样式名‘nosort’的禁止排序
         	}
         ],
-        aLengthMenu : [2,10,20, 40, 60], //更改显示记录数选项 
+        aLengthMenu : [10,20, 40, 60], //更改显示记录数选项 
         ajax: function (data, callback, settings) {
             //封装请求参数
             var param = {};
@@ -75,6 +94,7 @@ $(function () {
             param.start = data.start;//开始的记录序号
             param.page = (data.start / data.length)+1;//当前页码
             param.key = $("#key").val();
+            param.publish_status = $("#publish_status").val();
             //console.log(param);
             //ajax请求数据
             $.ajax({
@@ -121,14 +141,26 @@ $(function () {
                     }   
                 },
             { "data": "extend.pro_datetime" ,"title":"创建时间"},
-            { "data": "id" ,"title":"发布状态",
+            { "data": "pro_publish_status_txt" ,"title":"发布状态","align":"center",
                 "render": function ( data, type, full, meta ) {  
-                    return '<span class="label label-success radius">'+data+'</span>';
+                  var lableClass = 'label-warning';
+                	switch(full.pro_publish_status){
+                  //case 0:
+                  case 2:
+                  case "2":
+                	    lableClass = "label-success";
+                	    break;
+                  case 3:
+                  case "3":
+                	    lableClass = "label-danger";
+                	    break;
+                	    }
+                  return '<span class="label '+lableClass+' radius">'+data+'</span>';
                     }   
                 },
             { "data": "extend.pro_id", "title":"操作",
                 "render": function ( data, type, full, meta ) {  
-                    return '<a style="text-decoration:none" onclick="article_shenhe(this,\''+data+'\')" href="javascript:;" title="审核">审核</a>';
+                    return '<a style="text-decoration:none" onclick="audit(\'众筹明细\',\'{:U('project/audit')}?id='+full.id+'\',600,400)" href="javascript:;" title="审核">审核</a>';
                 }   
             }
         ]
@@ -141,6 +173,10 @@ $(function () {
 });
 
 function detail(title,url,w,h){
+    layer_show(title,url,w,h);
+}
+
+function audit(title,url,w,h){
     layer_show(title,url,w,h);
 }
 

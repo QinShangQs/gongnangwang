@@ -1,0 +1,81 @@
+<extend name="Public:_template" />
+<block name="css"> </block>
+<block name="content">
+<div class="pd-20">
+	<form action="__URL__/doAudit" method="post" class="form form-horizontal"
+		id="myform">
+		<input type="hidden" name="pro_id" value="{$inst.id}"/>
+		<input type="hidden" name="old_publish_status" value="{$inst.pro_publish_status}"/>
+		<div class="row cl">
+			<label class="form-label col-3">项目名称：</label>
+			<div class="formControls col-5">
+				{$inst.pro_name}
+			</div>			
+		</div>
+		<div class="row cl">
+            <label class="form-label col-3">当前发布状态：</label>
+            <div class="formControls col-5">
+                {$inst.pro_publish_status_txt}
+            </div>
+       </div>
+		<div class="row cl">
+      <label class="form-label col-3"><span class="c-red">*</span>发布状态：</label>
+      <div class="formControls col-5 skin-minimal">
+        <div class="radio-box">
+          <input type="radio" id="sex-1" name="new_publish_status" value="2" datatype="*" nullmsg="请选择发布状态！">
+          <label for="sex-1">审核成功</label>
+        </div>
+        <div class="radio-box">
+          <input type="radio" id="sex-2" name="new_publish_status" value="3">
+          <label for="sex-2">审核失败</label>
+        </div>
+      </div>
+      <div class="col-4"> </div>
+    </div>
+		<div class="row cl">
+			<label class="form-label col-3">备注：</label>
+			<div class="formControls col-5">
+				<textarea name="remark" cols="" rows="" class="textarea"
+					placeholder="说点什么...25个字符以内" datatype="*0-25" dragonfly="true"
+					onkeyup="textarealength(this,25)"></textarea>
+				<p class="textarea-numberbar">
+					<em class="textarea-length">0</em>/25
+				</p>
+			</div>
+			<div class="col-4">
+				<span class="Validform_checktip"></span>
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-9 col-offset-3">
+				<input class="btn btn-primary radius" type="submit"
+					value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+			</div>
+		</div>
+	</form>
+</div>
+</block>
+<block name="js"> 
+    <script type="text/javascript">
+		$(function(){
+		    $('.skin-minimal input').iCheck({
+		        checkboxClass: 'icheckbox-blue',
+		        radioClass: 'iradio-blue',
+		        increaseArea: '20%'
+		    });
+		    
+		    $("#myform").Validform({
+		        tiptype:2,
+		        showAllError:true,
+		        ajaxPost:true,
+		        callback:function(data){
+		        	  if(data.status == 'y'){
+		        		  var index = parent.layer.getFrameIndex(window.name);
+		              parent.$('#btnSearch').click();//刷新父页面表格
+		              parent.layer.close(index);        
+		               }
+		        }
+		    });
+		});
+	</script>
+</block>

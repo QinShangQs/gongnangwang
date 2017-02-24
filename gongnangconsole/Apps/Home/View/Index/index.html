@@ -64,6 +64,7 @@
 						name="" type="reset" class="btn btn-default radius size-L"
 						value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
 				</div>
+				<div id="logined_msg"> </div>
 			</div>
 		</form>
 	</div>
@@ -79,14 +80,16 @@ $(function(){
     });
     
     $("#myLoginForm").Validform({
-        tiptype:2,
+    	  tiptype:2,
         showAllError:true,
         ajaxPost:true,
         callback:function(data){
-              if(data.status == 'y'){
-                  location.href = "center";
-              }
-        }
+          if(data.status == 'y'){
+        	     setTimeout(function(){
+        	    	   location.href = "center";
+        	       },500);        	     
+               }
+           }
     });
 });
 </script>
