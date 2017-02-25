@@ -25,8 +25,9 @@ class BaseService {
 		}
 		return $result;
 	}
-	public function findBy(array $conditions) {
-		$result = $this->_logic->findAll ( $conditions );
+
+	public function findBy(array $conditions, $order = 'id desc') {
+		$result = $this->_logic->findAll($conditions, $order);
 		if(!empty($this->_mapper)){
 			$result = $this->_mapper->tranlate($result,true);
 		}

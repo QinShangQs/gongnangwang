@@ -1,202 +1,189 @@
 <extend name="Public:_template" />
-<block name="css">
-</block>
-<block name="content">
-
-<div >
-    <table>
-        <tr>
-            <td  valign=top>
-                   <div class="panel panel-default">
-					        <div class="panel-header">项目资料</div>
-					        <div class="panel-body">
-					               <table class="table table-border">
-					                        <tbody>
-					                          <tr>
-					                            <th class="text-r" width="100">项目名称：</th>
-					                            <td>{$inst.pro_name}</td>
-					                          </tr>
-					                           <tr>
-                                                <th class="text-r" width="100">审核状态：</th>
-                                                <td>{$inst.pro_publish_status_txt}</td>
-                                          </tr>
-					                          <tr>
-					                            <th class="text-r">项目logo：</th>
-					                            <td>{$inst.pro_logo}</td>
-					                          </tr>
-					                          <tr>
-                                              <th class="text-r"></th>
-                                              <td><img src="{$inst.pro_logo}" width="300"/></td>
-                                          </tr>
-					                          <tr>
-					                            <th class="text-r">资料介绍：</th>
-					                            <td>{$inst.pro_content}</td>
-					                          </tr>
-					                          <tr>
-					                            <th class="text-r">项目状态：</th>
-					                            <td>{$inst.pro_state_txt}</td>
-					                          </tr>
-					                         <tr>
-					                            <th class="text-r">项目阶段：</th>
-					                            <td>{$inst.pro_stage_txt}</td>
-					                          </tr>
-					                          <tr>
-					                            <th class="text-r">项目估值：</th>
-					                            <td>{$inst.pro_valuation}</td>
-					                          </tr>
-					                          <tr>
-					                            <th class="text-r">项目回报：</th>
-					                            <td>{$inst.pro_return}</td>
-					                          </tr>
-					                          <tr>
-					                            <th class="text-r">目标众筹：</th>
-					                            <td>{$inst.pro_target}</td>
-					                          </tr>
-					                          <tr>
-					                            <th class="text-r">金额设置：</th>
-					                            <td>{$inst.pro_value_txt}</td>
-					                          </tr>
-					                          <tr>
-					                            <th class="text-r">项目分类：</th>
-					                            <td>{$inst.pro_type_txt}</td>
-					                          </tr>
-					                          <tr>
-					                            <th class="text-r">项目图片：</th>
-					                            <td>{$inst.pro_picture}</td>
-					                          </tr>
-					                          <tr>
-                                              <th class="text-r"></th>
-                                              <td><img src="{$inst.pro_picture}" width="300"/></td>
-                                         </tr>
-					                          <tr>
-					                            <th class="text-r">融资顾问：</th>
-					                            <td>{$inst.pro_advisor} - {$inst.pro_advisornum} </td>
-					                          </tr>
-					                        </tbody>
-					                      </table>
-					        </div>
-					    </div>
-            </td>
-            <td style="width:45%" valign="top">
-                   <div class="panel panel-default">
-					        <div class="panel-header">商业模式</div>
-					        <div class="panel-body">
-                        <table class="table table-border">
-                        <tbody>
-                          <tr>
-                            <th class="text-r" width="80" valign='top'>视频播放：</th>
-                            <td>
-                                <video src="{$inst.extend.bus_video}" preload="auto"
-                                            width="100%" controls="controls"
-                                ></video>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th class="text-r">视频地址：</th>
-                            <td>{$inst.extend.bus_video}</td>
-                          </tr>
-                          <tr>
-                            <th class="text-r">用户数据：</th>
-                            <td>{$inst.extend.bus_userdata}</td>
-                          </tr>
-                          <tr>
-                            <th class="text-r">盈利数据：</th>
-                            <td>{$inst.extend.bus_profit}</td>
-                          </tr>
-                          <tr>
-                            <th class="text-r">其它数据：</th>
-                            <td>{$inst.extend.bus_other}</td>
-                          </tr>
-                         <tr>
-                            <th class="text-r">运营时间：</th>
-                            <td>{$inst.extend.bus_operate}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-				        </div>
-				    </div>
-                        
-                    <div class="panel panel-default">
-                            <div class="panel-header">项目团队</div>
-                            <div class="panel-body">
-                        <table class="table table-border">
-                        <tbody>
-                          <tr>
-                            <th class="text-r" width="80" valign='top'>视频播放：</th>
-                            <td>
-                                <video src="{$inst.extend.tea_video}" preload="auto"
-                                            width="100%" controls="controls"
-                                ></video>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th class="text-r">视频地址：</th>
-                            <td>{$inst.extend.tea_video}</td>
-                          </tr>
-                          <tr>
-                            <th class="text-r">核心团队：</th>
-                            <td>{$inst.extend.tea_core}</td>
-                          </tr>
-                          <tr>
-                            <th class="text-r">员工总人数：</th>
-                            <td>{$inst.extend.tea_num}</td>
-                          </tr>
-                          <tr>
-                            <th class="text-r">高级创业导师：</th>
-                            <td>{$inst.extend.tea_tutor}</td>
-                          </tr>
-                         <tr>
-                            <th class="text-r">企业战略高级顾问：</th>
-                            <td>{$inst.extend.tea_adviser}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                        </div>
-                    </div>    
-                    
-                    <div class="panel panel-default">
-                            <div class="panel-header">路演活动</div>
-                            <div class="panel-body">
-                            <table class="table table-border">
-                            <tbody>
-                              <tr>
-                                <th class="text-r" width="100" valign='top'>视频播放：</th>
-                                <td>
-                                    <video src="{$inst.extend.roa_video}" preload="auto"
-                                                width="100%" controls="controls"
-                                    ></video>
-                                </td>
-                              </tr>
-                              <tr>
-                                <th class="text-r">视频地址：</th>
-                                <td>{$inst.extend.roa_video}</td>
-                              </tr>
-                              <tr>
-                                <th class="text-r">现场投资嘉宾：</th>
-                                <td>{$inst.extend.roa_guest}</td>
-                              </tr>
-                                
-                          </table>
-                        </div>
-                    </div>
-                    
-                    <div class="panel panel-default">
-                            <div class="panel-header">附件资料</div>
-                            <div class="panel-body">
-                            <table class="table table-border">
-                            <tbody>
-                              <tr>
-                                <td><a href="{$inst.extend.att_name}" target="_blank">{$inst.extend.att_name}</a> </td>
-                              </tr>                                
-                          </table>
-                        </div>
-                    </div> 
-            </td>
-        </tr>
-        
-    </table>
-
+<block name="css"> </block>
+<block name="content"> <php>if(empty($inst)){</php>
+<div class="text-l">
+	<h4>没有找到数据</h4>
 </div>
-</block>
-<block name="js">
-</block>
+<php>}else{</php>
+
+
+<div class="panel panel-default">
+	<div class="panel-header">项目资料</div>
+	<div class="panel-body">
+		<table class="table table-border">
+			<tbody>
+				<tr>
+					<th class="text-r" width="100">项目名称：</th>
+					<td>{$inst.pro_name}</td>
+				</tr>
+				<tr>
+					<th class="text-r" width="100">审核状态：</th>
+					<td>{$inst.pro_publish_status_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">项目logo：</th>
+					<td>{$inst.pro_logo}</td>
+				</tr>
+				<tr>
+					<th class="text-r"></th>
+					<td><img src="{$inst.pro_logo_http}" width="300" /></td>
+				</tr>
+				<tr>
+					<th class="text-r">资料介绍：</th>
+					<td>{$inst.pro_content}</td>
+				</tr>
+				<tr>
+					<th class="text-r">项目状态：</th>
+					<td>{$inst.pro_state_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">项目阶段：</th>
+					<td>{$inst.pro_stage_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">项目估值：</th>
+					<td>{$inst.pro_valuation}</td>
+				</tr>
+				<tr>
+					<th class="text-r">项目回报：</th>
+					<td>{$inst.pro_return}</td>
+				</tr>
+				<tr>
+					<th class="text-r">目标众筹：</th>
+					<td>{$inst.pro_target}</td>
+				</tr>
+				<tr>
+					<th class="text-r">金额设置：</th>
+					<td>{$inst.pro_value_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">项目分类：</th>
+					<td>{$inst.pro_type_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">项目图片：</th>
+					<td>{$inst.pro_picture}</td>
+				</tr>
+				<tr>
+					<th class="text-r"></th>
+					<td><img src="{$inst.pro_picture_http}" width="300" /></td>
+				</tr>
+				<tr>
+					<th class="text-r">融资顾问：</th>
+					<td>{$inst.pro_advisor} - {$inst.pro_advisornum}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-header">商业模式</div>
+	<div class="panel-body">
+		<table class="table table-border">
+			<tbody>
+				<tr>
+					<th class="text-r" width="80" valign='top'>视频播放：</th>
+					<td><video src="{$inst.extend.bus_video}" preload="auto"
+							width="100%" controls="controls"></video>
+					</td>
+				</tr>
+				<tr>
+					<th class="text-r">视频地址：</th>
+					<td>{$inst.extend.bus_video}</td>
+				</tr>
+				<tr>
+					<th class="text-r">用户数据：</th>
+					<td>{$inst.extend.bus_userdata}</td>
+				</tr>
+				<tr>
+					<th class="text-r">盈利数据：</th>
+					<td>{$inst.extend.bus_profit}</td>
+				</tr>
+				<tr>
+					<th class="text-r">其它数据：</th>
+					<td>{$inst.extend.bus_other}</td>
+				</tr>
+				<tr>
+					<th class="text-r">运营时间：</th>
+					<td>{$inst.extend.bus_operate}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-header">项目团队</div>
+	<div class="panel-body">
+		<table class="table table-border">
+			<tbody>
+				<tr>
+					<th class="text-r" width="80" valign='top'>视频播放：</th>
+					<td><video src="{$inst.extend.tea_video}" preload="auto"
+							width="100%" controls="controls"></video>
+					</td>
+				</tr>
+				<tr>
+					<th class="text-r">视频地址：</th>
+					<td>{$inst.extend.tea_video}</td>
+				</tr>
+				<tr>
+					<th class="text-r">核心团队：</th>
+					<td>{$inst.extend.tea_core}</td>
+				</tr>
+				<tr>
+					<th class="text-r">员工总人数：</th>
+					<td>{$inst.extend.tea_num}</td>
+				</tr>
+				<tr>
+					<th class="text-r">高级创业导师：</th>
+					<td>{$inst.extend.tea_tutor}</td>
+				</tr>
+				<tr>
+					<th class="text-r">企业战略高级顾问：</th>
+					<td>{$inst.extend.tea_adviser}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-header">路演活动</div>
+	<div class="panel-body">
+		<table class="table table-border">
+			<tbody>
+				<tr>
+					<th class="text-r" width="100" valign='top'>视频播放：</th>
+					<td><video src="{$inst.extend.roa_video}" preload="auto"
+							width="100%" controls="controls"></video>
+					</td>
+				</tr>
+				<tr>
+					<th class="text-r">视频地址：</th>
+					<td>{$inst.extend.roa_video}</td>
+				</tr>
+				<tr>
+					<th class="text-r">现场投资嘉宾：</th>
+					<td>{$inst.extend.roa_guest}</td>
+				</tr>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-header">附件资料</div>
+	<div class="panel-body">
+		<table class="table table-border">
+			<tbody>
+				<tr>
+					<td><a href="{$inst.extend.att_name}" target="_blank">{$inst.extend.att_name}</a>
+					</td>
+				</tr>
+		</table>
+	</div>
+</div>
+
+<php>}</php> </block>
+<block name="js"> </block>

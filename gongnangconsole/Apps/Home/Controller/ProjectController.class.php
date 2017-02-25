@@ -26,6 +26,23 @@ class ProjectController extends BaseController {
 		$this->ajaxReturn ( $result );
 	}
 	
+	public function getOpers($pro_id, $pro_publish_status){
+		switch ($pro_publish_status){
+			case _PRO_PUB_STATUS_COMMIT:
+				echo '<a style="text-decoration:none" onclick="layer_show(\'众筹明细\',\''.U('project/audit').'?id='.$pro_id.'\',600,400)" href="#" title="审核">审核</a>';
+				break;
+			case _PRO_PUB_STATUS_RECOMMIT:
+			case _PRO_PUB_STATUS_FAILED:
+				echo '<a style="text-decoration:none" onclick="layer_show(\'众筹明细\',\''.U('project/audit').'?id='.$pro_id.'\',600,400)" href="#" title="重新审核">重审</a>&nbsp;&nbsp;'
+						.'<a style="text-decoration:none" onclick="layer_show(\'审核历史\',\''.U('project/auditlist').'?id='.$pro_id.'\',400,250)" href="#" title="审核历史"><i class="Hui-iconfont">&#xe6b6;</i></a>';
+				break;
+			case _PRO_PUB_STATUS_SUCCESS:
+			default:
+				echo '<a style="text-decoration:none" onclick="layer_show(\'审核历史\',\''.U('project/auditlist').'?id='.$pro_id.'\',400,250)" href="#" title="审核历史"><i class="Hui-iconfont">&#xe6b6;</i></a>';;
+				break;
+		}
+	}
+	
 	public function detail($id){
 		$inst = $this->_service->getById($id);
 		$this->assign('inst', $inst);
@@ -44,4 +61,12 @@ class ProjectController extends BaseController {
 		$result->success ? $this->_ajax_success('操作成功',$std):$this->_ajax_failed('操作失败',$std);
 		
 	}
+	
+	public function auditList($id){
+		$conditions['pro_id'] = array('eq', $id);
+		$datas = $this->_auditService->findBy($conditions, 'id desc');
+		$this->assign('datas', $datas);
+		$this->display();
+	}
+	
 }

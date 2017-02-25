@@ -160,7 +160,11 @@ $(function () {
                 },
             { "data": "extend.pro_id", "title":"操作",
                 "render": function ( data, type, full, meta ) {  
-                    return '<a style="text-decoration:none" onclick="audit(\'众筹明细\',\'{:U('project/audit')}?id='+full.id+'\',600,400)" href="javascript:;" title="审核">审核</a>';
+                    var txt = '';
+                    $.get('__URL__/getOpers',{pro_id:data, pro_publish_status:full.pro_publish_status, r:Math.random()},function(_txt){
+                    	txt = _txt;
+                    });
+                    return txt;
                 }   
             }
         ]
@@ -173,12 +177,14 @@ $(function () {
 });
 
 function detail(title,url,w,h){
-    layer_show(title,url,w,h);
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
 }
 
-function audit(title,url,w,h){
-    layer_show(title,url,w,h);
-}
 
 </script>
 </script>

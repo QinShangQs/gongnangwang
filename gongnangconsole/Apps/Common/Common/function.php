@@ -593,17 +593,16 @@ function real_ip() {
 }
 
 /**
- * 获取文件域名访问地址
- * @param unknown $path 带rootpath的相对路径地址
- * @return string
+ * 设置文件访问域名
+ * 若是文件路径则返回共囊地址否则返回原 http地址
+ * @param string $filePath 文件路径或http地址
  */
-function getFileDomainUrl($path){
-	$rootPath = str_replace('./','', C ( 'IMAGE_PATH' ));
-	$fileDomain = C( 'FILE_DOMAIN');
-	$path = str_replace($rootPath, '', $path);
-	return $fileDomain.$path;
+function _asset_gn($filePath){
+	if(!preg_match('/http/i', $filePath)){
+		return C('SITE_MAIN_DOMAIN').$filePath;
+	}
+	return $filePath;
 }
-
 
 /**
  * 项目状态列表
@@ -714,16 +713,40 @@ function _getProValueById($id){
 }
 
 /**
+ * 已申请 -项目发布状态
+ * @var int
+ */
+define('_PRO_PUB_STATUS_COMMIT',1);
+
+/**
+ * 审核成功 -项目发布状态
+ * @var int
+ */
+define('_PRO_PUB_STATUS_SUCCESS',2);
+
+/**
+ * 审核失败 -项目发布状态
+ * @var int
+ */
+define('_PRO_PUB_STATUS_FAILED',3);
+
+/**
+ * 重新申请 -项目发布状态
+ * @var int
+ */
+define('_PRO_PUB_STATUS_RECOMMIT',4);
+
+/**
  * 项目发布状态列表
  * @return multitype:string
  */
 function _getProPublishStatus(){
 	$arr = array();
 	$arr[0] = "请选择发布状态";
-	$arr[1] = "已申请";
-	$arr[2] = "审核成功";
-	$arr[3] = "审核失败";
-	$arr[4] = "重新申请";
+	$arr[_PRO_PUB_STATUS_COMMIT] = "已申请";
+	$arr[_PRO_PUB_STATUS_SUCCESS] = "审核成功";
+	$arr[_PRO_PUB_STATUS_FAILED] = "审核失败";
+	$arr[_PRO_PUB_STATUS_RECOMMIT] = "重新申请";
 	return $arr;
 }
 /**

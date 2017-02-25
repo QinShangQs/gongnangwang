@@ -26,5 +26,6 @@ return array (
 			'center'=>'Main/index'
 		), 
 		
-		'SITE_ZH_NAME' => '共囊网'
+		'SITE_ZH_NAME' => '共囊网',
+		'SITE_MAIN_DOMAIN' => '//www.gongnang.com/',//主域名
 );

@@ -1,0 +1,26 @@
+<extend name="Public:_template" />
+<block name="css">
+</block>
+<block name="content">
+		<table class="table table-border table-bordered radius">
+            <thead>
+              <tr>
+                <th>审核时间</th>
+                <th>原状态</th>
+                <th>新状态</th>
+                <th>备注</th>
+              </tr>
+            </thead>
+            <tbody>
+	            <php>foreach($datas as $d=>$v){</php>
+	              <tr>
+	                <th>{$v.add_time}</th>
+	                <td>{$v.old_publish_status_txt}</td>
+	                <td>{$v.new_publish_status_txt}</td>
+	                <td>{$v.remark}</td>
+	              </tr>
+	             <php>}</php>
+          </table>
+</block>
+<block name="js">
+</block>
