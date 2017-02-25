@@ -415,7 +415,13 @@
 				<span class="label label-info">仅限认证投资人阅读</span>
                 <div class="Editor_name_btn Both">
                     <a href="/chou_m/{{$val->pro_name}}">返回</a>
-                    <button onclick="form5_sub()">修改</button>
+                    <button onclick="form5_sub()">
+                        @if($val->pro_publish_status == _PRO_PUB_STATUS_FAILED)
+                        	重新申请
+                        @else
+                        	修改
+                        @endif  
+                    </button>
                 </div>
 
             </div>

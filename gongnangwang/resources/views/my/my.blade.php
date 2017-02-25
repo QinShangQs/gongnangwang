@@ -58,9 +58,21 @@
 					<ul class="per_newspeo_p_ul">
 						<li class="high">已上线</li>
 						<li class="coil">已下线</li>
-						<li class="per_newspeo_p_li Audit">审核中</li>
+						
+						@if($val->pro_publish_status == _PRO_PUB_STATUS_FAILED)
+                        	<li class="per_newspeo_p_li Audit">{{_getProPublishStatusById($val->pro_publish_status)}}</li>
+                        @else
+                        	<li class="per_newspeo_p_li">{{_getProPublishStatusById($val->pro_publish_status)}}</li>
+                        @endif  
+
 					</ul>
 				</div>
+				@if(isset($val->publish_status_remark))
+				<!-- 审核失败提示信息 -->
+				<div style="font-size: small; color: red; text-align: center; background: #e5e5e5;">
+					{{$val->publish_status_remark}}
+				</div>
+				@endif
 			</div>
             @endforeach
 		</div>

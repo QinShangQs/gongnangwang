@@ -1,7 +1,7 @@
 
 --给众筹添加发布状态 
 --2017-2-24
-alter table gon_project add column pro_publish_status tinyint default 0;
+alter table gon_project add column pro_publish_status tinyint default 1;
 
 --众筹审核记录表 
 --2017-2-24

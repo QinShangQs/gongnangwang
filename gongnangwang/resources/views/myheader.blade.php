@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>头 部</title>
+    <link rel="shortcut icon" href="{{ asset('images/18.png') }}">
+	<title>共囊网 股权众筹 合伙人 活动 拍卖 共囊</title>
+	
     <link rel="stylesheet" type="text/css" href="{{ asset('css/publick.css') }}"/>
 </head>
 <body>

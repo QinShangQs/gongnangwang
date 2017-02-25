@@ -79,9 +79,11 @@ class Chou extends Model
         $users = DB::table('gon_project')
            // ->join('gon_project_extend', 'gon_project.id', '=', 'gon_project_extend.pro_id')
             ->join('gon_userinfo', 'gon_project.user_id', '=', 'gon_userinfo.id')
-            ->select('gon_project.id','gon_project.pro_name','gon_project.pro_logo','gon_project.pro_target','gon_project.pro_state','gon_userinfo.nickname')
+            ->select('gon_project.id','gon_project.pro_name','gon_project.pro_publish_status','gon_project.pro_logo','gon_project.pro_target','gon_project.pro_state','gon_userinfo.nickname')
             //->skip(2)
             ->take(8)
+            ->where('gon_project.pro_publish_status','=','2')//发布成功状态
+            ->orderBy('gon_project.id', 'desc')
             ->get();
         return $users;
     }
@@ -98,10 +100,24 @@ class Chou extends Model
         $users = DB::table('gon_userinfo')
              ->join('gon_user', 'gon_userinfo.user_id', '=', 'gon_user.id')
              ->join('gon_project', 'gon_project.user_id', '=', 'gon_userinfo.id')
-             ->select('gon_project.id','gon_project.pro_name','gon_project.pro_logo','gon_userinfo.identity')
-            ->where('gon_user.id', '=', $id)
+             ->select('gon_project.id','gon_project.pro_name','gon_project.pro_logo','gon_project.pro_publish_status','gon_userinfo.identity')
+             ->where('gon_user.id', '=', $id)
              ->take(4)
              ->get();
+        
+        foreach ($users as $k=>$v){
+        	$audit = DB::table('gon_project')
+        	->leftJoin('gon_project_audit','gon_project_audit.pro_id', '=', 'gon_project.id')
+        	->select('gon_project_audit.*')
+        	->where('gon_project.pro_publish_status','=','3')
+        	->orderBy('gon_project_audit.id','desc')
+        	->first();
+        	
+        	if($audit != null){
+        		$users[$k]->publish_status_remark =$audit->remark;
+        	}
+
+        }
         return $users;
     }
 
