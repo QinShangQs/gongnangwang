@@ -172,7 +172,7 @@ class RenController extends Controller
 
         //$arr = $chou->partnerExtendSelect();
         //$a=array_merge_recursive($data,$arr);
-        return view('ren/ren_m',['data'=>$par_data,'pname'=>$pname]);
+        return view('ren.ren_m',['data'=>$par_data,'pname'=>$pname]);
     }
 
 

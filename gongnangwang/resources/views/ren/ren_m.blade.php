@@ -313,7 +313,7 @@ $(document).ready(function(){
                     '<div class="Marriage_nrg_words">'+
                     '<h3>合伙人职责</h3>'+
                     '<ol class="Marriage_nrg_words_ol" start="1">'+
-                    '<li>'+a.par_duty+'</li>'+
+                    '<li>'+a.par_duty.replaceAll('\n','<br/>')+'</li>'+
                     '</ol>'+
                     '</div>'+
                     '</div>'+
@@ -322,7 +322,7 @@ $(document).ready(function(){
                     '<div class="Marriage_nrg_words">'+
                     '<h3>合伙人要求</h3>'+
                     '<ol class="Marriage_nrg_words_ol" start="1">'+
-                    '<li>'+ a.par_ask+'</li>'+
+                    '<li>'+ a.par_ask.replaceAll('\n','<br/>')+'</li>'+
                     '</ol>'+
                     '</div>'+
                     '</div>'+
@@ -407,7 +407,7 @@ $(document).ready(function(){
                             '<div class="Marriage_nrg_words">'+
                             '<h3>合伙人职责</h3>'+
                             '<ol class="Marriage_nrg_words_ol" start="1">'+
-                            '<li>'+a.par_duty+'</li>'+
+                            '<li>'+a.par_duty.replaceAll('\n','<br/>') +'</li>'+
                             '</ol>'+
                             '</div>'+
                             '</div>'+
@@ -416,7 +416,7 @@ $(document).ready(function(){
                             '<div class="Marriage_nrg_words">'+
                             '<h3>合伙人要求</h3>'+
                             '<ol class="Marriage_nrg_words_ol" start="1">'+
-                            '<li>'+ a.par_ask+'</li>'+
+                            '<li>'+ a.par_ask.replaceAll('\n','<br/>') +'</li>'+
                             '</ol>'+
                             '</div>'+
                             '</div>'+
