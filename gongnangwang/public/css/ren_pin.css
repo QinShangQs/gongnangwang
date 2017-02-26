@@ -9,10 +9,10 @@
 .Marriage_word_ul li a:hover{width: 120px;height: 40px;float:left;margin-right:18px;text-align: center;line-height: 40px;color: #01a590;background: #fff;border:1px solid #838383;margin-top: 15px;}
 
 
-.Marriage_nrg{height: 205px;margin-top: 60px;}
-.side_left{width: 4px;height: 100%;background: #01a590;}
+.Marriage_nrg{margin-top: 60px;height: inherit; border-left: 4px solid #01a590;}
+.side_left{}
 .Marriage_nrg_words{margin-left: 15px;}
-.Marriage_nrg_words_ol li{line-height: 25px;}
+.Marriage_nrg_words_ol li{line-height: 25px;margin-top:10px}
 
 .Marriage_nrg_two{height: 127px;margin-top: 60px;}
 .side_left_three{width: 4px;height: 100%;background: #01a590;}
