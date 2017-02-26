@@ -5,6 +5,8 @@ cp -R /data/wwwroot/default/my_laravel 20170219/
 #安装七牛sdk#
 composer require qiniu/php-sdk  
 
+{!! nl2br($val->sign) !!}
+
 php /usr/local/bin/composer/composer.phar require qiniu/php-sdk
 
 cp -R /data/wwwroot/default/my_laravel 20170219/
@@ -26,6 +28,7 @@ jiba123.com
 139.196.50.245
 root
 Gongnang1
+GONG.nang2017-2-26.110
 
 
 数据库 密码

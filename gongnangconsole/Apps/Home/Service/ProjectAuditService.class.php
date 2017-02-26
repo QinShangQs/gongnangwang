@@ -18,7 +18,7 @@ class ProjectAuditService extends BaseService{
 		$model = new Model();
 		$model->startTrans();
 		
-		$flag=false;
+		$flag=null;
 		$project = new \stdClass();
 		$project->id = $projectAudit->pro_id;
 		$project->pro_publish_status = $projectAudit->new_publish_status;
@@ -29,8 +29,10 @@ class ProjectAuditService extends BaseService{
 			$flag = true;
 			$model->commit();
 		}else{
+			$flag = null;
 			$model->rollback();
 		}
-		return $flag ?	parent::success() :parent::failed();
+
+		return $flag !== false ? parent::success() :parent::failed();
 	}
 }

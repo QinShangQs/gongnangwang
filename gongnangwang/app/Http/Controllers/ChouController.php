@@ -397,6 +397,9 @@ class ChouController extends Controller
         $data['pro_datetime'] = date('Y-m-d H:i:s',time());
         $data['pro_id'] = $input['pro_id'];
 
+        /*发布状态*/
+        $data['pro_publish_status'] = $input['pro_publish_status'];
+        
         $Chou = new Chou();
         $res = $Chou->updateChouDo($data);
 

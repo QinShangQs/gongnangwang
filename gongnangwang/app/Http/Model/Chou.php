@@ -204,6 +204,7 @@ class Chou extends Model
             ->update(['pro_name'=>$data['pro_name'],'pro_logo'=>$data['pro_logo'],'pro_content'=>$data['pro_content'],'pro_address'=>$data['pro_address'],'pro_state'=>$data['pro_state'],
                 'pro_stage'=>$data['pro_stage'],'pro_valuation'=>$data['pro_valuation'],'pro_return'=>$data['pro_return'],'pro_target'=>$data['pro_target'],'pro_value'=>$data['pro_value'],
                 'pro_type'=>$data['pro_type'],'pro_advisor'=>$data['pro_advisor'],'pro_advisornum'=>$data['pro_advisornum'],'pro_picture'=>$data['pro_picture'],'user_id'=>$data['user_id']
+            	,'pro_publish_status'=>$data['pro_publish_status']
             ]);
 
         $extent = DB::table('gon_project_extend')

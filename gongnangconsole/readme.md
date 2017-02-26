@@ -49,3 +49,11 @@ server {
         fastcgi_param   SCRIPT_NAME   $fastcgi_script_name2;
     }
 }
+
+    location ~ [^/]\.php(/|$) {
+        fastcgi_pass 127.0.0.1:9000;
+        #fastcgi_pass unix:/dev/shm/php-cgi.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi.conf;
+        }

@@ -418,8 +418,10 @@
                     <button onclick="form5_sub()">
                         @if($val->pro_publish_status == _PRO_PUB_STATUS_FAILED)
                         	重新申请
+                        	<input type="hidden" name="pro_publish_status" value="{{_PRO_PUB_STATUS_RECOMMIT}}"/>
                         @else
                         	修改
+                        	<input type="hidden" name="pro_publish_status" value="{{_PRO_PUB_STATUS_COMMIT}}"/>
                         @endif  
                     </button>
                 </div>
