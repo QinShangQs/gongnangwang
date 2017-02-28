@@ -428,7 +428,7 @@ $(function() {
             domain: $('#domain').val(),
             auto_start: true,
             filters : {
-                max_file_size : '20mb',
+                max_file_size : '50mb',
                 prevent_duplicates: true,
                 mime_types: [                   
                     {title : "Word files", extensions : "doc,docx,ppt,pptx,pdf"}
