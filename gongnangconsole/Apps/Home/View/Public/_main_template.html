@@ -63,19 +63,30 @@
         </li>
     </ul>
     <a aria-hidden="false" class="Hui-nav-toggle" href="#"></a> </header>
-<aside class="Hui-aside">
-    <input runat="server" id="divScrollValue" type="hidden" value="" />
-    <div class="menu_dropdown bk_2">
-        <dl id="menu-article">
-            <dt><i class="Hui-iconfont">&#xe616;</i> 众筹管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-            <dd>
-                <ul>
-                    <li><a _href="{:U('project/index')}" href="javascript:void(0)">众筹列表</a></li>
-                </ul>
-            </dd>
-        </dl>
-    </div>
-</aside>
+	<aside class="Hui-aside">
+	    <input runat="server" id="divScrollValue" type="hidden" value="" />
+	    <div class="menu_dropdown bk_2">
+	        <dl id="menu-article">
+	            <dt><i class="Hui-iconfont">&#xe616;</i> 众筹管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+	            <dd>
+	                <ul>
+	                    <li><a _href="{:U('project/index')}" href="javascript:void(0)">众筹列表</a></li>
+	                </ul>
+	            </dd>
+	        </dl>
+	    </div>
+	    <div class="menu_dropdown bk_2">
+	        <dl id="menu-article">
+	            <dt><i class="Hui-iconfont">&#xe616;</i> 合伙人管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+	            <dd>
+	                <ul>
+	                    <li><a _href="{:U('partner/index')}" href="javascript:void(0)">合伙人列表</a></li>
+	                    <li><a _href="{:U('jobs/index')}" href="javascript:void(0)">岗位列表</a></li>
+	                </ul>
+	            </dd>
+	        </dl>
+	    </div>
+	</aside>
 <div class="dislpayArrow"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
 <section class="Hui-article-box">
     <div id="Hui-tabNav" class="Hui-tabNav">
@@ -102,36 +113,3 @@
 <script type="text/javascript" src="__PUBLIC__/lib/layer/1.9.3/layer.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/H-ui.js"></script> 
 <script type="text/javascript" src="__PUBLIC__/js/H-ui.admin.js"></script> 
-<script type="text/javascript">
-/*资讯-添加*/
-function article_add(title,url){
-    var index = layer.open({
-        type: 2,
-        title: title,
-        content: url
-    });
-    layer.full(index);
-}
-/*图片-添加*/
-function picture_add(title,url){
-    var index = layer.open({
-        type: 2,
-        title: title,
-        content: url
-    });
-    layer.full(index);
-}
-/*产品-添加*/
-function product_add(title,url){
-    var index = layer.open({
-        type: 2,
-        title: title,
-        content: url
-    });
-    layer.full(index);
-}
-/*用户-添加*/
-function member_add(title,url,w,h){
-    layer_show(title,url,w,h);
-}
-</script> 

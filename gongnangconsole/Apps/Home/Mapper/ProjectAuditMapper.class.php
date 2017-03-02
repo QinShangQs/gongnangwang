@@ -11,8 +11,8 @@ final class ProjectAuditMapper implements IMapper {
 					$rows [$k] ['new_publish_status_txt'] = _getProPublishStatusById ( $v ['new_publish_status'] );
 				}
 			} else {
-				$rows ['old_publish_status_txt'] = _getProStateById ( $rows ['old_publish_status'] );
-				$rows ['new_publish_status_txt'] = _getProStageById ( $rows ['new_publish_status'] );
+				$rows ['old_publish_status_txt'] = _getProPublishStatusById ( $rows ['old_publish_status'] );
+				$rows ['new_publish_status_txt'] = _getProPublishStatusById ( $rows ['new_publish_status'] );
 			}
 		}
 		

@@ -759,3 +759,297 @@ function _getProPublishStatusById($id){
 	return $arr[$id];
 }
 
+/**
+ * 合伙人团队规模列表
+ * @return multitype:string
+ */
+function _getParTeams(){
+	$arr = array();
+	$arr[0] = "请选择";
+	$arr[1] = "少于15人";
+	$arr[2] = "15-50人";
+	$arr[3] = "50-200人";
+	$arr[4] = "200-500人";
+	$arr[5] = "500-2000人";
+	$arr[6] = "2000人以上";
+	return $arr;
+}
+
+/**
+ * 获取当前合伙人的团队规模
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getParTeamById($id){
+	$arr = _getParTeams();
+	return $arr[$id];
+}
+
+/**
+ * 合伙人融资说明列表
+ * @return multitype:string
+ */
+function _getParFinances(){
+	$arr = array();
+	$arr[0] = "请选择融资说明";
+	$arr[1] = "未融资";
+	$arr[2] = "天使轮";
+	$arr[3] = "A 轮";
+	$arr[4] = "B 轮";
+	$arr[5] = "C 轮";
+	$arr[6] = "D轮及以上";
+	$arr[7] = "上市公司";
+	$arr[8] = "不需要融资";
+	return $arr;
+}
+
+/**
+ * 获取当前合伙人的融资说明
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getParFinanceById($id){
+	$arr = _getParFinances();
+	return $arr[$id];
+}
+
+/**
+ * 公司 - 合伙人身份
+ * @var unknown
+ */
+define("_PAR_TYPE_COMPANY", 1);
+/**
+ * 个人 - 合伙人身份
+ * @var unknown
+ */
+define("_PAR_TYPE_PERSON", 2);
+
+/**
+ * 获取合伙人身份列表
+ * @return multitype:string
+ */
+function _getPartypes(){
+	$arr = array();
+	$arr[0] = "请选择身份";
+	$arr[_PAR_TYPE_COMPANY] = "公司";
+	$arr[_PAR_TYPE_PERSON] = "个人";
+	return $arr;	
+}
+
+/**
+ * 获取当前合伙人身份
+ * @param unknown $id
+ * @return Ambigous <>
+ */
+function _getPartypeById($id){
+	$arr = _getPartypes();
+	return $arr[$id];
+}
+
+/**
+ * 工作经验列表 - 岗位 - 合伙人
+ * @return multitype:string
+ */
+function _getParWorks(){
+	$arr = array();
+	$arr[0] = "请选择工作经验";
+	$arr[1] = "不限";
+	$arr[2] = "1-3年";
+	$arr[3] = "3-5年";
+	$arr[4] = "5-10年";
+	$arr[5] = "十年以上";
+	
+	return $arr;
+}
+
+/**
+ * 获取当前工作经验
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getParWorkById($id){
+	$arr = _getParWorks();
+	return $arr[$id];
+}
+
+/**
+ * 学历要求列表 - 岗位 - 合伙人
+ * @return multitype:string
+ */
+function _getParEducations(){
+	$arr = array();
+	$arr[0] = "请选择学历";
+	$arr[1] = "不限";
+	$arr[2] = "大专";
+	$arr[3] = "本科";
+	$arr[4] = "博士、硕士、研究生";
+
+	return $arr;	
+}
+
+/**
+ * 获取当前的学历要求
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getParEducationById($id){
+	$arr = _getParEducations();
+	return $arr[$id];
+}
+
+/**
+ * 年龄要求列表 - 岗位 - 合伙人
+ * @return multitype:string
+ */
+function _getParAges(){
+	$arr = array();
+	$arr[0] = "请选择年龄要求";
+	$arr[1] = "不限";
+	$arr[2] = "20-30岁";
+	$arr[3] = "30-40岁";
+	$arr[4] = "40岁以上";	
+	
+	return $arr;
+}
+
+/**
+ * 获取当前的年龄要求
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getParAgeById($id){
+	$arr = _getParAges();
+	return $arr[$id];
+}
+
+/**
+ * 工作方式 - 岗位 - 合伙人
+ * @return multitype:string
+ */
+function _getParModes(){
+	$arr = array();
+	$arr[0] = "请选择工作方式";
+	$arr[1] = "全职";
+	$arr[2] = "兼职";
+	return $arr;
+}
+
+/**
+ * 获取当前工作方式 
+ * @param unknown $id
+ * @return unknown
+ */
+function _getParModeById($id){
+	$arr = _getParModes();
+	return $arr[$id];
+}
+
+/**
+ * 获取报酬方式列表 - 岗位 - 合伙人
+ * @return multitype:string
+ */
+function _getParPayTypes(){
+	$arr = array();
+	$arr[0] = "请选择报酬方式";
+	$arr[1] = "月薪";
+	$arr[2] = "年薪";
+	return $arr;
+}
+
+/**
+ * 获取报酬工作方式
+ * @param unknown $id
+ * @return unknown
+ */
+function _getParPayTypeById($id){
+	$arr = _getParPayTypes();
+	return $arr[$id];
+}
+
+/**
+ * 获取股权回报方式列表 - 岗位 - 合伙人
+ * @return multitype:string
+ */
+function _getParReturnTypes(){
+	$arr = array();
+	$arr[0] = "请选择股权回报方式";
+	$arr[1] = "股份回报";
+	$arr[2] = "其它回报";
+	return $arr;
+}
+
+/**
+ * 获取股权回报方式
+ * @param unknown $id
+ * @return unknown
+ */
+function _getParReturnTypeById($id){
+	$arr = _getParReturnTypes();
+	return $arr[$id];
+}
+
+/**
+ * 在线状态列表 - 岗位 - 合伙人
+ * @return multitype:string
+ */
+function _getParLineStatus(){
+	$arr = array();
+	$arr[""] = "请选择在线状态";
+	$arr["on"] = "在线";
+	$arr["off"] = "下线";
+	return $arr;
+}
+
+/**
+ * 获取当前在线状态
+ * @param string $id
+ * @return unknown
+ */
+function _getParLineStatusById($id){
+	$arr = _getParLineStatus();
+	return $arr[$id];
+}
+
+/**
+ * 已申请 - 岗位发布状态
+ * @var int
+ */
+define("_JOB_PUB_STATUS_COMMIT", 1);
+/**
+ * 通过 - 岗位发布状态
+ * @var int
+ */
+define("_JOB_PUB_STATUS_PASS", 2);
+/**
+ * 拒绝- 岗位发布状态
+ * @var int
+ */
+define("_JOB_PUB_STATUS_REFUSE", 3);
+/**
+ * 重新申请 - 岗位发布状态
+ * @var int
+ */
+define("_JOB_PUB_STATUS_RECOMMIT", 4);
+
+/**
+ * 岗位发布列表 - 岗位 - 合伙人
+ * @return multitype:string
+ */
+function _getParPublishStatus(){
+	$arr = array();
+	$arr[0] = "请选择发布状态";
+	$arr[_JOB_PUB_STATUS_COMMIT] = "已申请";
+	$arr[_JOB_PUB_STATUS_PASS] = "通过";
+	$arr[_JOB_PUB_STATUS_REFUSE] = "拒绝";
+	$arr[_JOB_PUB_STATUS_RECOMMIT] = "重新申请";
+	return $arr;
+}
+/**
+ * 获取当前岗位的发布状态
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getParPublishStatusById($id){
+	$arr = _getParPublishStatus();
+	return $arr[$id];
+}

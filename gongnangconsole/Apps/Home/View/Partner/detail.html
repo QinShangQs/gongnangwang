@@ -1,0 +1,73 @@
+<extend name="Public:_template" />
+<block name="css"> </block>
+<block name="content"> <php>if(empty($inst)){</php>
+<div class="text-l">
+	<h4>没有找到数据</h4>
+</div>
+<php>}else{</php>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<table class="table table-border">
+			<tbody>
+				<tr>
+					<th class="text-r" width="100">征集标题：</th>
+					<td>{$inst.par_title}</td>
+				</tr>
+				<tr>
+					<th class="text-r" width="100">用户昵称：</th>
+					<td>{$inst.user_info.nickname}</td>
+				</tr>
+				<tr>
+					<th class="text-r" width="100">公司/项目名称：</th>
+					<td>{$inst.par_proname}</td>
+				</tr>
+				<tr>
+					<th class="text-r">公司/项目官网：</th>
+					<td>{$inst.par_website}</td>
+				</tr>
+				<tr>
+					<th class="text-r">身份：</th>
+					<td>{$inst.par_protype_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">项目logo：</th>
+					<td>{$inst.par_logo}</td>
+				</tr>
+				<tr>
+					<th class="text-r"></th>
+					<td><img src="{$inst.par_logo_http}" width="300" /></td>
+				</tr>
+				<tr>
+					<th class="text-r">团队现有：</th>
+					<td>{$inst.par_team_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">融资说明：</th>
+					<td>{$inst.par_finance_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">办公地址：</th>
+					<td>{$inst.par_address}</td>
+				</tr>
+				<tr>
+					<th class="text-r" width="80" valign='top'>视频播放：</th>
+					<td><video src="{$inst.par_video}" preload="auto"
+							width="100%" controls="controls"></video>
+					</td>
+				</tr>
+				<tr>
+					<th class="text-r">视频地址：</th>
+					<td>{$inst.par_video}</td>
+				</tr>
+				<tr>
+					<th class="text-r">创建时间：</th>
+					<td>{$inst.par_datetime}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<php>}</php> </block>
+<block name="js"> </block>

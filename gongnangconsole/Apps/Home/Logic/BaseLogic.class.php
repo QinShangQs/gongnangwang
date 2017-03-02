@@ -6,8 +6,18 @@ use Think\Model;
 
 class BaseLogic {
 	protected $_repository = null;
+	protected $_mapper = null;
+	
+	public function __construct(){
+		
+	}
+	
 	public function getById($id) {
-		return $this->_repository->relation ( true )->getById ( $id );
+		$inst = $this->_repository->relation ( true )->getById ( $id );
+		if(!empty($this->_mapper)){
+			$inst = $this->_mapper->tranlate($inst,false);
+		}
+		return $inst;
 	}
 	public function add(\stdClass $instance) {
 		return $this->_repository->data ( $instance )->add ();
@@ -22,7 +32,11 @@ class BaseLogic {
 		return $this->_repository->where($conditions)->delete();
 	}
 	public function findAll($conditions = array(),$orderby = 'id asc') {
-		return $this->_repository->where ( $conditions )->relation ( true )->order($orderby)->select ();
+		$result = $this->_repository->where ( $conditions )->relation ( true )->order($orderby)->select ();
+		if(!empty($this->_mapper)){
+			$result = $this->_mapper->tranlate($result,true);
+		}
+		return $result;
 	}
 	
 	public function countByProperty($propertyName, $value, $oper = 'eq') {
@@ -51,12 +65,17 @@ class BaseLogic {
 		$data = $this->_repository->relation ( true )->where ( $conditions )->order ( $order )->limit ( $startRow, $rows )->select ();
 		if (empty ( $data ))
 			$data = array ();
+
 		$result = array (
 				'total' => $count,
 				'data' => $data ,
 				'page' => $page,
 				'limit' => $rows
 		);
+		
+		if(!empty($this->_mapper)){
+			$result['data'] = $this->_mapper->tranlate($result['data'],true);
+		}
 		
 		return $result;
 	}
