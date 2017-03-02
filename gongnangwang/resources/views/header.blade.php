@@ -10,6 +10,10 @@
 	<script type="text/javascript" src="{{ asset('js/jquery1.9.1.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/head.js') }}" ></script>	
 	<script type="text/javascript" src="{{ asset('js/common.js') }}" ></script>	
+	
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/bug.css') }}" />
+	<![endif]-->
 </head>
 <body>
 	<!--导航开始-->

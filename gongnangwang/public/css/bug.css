@@ -1,0 +1,6 @@
+.jian_ul li span,.jian_ul_ul li span,.ping button,.mr_middle img,.invest_money,.reback,.invest_btn button,.record .choucou,.nav_search{
+    position:relative;
+    z-index: 1000;
+    behavior: url(ie-css3.htc);
+}
+
