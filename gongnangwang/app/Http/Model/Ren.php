@@ -178,8 +178,9 @@ class Ren extends Model
              ->join('gon_userinfo','gon_userinfo.id','=','gon_partner.user_id')
              ->join('gon_partner_extend','gon_partner_extend.par_id','=','gon_partner.id')
              ->where('gon_userinfo.user_id','=',$user_id)
-             ->select('gon_partner_extend.id','par_position','par_duty','gon_partner.par_proname')
-             ->take(4)
+             ->select('gon_partner_extend.id','gon_partner_extend.line_status','gon_partner_extend.publish_status','par_position','par_duty','gon_partner.par_proname')
+             //->take(4)
+             ->orderby('gon_partner_extend.id','desc')
              ->get();
         return $data;
     }
@@ -200,6 +201,20 @@ class Ren extends Model
         return $data;
     }
 
+    /**
+     * 合伙人职位先上状态修改
+     * @param unknown $pos_id
+     * @param unknown $line_status 新的下上状态
+     * @return unknown
+     */
+    public function jobLineStatusUpdate($pos_id , $line_status)
+    {
+    
+    	$res = DB::table('gon_partner_extend')
+    	->where('id','=', $pos_id)
+    	->update(['line_status' => $line_status ]);
+    	return $res;
+    }
 
     /*合伙人职位修改*/
     public function partnerExtendUpdate($extend)
@@ -208,7 +223,10 @@ class Ren extends Model
         $res = DB::table('gon_partner_extend')
                 ->where('id','=', $extend['pos_id'])
                 ->update(['par_position' => $extend['par_position'] , 'par_work'=>$extend['par_work'] , 'par_education'=>$extend['par_education'] , 'par_age'=>$extend['par_age'] , 'par_mode'=>$extend['par_mode'] ,
-                'par_pay_type'=>$extend['par_pay_type'] , 'par_pay'=>$extend['par_pay'] , 'par_return_type'=>$extend['par_return_type'] , 'par_return'=>$extend['par_return'] , 'par_duty'=>$extend['par_duty'] , 'par_ask'=>$extend['par_ask'] , 'par_datetime'=>$extend['par_datetime'] , 'par_id'=>$extend['par_id']
+                		'par_pay_type'=>$extend['par_pay_type'] , 'par_pay'=>$extend['par_pay'] , 'par_return_type'=>$extend['par_return_type'] 
+                		, 'par_return'=>$extend['par_return'] , 'par_duty'=>$extend['par_duty'] , 'par_ask'=>$extend['par_ask'] 
+                		, 'par_datetime'=>$extend['par_datetime'] , 'par_id'=>$extend['par_id']
+                		, 'publish_status'=>$extend['publish_status']
                 ]);
         return $res;
     }
@@ -280,6 +298,25 @@ class Ren extends Model
         return $res;
     }
 
+    //一个用户只能发布一个合伙人项目
+    public function partnerByUserId($user_id)
+    {
+    	$res = DB::table('gon_partner')
+    	->join('gon_userinfo', 'gon_partner.user_id', '=', 'gon_userinfo.id')
+    	->join('gon_user', 'gon_user.id', '=', 'gon_userinfo.user_id')
+    	->where('gon_user.id', '=', $user_id)
+    	->select('gon_partner.*')
+    	->first();
+    	return $res;
+    }
+    
+    public function countJobsByParId($par_id){
+    	$count = DB::table('gon_partner_extend')
+    	->where('gon_partner_extend.par_id', '=', $par_id)
+    	->count();
+    	
+    	return $count;
+    }
 
     //ren  职位ajax分页
     public function position_page($page=1,$number=5)

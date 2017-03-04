@@ -16,6 +16,8 @@ $(document).ready(function(){
 <div class="content_nr">
 	<div class="conter_con">
         <input type="hidden" name="par_id" id="par_id" value="{{$data[0]->pid}}"/>
+        <input type="hidden" name="pid" id="pid" value="{{$partner_extend_id}}"/>
+        
        {{-- @foreach($data as $key=>$data[0])--}}
 		<div class="Marriage_both">
 			<!-- 左 -->
@@ -33,7 +35,7 @@ $(document).ready(function(){
 				<div class="Marriage_word">
 					<ul class="Marriage_word_ul">
                         @foreach($pname as $key=>$val)
-						<li><a href="javascript:;" id="position" pid="{{$val->id}}">{{$val->par_position}}</a></li>
+						<li><a class="job-lis" href="javascript:;" id="position" pid="{{$val->id}}">{{$val->par_position}}</a></li>
                         @endforeach
 					</ul>
 				</div>
@@ -77,7 +79,7 @@ $(document).ready(function(){
 					</div>
 				</div>
                 </div>
-				<p class="Delivery Both"><button>投递简历</button></p>
+				<p class="Delivery Both"><button type="button" id="deliver">投递简历</button></p>
 				<h3 class="xiangm">项目点评</h3>
                 <div class="text_form">
                     <textarea name="com_content" id="com_content" rows="" cols=""> </textarea>
@@ -245,6 +247,9 @@ $(document).ready(function(){
 	</div>
 	
 </div>
+
+<!-- 当前选中的岗位 -->
+<input type="hidden" id="job_id" value=""/>
 <!-- 内容结束 -->
 <!--底部开始-->
 @include('footer')
@@ -254,101 +259,12 @@ $(document).ready(function(){
 <script src="{{ asset('js/jquery1.9.1.min.js') }}"></script>
 <script>
     $(document).ready(function(){
-        var par_id  = $('#par_id').val();
-        $.get("/position",{par_id:par_id},
-                function(data){
-                    var a =  eval('('+ data +')');
-                    if(a.par_mode == 1){
-                        mode = "全职";
-                    }else{
-                        mode = "兼职";
-                    }
-
-                    if(a.par_work == 1){
-                        work = "不限";
-                    }else if(a.par_work == 2){
-                        work = "1-3年";
-                    }else if(a.par_work == 3){
-                        work = "3-5年";
-                    }else if(a.par_work == 4){
-                        work = "5-10年";
-                    }else{
-                        work = "10年以上";
-                    }
-
-                    if(a.par_education == 1){
-                        education = "不限";
-                    }else if(a.par_education == 2){
-                        education = "大专";
-                    }else if(a.par_education == 3){
-                        education = "本科";
-                    }else{
-                        education = "博士、硕士、研究生";
-                    }
-
-                    if(a.par_age == 1){
-                        age = "不限";
-                    }else if(a.par_age == 2){
-                        age = "20-30岁";
-                    }else if(a.par_age == 3){
-                        age = "30-40岁";
-                    }else{
-                        age = "40岁以上";
-                    }
-
-                    if(a.par_pay_type == 1){
-                        type = "月薪";
-                    }else{
-                        type = "年薪";
-                    }
-
-                    if(a.par_return_type == 1){
-                        return_type = "股份回报";
-                    }else{
-                        return_type = "其他回报";
-                    }
-
-                    var obj = '<div class="Marriage_nrg Both">'+
-                            '<div class="side_left Left"></div>'+
-                    '<div class="Marriage_nrg_words">'+
-                    '<h3>合伙人职责</h3>'+
-                    '<ol class="Marriage_nrg_words_ol" start="1">'+
-                    '<li>'+a.par_duty.replaceAll('\n','<br/>')+'</li>'+
-                    '</ol>'+
-                    '</div>'+
-                    '</div>'+
-                    '<div class="Marriage_nrg Both">'+
-                    '<div class="side_left Left"></div>'+
-                    '<div class="Marriage_nrg_words">'+
-                    '<h3>合伙人要求</h3>'+
-                    '<ol class="Marriage_nrg_words_ol" start="1">'+
-                    '<li>'+ a.par_ask.replaceAll('\n','<br/>')+'</li>'+
-                    '</ol>'+
-                    '</div>'+
-                    '</div>'+
-                    '<div class="Marriage_nrg_two Both">'+
-                    '<div class="side_left Left"></div>'+
-                    '<div class="Marriage_nrg_words">'+
-                    '<h3>薪酬股份回报</h3>'+
-                    '<ol class="Marriage_nrg_words_ol_mone">'+
-                    '<li>工作方式：'+ mode +
-                    '<li>工作经验：'+ work+'</li>'+
-                    '</ol>'+
-                    '<ol class="Marriage_nrg_words_ol_mone">'+
-                    '<li>学历要求：'+ education +'</li>'+
-                    '<li>年龄要求：'+ age +'</li>'+
-                    '</ol>'+
-                    '<ol class="Marriage_nrg_words_ol_mone">'+
-                    '<li>'+type+'：'+ a.par_pay +'</li>'+
-                    '<li>'+return_type+'：'+ a.par_return +'</li>'+
-                    '</ol>'+
-                    '</div>'+
-                    '</div>';
-                    $('#contents').html(obj)
-                });
-
+       
         $(".Marriage_word_ul li a").click(function(){
+			$(this).css('background','red').parent().siblings().find('a').css('background','#01a590');
+            
             var pid = $(this).attr("pid");
+            $("#job_id").val(pid);
             var par_id  = $('#par_id').val();
             $.get("/position", { pid:pid , par_id:par_id},
                 function(data){
@@ -441,6 +357,10 @@ $(document).ready(function(){
                     $('#contents').html(obj)
                 });
         });
+
+        var pid  = $('#pid').val();
+        $("[pid='"+pid+"']").first().click();
+        
         $('#comment').click(function(){
             var com_content = $('#com_content').val()
             var par_id      = $('#par_id').val()
@@ -456,4 +376,23 @@ $(document).ready(function(){
             }
         })
     })
+</script>
+
+<script type="text/javascript">
+	$(function(){
+		$("#deliver").click(function(){
+			var par_id = $("#par_id").val();
+			var job_id = $("#job_id").val();
+			$.post('/ren/deliver',{par_id:par_id ,job_id:job_id},function(obj){
+				if(obj.code == 0){
+					alert(obj.msg);
+				}else{
+					alert(obj.msg);
+					if(obj.href){
+						location.href = obj.href;
+					}
+				}
+			},'json');
+		});
+	});
 </script>

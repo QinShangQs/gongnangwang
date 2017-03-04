@@ -47,6 +47,17 @@ class BaseLogic {
 		return $this->_repository->where($conditions)->count();
 	}
 	
+	/**
+	 * 从表中获取一部分字段值列构成的数组
+	 * @param unknown $fields 字段 如"id,name"
+	 * @param unknown $condtions 条件数组
+	 * @param number $limit 限制数量
+	 */
+	public function getFieldsBy($fields ,array $condtions , $limit = 1, $order = 'id desc'){
+		return $this->_repository->where($condtions)
+		->field($fields)->order ( $order )->limit($limit)->select();
+	}	
+	
 	public function getByProperty($propertyName, $value, $oper = 'eq', $order = 'id desc') {
 		$conditions [$propertyName] = array (
 				$oper,

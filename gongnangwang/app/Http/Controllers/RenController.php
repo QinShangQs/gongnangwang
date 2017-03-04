@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Model\Ren;
 use App\Http\Model\User;
+use App\Http\Model\JobDelivers;
 use App\Http\Requests;
 
 use DB;
 use Session;
 use Illuminate\Support\Facades\Redis as Redis;
+use App\Http\Model\JobDeliver;
 
 header("Content-Type:text/html;charset=utf-8");
 class RenController extends Controller
@@ -172,7 +174,7 @@ class RenController extends Controller
 
         //$arr = $chou->partnerExtendSelect();
         //$a=array_merge_recursive($data,$arr);
-        return view('ren.ren_m',['data'=>$par_data,'pname'=>$pname]);
+        return view('ren.ren_m',['data'=>$par_data,'pname'=>$pname,'partner_extend_id'=>$val[3]]);
     }
 
 
@@ -248,7 +250,19 @@ class RenController extends Controller
      */
     public function pinadd()
     {
-        return view('ren/pinadd');
+    	$ren = new Ren();
+    	$partner = $ren->partnerByUserId(Session::get('user_id'));
+    	//dd($partner->id);
+    	$jobCount = $ren->countJobsByParId($partner->id);
+    	//控制发布职位数量，公司10个，个人5个
+    	if($partner->par_protype == 1 && $jobCount >= 10){
+    		echo "<script>alert('您只能发布10个职位'); location.href='/my1'</script>";
+    	}else if($partner->par_protype == 2 && $jobCount >= 5){
+    		echo "<script>alert('您只能发布5个职位'); location.href='/my1'</script>";
+    	}else{
+    		return view('ren/pinadd');
+    	}
+        
     }
 
 
@@ -318,6 +332,17 @@ class RenController extends Controller
         $Ren = new Ren();
         $Ren->position_delete($pos_id);
     }
+    
+    /*合伙人岗位上下线*/
+    public function position_line(Request $request)
+    {
+    	$input = $request->all();
+    	$pos_id = $input['pos_id'];
+    	$line_status = $input['line'];
+    
+    	$Ren = new Ren();
+    	$Ren->jobLineStatusUpdate($pos_id, $line_status);
+    }
 
 
     /*渲染合伙人职位编辑页面*/
@@ -367,9 +392,51 @@ class RenController extends Controller
         $extend['par_datetime'] = date('Y-m-d H:i:s',time());
         $extend['par_id'] = Redis::get(Session::get('user_id').'pin');
         $extend['pos_id'] = $input['pos_id'];
+        $extend['publish_status'] = _JOB_PUB_STATUS_RECOMMIT;//修改后为须重新审核
 
         $Ren = new Ren();
         $res = $Ren->partnerExtendUpdate($extend);
         echo $res;
+    }
+    
+    public function deliver(Request $request){
+    	$input = $request->all();
+    	$par_id = $input['par_id'];
+    	$exnted_id = $input['job_id'];
+    	$user_id = Session::get('user_id');
+    	$user_name = Session::get('user_name');
+    	
+    	if(!isset($user_id) || !isset($user_name)){
+    		echo json_encode(array('code'=> 1,"msg" =>'请您登录后投递简历','href'=>'/login' ));
+    		exit;
+    	}
+    	
+    	$userModel = new User();
+    	$user = $userModel->getById($user_id);
+    	if(empty($user->resume)){
+    		echo json_encode(array('code'=> 2,"msg" =>'请您上传简历后投递简历','href'=>'/useredit' ));
+    		exit;
+    	}
+    	
+    	$jobDeliversModel = new JobDelivers();
+    	$oldDeliver = $jobDeliversModel->getByJobId($exnted_id, $user_id);
+    	if(!empty($oldDeliver)){
+    		echo json_encode(array('code'=> 3,"msg" =>'您已投递过了！','href'=>'' ));
+    	}else{
+    		$data = array();
+    		$data['user_id'] = $user_id;
+    		$data['extend_id'] = $exnted_id;
+    		$data['par_id'] = $par_id;
+    		$data['resume'] = $user->resume;
+    		$newId = $jobDeliversModel->insert($data);
+    		
+    		if($newId){
+    			echo json_encode(array('code'=> 0,"msg" =>'简历投递成功！','href'=>'' ));
+    			exit;
+    		}else{
+    			echo json_encode(array('code'=> 4,"msg" =>'简历投递失败，请稍后重试！','href'=>'' ));
+    			exit;
+    		}
+    	}
     }
 }

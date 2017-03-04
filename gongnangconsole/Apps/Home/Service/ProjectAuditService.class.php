@@ -5,13 +5,13 @@ use Home\Logic\ProjectAudtiLogic;
 use Home\Mapper\ProjectAuditMapper;
 use Home\Logic\ProjectLogic;
 use Think\Model;
+use Home\Mapper\ProjectMapper;
 class ProjectAuditService extends BaseService{
 	private $_projectLogic = null;
 	public function __construct(){
 		parent::__construct();
-		$this->_logic = new ProjectAudtiLogic();
-		$this->_mapper = new ProjectAuditMapper();
-		$this->_projectLogic = new ProjectLogic();
+		$this->_logic = new ProjectAudtiLogic(new ProjectAuditMapper());
+		$this->_projectLogic = new ProjectLogic(new ProjectMapper());
 	}
 	
 	public function auditIt(\stdClass $projectAudit){

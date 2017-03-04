@@ -72,6 +72,10 @@
         if(par_duty== '' || par_duty == undefined || par_duty == null){
             $('.duty').addClass('Out');
             return false;
+        }else if(par_duty.length > 300){
+        	$('.duty').addClass('Out');
+        	alert('合伙人职责在300个字符以内');
+            return false;
         }else{
             $('.duty').removeClass('Out');
             return true;
@@ -83,6 +87,10 @@
         var par_ask = $('#par_ask').val();
         if(par_ask== '' || par_ask == undefined || par_ask == null){
             $('.ask').addClass('Out');
+            return false;
+        }else if(par_ask.length > 200){
+        	$('.duty').addClass('Out');
+        	alert('合伙人要求在200个字符以内');
             return false;
         }else{
             $('.ask').removeClass('Out');

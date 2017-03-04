@@ -72,6 +72,10 @@ function par_dutyVerify()
     if(par_duty== '' || par_duty == undefined || par_duty == null){
         $('.duty').addClass('Out');
         return false;
+    }else if(par_duty.length > 300){
+    	$('.duty').addClass('Out');
+    	alert('合伙人职责在300个字符以内');
+        return false;
     }else{
         $('.duty').removeClass('Out');
         return true;
@@ -84,6 +88,10 @@ function par_askVerify()
     if(par_ask== '' || par_ask == undefined || par_ask == null){
         $('.ask').addClass('Out');
         return false;
+    }else if(par_ask.length > 200){
+    	$('.duty').addClass('Out');
+    	alert('合伙人要求在200个字符以内');
+        return false;
     }else{
         $('.ask').removeClass('Out');
         return true;
@@ -91,6 +99,10 @@ function par_askVerify()
 }
 
 function mySubmit(){
+	if(!confirm('修改后需要重新审核，您确定要保存修改吗？')){
+		return false;
+	}
+	
     if(par_positionVerify() & par_workVerify() & par_educationVerify() & par_ageVerify() & par_dutyVerify() & par_askVerify()){
         var pos_id = $('#pos_id').val();
         var par_position = $('#par_position').val()

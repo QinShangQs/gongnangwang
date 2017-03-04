@@ -105,9 +105,9 @@ $(function () {
             { "data": "par_team_txt" ,"title":"团队规模"},
             { "data": "par_datetime" ,"title":"创建时间"},
             
-            { "data": "id", "title":"操作",
+            { "data": "job_count", "title":"岗位数量",
                 "render": function ( data, type, full, meta ) {  
-                    var txt = '<a style="text-decoration:none" onclick="layer_show(\'岗位列表\',\'{:U("jobs/lists")}?id='+data+'\',400,250)" href="#" title="岗位列表"><i class="Hui-iconfont">&#xe62b;</i></a>';
+                    var txt = data + '个&nbsp;&nbsp;<a style="text-decoration:none" onclick="layer_show(\'岗位列表\',\'{:U("jobs/lists")}?id='+full.id+'\',400,250)" href="#" title="岗位列表"><i class="Hui-iconfont">&#xe62b;</i></a>';
                     return txt;
                 }   
             }

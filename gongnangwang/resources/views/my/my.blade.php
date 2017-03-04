@@ -112,9 +112,20 @@
     	<div class="wdgn Both" style="display: block;">
             @foreach($pos_data as $key=>$val)
     		<div class="main_hhr_zhize">
-    			<p><a style="color: #333" href="/ren_m/{{$val->par_proname}}/{{$val->id}}" target="_blank">{{$val->par_position}}</a></p>
+    			<p><a style="color: #333" href="/ren_m/{{$val->par_proname}}/{{$val->id}}" target="_blank">{{$val->par_position}} 
+    			<span style="font-size:small">({{_getParLineStatusById($val->line_status)}})</span>
+    			<span style="font-size:small">({{_getParPublishStatusById($val->publish_status)}})</span>
+    			</a></p>
     			<ul>
-    				<li>{{$val->par_duty}}<span class="posDelete" id="{{$val->id}}">删除</span><span>下线</span><span><a style="color: #01a590" href="/position_edit?pos_id={{$val->id}}">编辑</a></span></li>
+    				<li>{!! nl2br($val->par_duty) !!}
+    				
+    					<span class="posDelete" id="{{$val->id}}">删除</span>
+    					@if($val->line_status == 'on')
+    						<span style="color: yellow" class="posLine" id="{{$val->id}}" line="off" >下线</span>
+    					@else
+    						<span style="color: green" class="posLine" id="{{$val->id}}" line="on" >上线</span>
+    					@endif
+    				<span><a style="color: #01a590" href="/position_edit?pos_id={{$val->id}}">编辑</a></span></li>
     			</ul>
     		</div>
             @endforeach
@@ -1120,6 +1131,26 @@
         document.getElementById('verify').src=$url;
     }
 
+    /**
+	上下线状态修改
+	*/
+    $('.posLine').click(function () {
+            var pos_id = $(this).attr('id');
+            var line = $(this).attr('line');
+            var txt = $(this).text();
+            if(txt == "下线"){
+                txt = "下线后用户将看不到该岗位，确认下线吗?"
+            }else{
+            	txt = "上线后只有管理员审核后的才能被用户看到，确认上线吗？"
+            }
+            
+            if(confirm(txt)){
+                $.get("/position_line", { pos_id: pos_id, line:line } , function (obj) {
+                    location.href='/my1';
+                } );
+            }
+     });
+    
     function re_update()
     {
         var old_pass = $('#old_pass').val();
@@ -1185,7 +1216,8 @@
                 location.href='/my1';
             } );
         }
-    })
+    });
+	
 
     function tab(x,y,z){
         var oLi= x.getElementsByTagName('li');

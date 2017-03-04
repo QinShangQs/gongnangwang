@@ -126,7 +126,15 @@ class User extends Model
             ->select('id')
             ->get();
         return $users;
-
+    }
+    
+    public function getById($id)
+    {
+    	$user = DB::table('gon_userinfo')
+    	->where('user_id', '=', $id)
+    	->select('gon_userinfo.*')
+    	->first();
+    	return $user;
     }
 
     /**

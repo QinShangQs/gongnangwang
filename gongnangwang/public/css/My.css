@@ -116,7 +116,7 @@
 .pagination p input{width: 48px;height: 28px;margin: 0 10px;outline: none;}
 
 /*合伙人*/
-.main_hhr{width: 100%;height: 800px;background: #f7f7f7;margin: 0 auto;margin-top: 30px;}
+.main_hhr{ width: 100%; background: #f7f7f7; margin: 0 auto; margin-top: 30px;  padding-bottom: 20px;}
 .main_hhr_div{width: 100%;height: 80px;border-bottom: 1px solid #dcdcdc;}
 .main_hhr_ul li{cursor: pointer;font-size: 24px;margin: 25px 0 0 25px;float: left;font-weight: normal;}
 .partner{height: 80px;line-height: 80px;cursor:pointer;font-size: 24px;margin: 10px 25px 0 0;}

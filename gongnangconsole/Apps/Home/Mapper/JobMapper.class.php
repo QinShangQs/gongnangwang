@@ -2,8 +2,15 @@
 
 namespace Home\Mapper;
 
+use Home\Logic\PartnerLogic;
 final class JobMapper implements IMapper {
+	private $_partnerLogic = null;
+	public function __construct(){
+		$this->_partnerLogic = new PartnerLogic(null);
+	}
+	
 	public function tranlate(array $rows, $isArray) {
+	
 		if (! empty ( $rows )) {
 			if ($isArray) {
 				foreach ( $rows as $k => $v ) {
@@ -15,6 +22,8 @@ final class JobMapper implements IMapper {
 					$rows [$k] ['par_return_type_txt'] = _getParReturnTypeById ( $v ['par_return_type'] );
 					$rows [$k] ['line_status_txt'] = _getParLineStatusById ( $v ['line_status'] );
 					$rows [$k] ['publish_status_txt'] = _getParPublishStatusById ( $v ['publish_status'] );
+					
+					$rows [$k] ['par_proname'] = $this->getParProName($v ['par_id'] );
 				}
 			} else {
 				$rows ['par_work_txt'] = _getParWorkById ( $rows ['par_work'] );
@@ -25,9 +34,21 @@ final class JobMapper implements IMapper {
 				$rows ['par_return_type_txt'] = _getParReturnTypeById ( $rows ['par_return_type'] );
 				$rows ['line_status_txt'] = _getParLineStatusById ( $rows ['line_status'] );
 				$rows ['publish_status_txt'] = _getParPublishStatusById ( $rows ['publish_status'] );
+				
+				$rows ['par_proname'] = $this->getParProName($rows ['par_id'] );
 			}
 		}
 		
 		return $rows;
+	}
+	
+	private function getParProName($par_id){
+		$fields = "par_proname";
+		$conditions = array(array('id'=> array('eq', $par_id)));
+		$result = $this->_partnerLogic->getFieldsBy($fields,$conditions, 1);
+		if(isset($result[0])){
+			return $result[0]['par_proname'];
+		}
+		return '';
 	}
 }

@@ -59,6 +59,8 @@ Route::get('position_page', 'RenController@position_page');
 Route::get('position_delete', 'RenController@position_delete');
 Route::any('position_edit', 'RenController@position_edit');
 Route::any('position_edit_do', 'RenController@position_edit_do');
+Route::any('position_line', 'RenController@position_line');
+Route::post('ren/deliver', 'RenController@deliver');
 
 Route::any('comment', 'RenController@comment');
 
