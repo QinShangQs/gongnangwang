@@ -1,5 +1,3 @@
-
-<!--导航开始-->
 @include('header')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/ren_pin.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('/js/videojs/video-js.min.css') }}" />

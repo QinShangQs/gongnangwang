@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-        <link rel="shortcut icon" href="images/18.png">
-        <title>共囊网 股权众筹 合伙人 活动 拍卖 共囊</title>
-		<link rel="stylesheet" type="text/css" href="css/chou.css" />
-		<link rel="stylesheet" type="text/css" href="css/publick.css" />
-	</head>
-	<body>
-
-<!--导航开始-->
 @include('header')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/chou.css') }}"/>
 <!--导航结束-->
 <div class="banner" id="box">
     <ul class="banner_ul" id="banner_ul">

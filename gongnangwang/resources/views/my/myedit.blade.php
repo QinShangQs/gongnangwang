@@ -1,5 +1,3 @@
-
-<!--导航开始-->
 @include('me_header')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/ren_xinxi.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/chou_list.css') }}"/>

@@ -1,5 +1,3 @@
-
-	<!--导航开始-->
 @include('header')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('js/videojs/video-js.min.css') }}" />
@@ -322,6 +320,7 @@
 		</div>
 	</div>
 	<!--内容部分结束-->
+
 	<!--底部开始-->
 @include('footer')
 	<!--底部结束-->

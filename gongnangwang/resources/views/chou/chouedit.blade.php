@@ -1,4 +1,3 @@
-<!--导航开始-->
 @include('me_header')
 <link rel="stylesheet" href="{{ asset('css/chou_list.css') }}" />
 <script type="text/javascript" charset="utf-8">

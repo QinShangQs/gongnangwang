@@ -1,5 +1,3 @@
-
-<!--导航开始-->
 	@include('myheader')
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/My.css') }}"/>
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/ren.css') }}"/>

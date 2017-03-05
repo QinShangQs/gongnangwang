@@ -1,4 +1,3 @@
-<!--导航开始-->
 @include('header')
 
 <link rel="stylesheet" type="text/css" href="/js/videojs/video-js.min.css" />
