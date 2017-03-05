@@ -133,7 +133,7 @@ class Chou extends Model
         $users = DB::table('gon_userinfo')
             ->join('gon_user', 'gon_userinfo.user_id', '=', 'gon_user.id')
             ->join('gon_project', 'gon_project.user_id', '=', 'gon_userinfo.id')
-            ->select('gon_project.pro_name','gon_project.pro_logo')
+            ->select('gon_project.id','gon_project.pro_name','gon_project.pro_logo')
             ->where('gon_user.id', '=', $id)
             ->take(1)
             ->get();
@@ -151,7 +151,7 @@ class Chou extends Model
     {
         $users = DB::table('gon_userinfo')
             ->join('gon_project', 'gon_project.user_id', '=', 'gon_userinfo.id')
-            ->select('gon_project.pro_name','gon_project.pro_logo')
+            ->select('gon_project.id','gon_project.pro_name','gon_project.pro_logo')
             ->where('gon_userinfo.nickname', '=', $user_name)
             ->take(1)
             ->get();

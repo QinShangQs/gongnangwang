@@ -210,10 +210,10 @@
 					<div class="content_center_left Left">
                         @foreach($chou_data as $k=>$v)
 						<div class="ge_shou_icon">
-							<a href="/chou_m/{{ $v->pro_name }}"><img src="{{ asset($v->pro_logo) }}" width="379px" height="131px" /></a>
+							<a href="/chou_m/{{ $v->id }}"><img src="{{ asset($v->pro_logo) }}" width="379px" height="131px" /></a>
 						</div>
 						<div class="qiantu">
-							<p><a style="color: #333" href="/chou_m/{{ $v->pro_name }}">项目：{{ $v->pro_name }}</a></p>
+							<p><a style="color: #333" href="/chou_m/{{ $v->id }}">项目：{{ $v->pro_name }}</a></p>
 							<p>已获资金：50.00元</p>
 							<p><img src="{{ asset('images/blue_03.jpg') }}" /></p>
 						</div>

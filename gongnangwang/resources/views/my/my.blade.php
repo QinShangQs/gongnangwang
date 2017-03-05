@@ -76,9 +76,11 @@
 			</div>
             @endforeach
 		</div>
+		<!--
 		<div class="per_item_p Both">
 			<p>投资项目</p>
 		</div>
+		
 		<div class="per_item">
 
 			<div class="per_content_nar per_content_nar_none Left Margin_none">
@@ -94,6 +96,7 @@
 
 		</div>
 	</div>
+		-->
 </div>
 
 
