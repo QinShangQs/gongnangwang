@@ -28,7 +28,7 @@
 .red_packet{height:56px;background: #fcffb2;border-bottom: 1px solid #cecece;}
 /*.red_packet_one{margin-right: 10px;}*/
 .red_packet_one a{display: block;}
-.red_packet_img img{float: left;margin: 5px 5px 0 15px;}
+.red_packet_img img{width: 45px;height: 50px;float: left;margin: 2px 5px 0 15px;}
 /*
 .red_packet_one a p{color: #a31c0b;line-height: 56px;font-size: 14px;}
 .red_packet_one a p.red_packet_jiu_p{width: 45px;line-height: 18px;margin-top: 10px;}
