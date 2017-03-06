@@ -8,6 +8,7 @@
                 <th>账号</th>
                 <th>简历</th>
                 <th>投递时间</th>
+                <th>面试</th>
               </tr>
             </thead>
             <tbody>
@@ -16,6 +17,11 @@
 	                <th>{$v.account_name}</th>
 	                <td><a href="{$v.resume}" target="_blank">点击查看</a></td>
 	                <td>{$v.add_time}</td>
+	                <td>
+	                	<php>if($v['job_invited_id']){</php>
+	                		<a href="__URL__/invited.html?invited_id={$v.job_invited_id}" target="_blank">查看</a>
+	                	<php>}</php>
+	                </td>
 	              </tr>
 	             <php>}</php>
           </table>

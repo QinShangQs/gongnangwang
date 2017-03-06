@@ -100,14 +100,17 @@ $(function () {
             { "data": "par_proname" ,"title":"公司/项目名称"},
             { "data": "par_website" ,"title":"公司/项目官网"},
             { "data": "par_protype_txt" ,"title":"身份"},
-            { "data": "par_address" ,"title":"办公地址"},
+            //{ "data": "par_address" ,"title":"办公地址"},
             { "data": "par_finance_txt" ,"title":"融资说明"},
-            { "data": "par_team_txt" ,"title":"团队规模"},
+           // { "data": "par_team_txt" ,"title":"团队规模"},
             { "data": "par_datetime" ,"title":"创建时间"},
             
             { "data": "job_count", "title":"岗位数量",
                 "render": function ( data, type, full, meta ) {  
-                    var txt = data + '个&nbsp;&nbsp;<a style="text-decoration:none" onclick="layer_show(\'岗位列表\',\'{:U("jobs/lists")}?id='+full.id+'\',400,250)" href="#" title="岗位列表"><i class="Hui-iconfont">&#xe62b;</i></a>';
+                	var txt = '';
+                	if(data && data != 0){
+                		txt = data + '个&nbsp;&nbsp;<a style="text-decoration:none" onclick="layer_show(\'岗位列表\',\'{:U("jobs/lists")}?id='+full.id+'\',400,250)" href="#" title="岗位列表"><i class="Hui-iconfont">&#xe62b;</i></a>';
+                	}
                     return txt;
                 }   
             }

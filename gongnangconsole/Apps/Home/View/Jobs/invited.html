@@ -1,0 +1,42 @@
+<extend name="Public:_template" />
+<block name="css"> </block>
+<block name="content"> <php>if(empty($inst)){</php>
+<div class="text-l">
+	<h4>没有找到数据</h4>
+</div>
+<php>}else{</php>
+
+		<div class="panel panel-primary">
+			<div class="panel-header">面试邀请</div>
+			<div class="panel-body">				
+					<table class="table ">
+						<tbody>
+							<tr>
+								<th class="text-r">面试时间：</th>
+								<td>{$inst.interview_time}</td>
+							</tr>
+							<tr>
+								<th class="text-r">面试地址：</th>
+								<td>{$inst.interview_address} </td>
+							</tr>
+							<tr>
+								<th class="text-r" width="100">联系方式：</th>
+								<td>{$inst.interview_contact}</td>	
+							</tr>
+							<tr>
+								<th class="text-r">留言：</th>
+								<td>{$inst.interview_remark}</td>
+							</tr>
+							<tr>
+								<th class="text-r">邀请时间：</th>
+								<td>{$inst.add_time}</td>
+							</tr>
+						</tbody>
+					</table>
+		
+			</div>
+		</div>
+	<php>}</php>
+
+</block>
+<block name="js"> </block>

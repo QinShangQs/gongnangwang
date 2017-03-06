@@ -85,4 +85,9 @@ class JobsController extends BaseController {
 		$this->assign ( 'datas', $datas );
 		$this->display ();
 	}
+	public function invited($invited_id){
+		$inst = $this->_service->getInvited($invited_id);
+		$this->assign ( 'inst', $inst );
+		$this->display ();
+	}
 }
