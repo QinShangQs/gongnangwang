@@ -1,0 +1,79 @@
+<extend name="Public:_template" />
+<block name="css"> </block>
+<block name="content"> <php>if(empty($inst)){</php>
+<div class="text-l">
+	<h4>没有找到数据</h4>
+</div>
+<php>}else{</php>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<table class="table table-border">
+			<tbody>
+				<tr>
+					<th class="text-r" width="100">ID：</th>
+					<td>{$inst.id}</td>
+				</tr>
+				<tr>
+					<th class="text-r" width="100">昵称题：</th>
+					<td>{$inst.nickname}</td>
+				</tr>
+				<tr>
+					<th class="text-r" width="100">帐号：</th>
+					<td>{$inst.account.user_name}</td>
+				</tr>
+				<tr>
+					<th class="text-r" width="100">年龄段：</th>
+					<td>{$inst.age_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">身份：</th>
+					<td>{$inst.identity_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">地址：</th>
+					<td>{$inst.address}</td>
+				</tr>
+				<tr>
+					<th class="text-r">工作年限：</th>
+					<td>{$inst.worklife_txt}</td>
+				</tr>
+				<tr>
+					<th class="text-r">共囊宣言：</th>
+					<td>{$inst.sign}</td>
+				</tr>
+				<tr>
+					<th class="text-r">简历：</th>
+					<td><a href="{$inst.resume_http}" target="_blank">{$inst.resume_http}</a></td>
+				</tr>
+				<tr>
+					<th class="text-r">注册时间：</th>
+					<td>{$inst.datetime}</td>
+				</tr>
+				
+				<tr>
+					<th class="text-r"></th>
+					<td><img src="{$inst.photo_http}" width="300" /></td>
+				</tr>
+				<tr>
+					<th class="text-r">个人照片：</th>
+					<td>{$inst.photo_http}</td>
+				</tr>
+				<tr>
+					<th class="text-r" valign='top'>个人视频：</th>
+					<td><video src="{$inst.video}" preload="auto"
+							width="100%" controls="controls"></video>
+					</td>
+				</tr>
+				<tr>
+					<th class="text-r">视频地址：</th>
+					<td>{$inst.video}</td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<php>}</php> </block>
+<block name="js"> </block>

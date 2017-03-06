@@ -598,6 +598,9 @@ function real_ip() {
  * @param string $filePath 文件路径或http地址
  */
 function _asset_gn($filePath){
+	if(empty($filePath)){
+		return '';
+	}
 	if(!preg_match('/http/i', $filePath)){
 		return C('SITE_MAIN_DOMAIN').$filePath;
 	}
@@ -1051,5 +1054,89 @@ function _getParPublishStatus(){
  */
 function _getParPublishStatusById($id){
 	$arr = _getParPublishStatus();
+	return $arr[$id];
+}
+
+/**
+ * 年龄区间  - 用户
+ * @return multitype:string
+ */
+function _getUserAges(){
+	$arr = array();
+	$arr[0] = "请选择年龄区间";
+	$arr[1] = "18-25";
+	$arr[2] = "25-30";
+	$arr[3] = "30-40";
+	$arr[4] = "40-50";
+	$arr[5] = "50以上";
+	
+	return $arr;
+}
+
+/**
+ * 获取当前用户的年龄区间
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getUserAgeById($id){
+	$arr = _getUserAges();
+	return $arr[$id];
+}
+
+/**
+ * 身份列表 - 用户
+ * @return multitype:string
+ */
+function _getUserIndentities(){
+	$arr = array();
+	$arr[0] = "请选择身份";
+	$arr[1] = "创始人";
+	$arr[2] = "投资人";
+	$arr[3] = "律师";
+	$arr[4] = "上市高管";
+	$arr[5] = "职业经理";
+	$arr[6] = "设计师";
+	$arr[7] = "技术开发";
+	$arr[8] = "融资顾问";
+	$arr[9] = "明星名人";
+	$arr[10] = "在校大学生";
+	$arr[11] = "海外海归";
+	$arr[12] = "总裁董事长";
+	$arr[13] = "创业导师";
+	return $arr;
+}
+
+/**
+ * 获取当前用户身份
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getUserIndentityById($id){
+	$arr = _getUserIndentities();
+	return $arr[$id];
+}
+
+/**
+ * 工作经验列表 - 用户 
+ * @return multitype:string
+ */
+function _getUserWorks(){
+	$arr = array();
+	$arr[0] = "请选择工作年限";
+	$arr[1] = "1~3年";
+	$arr[2] = "3~5年";
+	$arr[3] = "5~10年";
+	$arr[4] = "10~20年";
+
+	return $arr;
+}
+
+/**
+ * 获取当前用户工作经验
+ * @param unknown $id
+ * @return Ambigous <string>
+ */
+function _getUserWorkById($id){
+	$arr = _getUserWorks();
 	return $arr[$id];
 }

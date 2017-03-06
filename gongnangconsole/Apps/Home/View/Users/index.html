@@ -1,0 +1,134 @@
+<extend name="Public:_template" />
+<block name="css">
+<style type="text/css">
+    .select-box {
+        width:inherit;
+        }
+   .pd-20 {
+    text-align: center
+    }
+</style>
+</block>
+<block name="content">
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户管理 <span class="c-gray en">&gt;</span> 用户列表 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="pd-20" >
+    <div class="text-c">
+	    <span class="select-box">
+		  <select class="select" size="1" id="identity">
+		    <php>$finances = _getUserIndentities();</php>
+		    <php>foreach($finances as $k=>$v){</php>
+		          <option value="{$k}"
+		              <php>if($k == 0){</php>
+		                      selected
+		              <php>}</php>		          
+		          >{$v}</option>
+		    <php>}</php>
+		  </select>
+        </span>
+		<input type="text" class="input-text" style="width:250px" placeholder="昵称、公司名称、共囊宣言" id="key" name="key">
+		<button type="submit" class="btn btn-success radius" id="btnSearch" name="btnSearch"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
+	</div>
+	<div class="mt-20">
+	<table id="example"  class="table table-border table-bordered table-hover table-bg table-sort">
+	</table>
+	</div>
+</div>
+</block>
+<block name="js">
+<include file="Public:datatable"/>
+<script type="text/javascript">
+$(function () {
+    //初始化表格
+    var table = $("#example").dataTable({
+        language:_datetableLang,  //提示信息
+        autoWidth: false,  //禁用自动调整列宽
+        stripeClasses: ["odd", "even"],  //为奇偶行加上样式，兼容不支持CSS伪类的场合
+        processing: true,  //隐藏加载提示,自行处理
+        serverSide: true,  //启用服务器端分页
+        searching: false,  //禁用原生搜索
+        orderMulti: false,  //启用多列排序
+        ordering:false,
+        order: [],  //取消默认排序查询,否则复选框一列会出现小箭头
+        renderer: "bootstrap",  //渲染样式：Bootstrap和jquery-ui
+        pagingType: "simple_numbers",  //分页样式：simple,simple_numbers,full,full_numbers
+        columnDefs: [
+        	{
+            	"targets": 'nosort',  //列的样式名
+            	"orderable": false    //包含上样式名‘nosort’的禁止排序
+        	}
+        ],
+        aLengthMenu : [10,20, 40, 60], //更改显示记录数选项 
+        ajax: function (data, callback, settings) {
+            //封装请求参数
+            var param = {};
+            param.limit = data.length;//页面显示记录条数，在页面显示每页显示多少项的时候
+            param.start = data.start;//开始的记录序号
+            param.page = (data.start / data.length)+1;//当前页码
+            param.key = $("#key").val();
+            param.identity = $("#identity").val();
+            //console.log(param);
+            
+            $.ajax({
+                type: "GET",
+                url: "__URL__/search",
+                cache: false,  
+                data: param, 
+                dataType: "json",
+                success: function (result) {
+                    setTimeout(function () {
+                        //封装返回数据
+                        var returnData = {};
+                        returnData.draw = data.draw;
+                        returnData.recordsTotal = result.total;
+                        returnData.recordsFiltered = result.total;
+                        returnData.data = result.data;
+                        
+                        callback(returnData);
+                    }, 50);
+                }
+            });
+        },
+        //列表表头字段
+        columns: [
+            { "data": "id","title":"ID"},
+            { "data": "nickname","title":"昵称",
+                "render": function ( data, type, full, meta ) {  
+                    return '<u style="cursor:pointer" class="text-primary" onclick="detail(\'用户明细\',\'{:U('users/detail')}?id='+full.id+'\')">'+data+'</u>';  
+                }   
+            },
+            { "data": "account.user_name" ,"title":"账号",
+            	"render": function ( data, type, full, meta ) {  
+                   if(data)
+                	   return data;
+                   return '';
+                }   	
+           	},
+            { "data": "age_txt" ,"title":"年龄段"},
+            { "data": "identity_txt" ,"title":"身份"},
+            { "data": "company" ,"title":"公司名称"},
+            { "data": "posts" ,"title":"职位"},
+            { "data": "address" ,"title":"地址"},
+            { "data": "worklife_txt" ,"title":"工作年限"},
+            { "data": "datetime" ,"title":"注册时间"}
+        ]
+    }).api();
+    //此处需调用api()方法,否则返回的是JQuery对象而不是DataTables的API对象
+    
+    $("button[name='btnSearch']").bind("click", function () { //按钮 触发table重新请求服务器
+        table.draw();
+    });
+});
+
+function detail(title,url,w,h){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+
+
+</script>
+</script>
+</block>
