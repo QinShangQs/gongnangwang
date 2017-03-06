@@ -3,10 +3,13 @@
 namespace Home\Mapper;
 
 use Home\Logic\PartnerLogic;
+use Home\Logic\VJobDeliversLogic;
 final class JobMapper implements IMapper {
 	private $_partnerLogic = null;
+	private $_vJobDeliversLogic = null;
 	public function __construct(){
 		$this->_partnerLogic = new PartnerLogic(null);
+		$this->_vJobDeliversLogic = new VJobDeliversLogic(null);
 	}
 	
 	public function tranlate(array $rows, $isArray) {
@@ -24,6 +27,7 @@ final class JobMapper implements IMapper {
 					$rows [$k] ['publish_status_txt'] = _getParPublishStatusById ( $v ['publish_status'] );
 					
 					$rows [$k] ['par_proname'] = $this->getParProName($v ['par_id'] );
+					$rows [$k] ['deliver_count'] = $this->getDeliverCount($v ['id']);
 				}
 			} else {
 				$rows ['par_work_txt'] = _getParWorkById ( $rows ['par_work'] );
@@ -36,6 +40,7 @@ final class JobMapper implements IMapper {
 				$rows ['publish_status_txt'] = _getParPublishStatusById ( $rows ['publish_status'] );
 				
 				$rows ['par_proname'] = $this->getParProName($rows ['par_id'] );
+				$rows ['deliver_count'] = $this->getDeliverCount($rows ['id']);
 			}
 		}
 		
@@ -50,5 +55,10 @@ final class JobMapper implements IMapper {
 			return $result[0]['par_proname'];
 		}
 		return '';
+	}
+	
+	private function getDeliverCount($extend_id){
+		$count = $this->_vJobDeliversLogic->countByProperty('extend_id', $extend_id);
+		return $count;
 	}
 }

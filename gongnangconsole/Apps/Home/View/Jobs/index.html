@@ -81,7 +81,7 @@ $(function () {
                         returnData.data = result.data;
                         
                         callback(returnData);
-                    }, 100);
+                    }, 50);
                 }
             });
         },
@@ -96,12 +96,15 @@ $(function () {
             { "data": "par_proname" ,"title":"合伙人"},            
             { "data": "par_work_txt" ,"title":"工作经验"},
             { "data": "par_education_txt" ,"title":"学历要求"},
-            { "data": "par_age_txt" ,"title":"年龄要求"},
             { "data": "par_mode_txt" ,"title":"工作方式"},
             { "data": "par_pay_type_txt" ,"title":"薪酬类型"},
             { "data": "par_pay" ,"title":"薪酬"},
-            { "data": "par_return_type_txt" ,"title":"股权回报方式"},
-            { "data": "par_return" ,"title":"股权回报"},
+            { "data": "deliver_count" ,"title":"投递数", "render":function(data, type, full, meta ){
+            	if(data == 0 || !data){
+            		return 0;
+            	}
+            	return '<a style="text-decoration:none" onclick="layer_show(\'投递记录\',\'{:U("jobs/delivers")}?id='+full.id+'\',400,250)" href="#" >'+data+'</a>';
+            }},
             { "data": "line_status_txt" ,"title":"在线状态"},
             { "data": "publish_status_txt" ,"title":"发布状态",
             	"render": function ( data, type, full, meta ) {  

@@ -80,4 +80,9 @@ class JobsController extends BaseController {
 		$this->assign ( 'datas', $datas );
 		$this->display ();
 	}
+	public function delivers($id){
+		$datas = $this->_service->getDelivers($id);
+		$this->assign ( 'datas', $datas );
+		$this->display ();
+	}
 }
