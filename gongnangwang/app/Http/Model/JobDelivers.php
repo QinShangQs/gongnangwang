@@ -33,4 +33,15 @@ class JobDelivers extends Model {
 			->first ();
 		return $inst;
 	}
+	
+	public function getMyDelivers($user_id)	{
+		$users = DB::table('gon_partner_extend as job')
+		->select("job.par_position","par.par_proname","par.par_title","vjd.*")
+		->join('gon_partner as par', 'par.id', '=', 'job.par_id')
+		->join('gon_v_job_delivers as vjd', 'vjd.extend_id', '=', 'job.id')
+		->where('vjd.account_id', '=', $user_id)
+		->orderby('vjd.add_time','desc')
+		->get();
+		return $users;
+	}
 }

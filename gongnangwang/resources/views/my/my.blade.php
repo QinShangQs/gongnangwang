@@ -1,6 +1,6 @@
-	@include('myheader')
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/My.css') }}"/>
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/ren.css') }}"/>
+@include('myheader')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/My.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/ren.css') }}"/>
 <!--导航结束-->
 
 <!--我的共囊-->
@@ -104,6 +104,7 @@
 		<div class="main_hhr_div">
 			<ul class="main_hhr_ul Left" id="main_hhr_ul">
 				<li class="My_ren_active">我的岗位</li>
+				<li>我的投递</li>
 				<li>我的简历</li>
 			</ul>
 			<p class="partner Right"><a href="/renedit" target="_blank"><img src="images/content_middle_icon-02.png"/>合伙人管理</a></p>
@@ -118,19 +119,49 @@
     			<span style="font-size:small">({{_getParPublishStatusById($val->publish_status)}})</span>
     			</a></p>
     			<ul>
-    				<li>{!! nl2br($val->par_duty) !!}
-    				
+    				<li>
+    					{{_getParModeById($val->par_mode)}}
+    					&nbsp;/&nbsp;{{($val->par_pay)}}
+    					&nbsp;/&nbsp;{{_getParWorkById($val->par_work)}}
+    					&nbsp;/&nbsp;{{_getParEducationById($val->par_education)}}
+    				</li>
+    				<li class="time">
+    					发布时间：{{$val->par_datetime}}
     					<span class="posDelete" id="{{$val->id}}">删除</span>
     					@if($val->line_status == 'on')
     						<span style="color: yellow" class="posLine" id="{{$val->id}}" line="off" >下线</span>
     					@else
     						<span style="color: green" class="posLine" id="{{$val->id}}" line="on" >上线</span>
     					@endif
-    				<span><a style="color: #01a590" href="/position_edit?pos_id={{$val->id}}">编辑</a></span></li>
+    				<span><a style="color: #01a590" href="/position_edit?pos_id={{$val->id}}">编辑</a></span>
+    				</li>
     			</ul>
     		</div>
             @endforeach
     	</div>
+    	
+    	<div class="wdgn Both" >
+    		@foreach($delivers as $k=>$v)
+			<div class="main_hhr_zhize">
+				<ul>
+		    		<li>
+		    			<a href="/ren_m/{{$v->par_proname}}/{{$v->extend_id}}" target="_blank"><h5>{{$v->par_position}}</h5></a>
+						<br/>
+						{{$v->par_title}}
+						<br/>
+						{{$v->par_proname}}
+		    		</li>
+		    		<li class="time">
+		    			申请时间：{{$v->add_time}}
+		    			@if($v->job_invited_id)
+    						<span style="color: #01a590" class="deliver" invisted_id="{{$v->job_invited_id}}">查看面试邀请</span>
+    					@endif
+		    		</li>
+		    	</ul>
+			</div>
+			@endforeach
+		</div>
+    	
     	<div class="wdgn">
     		<div class="jian">
     			<ul class="jian_ul Both">
@@ -1118,6 +1149,31 @@
 		</div>
 	</div>
 </div>
+
+<!-- 面试邀请触发模态框 -->
+<button class="btn btn-primary btn-lg" style="display:none" data-toggle="modal" id="my-invisted-btn" data-target="#my-invisted">
+	开始演示模态框
+</button>
+<!-- 面试邀请模态框 -->
+<div class="modal fade" id="my-invisted" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					我的面试邀请
+				</h4>
+			</div>
+			<div class="modal-body">
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
 <!--底部开始-->
 @include('footer')
 	<!--底部结束-->
@@ -1208,18 +1264,8 @@
             }
         });
     }
-    /*职位删除*/
-    $('.posDelete').click(function () {
-        var pos_id = $(this).attr('id');
-        if(confirm("确认删除吗")){
-
-            $.get("/position_delete", { pos_id: pos_id } , function () {
-                location.href='/my1';
-            } );
-        }
-    });
-	
-
+    
+   
     function tab(x,y,z){
         var oLi= x.getElementsByTagName('li');
         var ODiv=document.getElementsByClassName(y);
@@ -1240,4 +1286,31 @@
     tab(My_deng_con_nav,'My_Deng_right','My_deng_con_nav_active')
     tab(main_hhr_ul,'wdgn','My_ren_active')
     tab(huodong_main,'fabu_01','huodong_main_active')
+</script>
+
+<script type="text/javascript">
+/*职位删除*/
+$('.posDelete').click(function () {
+    var pos_id = $(this).attr('id');
+    if(confirm("确认删除吗")){
+        $.get("/position/delete", { pos_id: pos_id } , function () {
+            location.href='/my1';
+        } );
+    }
+});
+
+$(".deliver").click(function(){
+	var invisted_id = $(this).attr("invisted_id");
+	$.getJSON('/my/invisted',{invisted_id:invisted_id, r:Math.random()},function(obj){
+		$("#my-invisted .modal-body").html(
+				'<p><span class="label label-primary">面试时间：</span>&nbsp;&nbsp;'+obj.interview_time+"<br/></p>"
+				+'<p><span class="label label-primary">面试地址：</span>&nbsp;&nbsp;'+obj.interview_address+"<br/></p>"
+				+'<p><span class="label label-primary">联系方式：</span>&nbsp;&nbsp;'+obj.interview_contact+"<br/></p>"
+				+'<p><span class="label label-primary">面试留言：</span>&nbsp;&nbsp;'+obj.interview_remark+"<br/></p>"
+				+'<p><span class="label label-primary">发起时间：</span>&nbsp;&nbsp;'+obj.add_time +"</p>"
+		);
+		$("#my-invisted-btn").click();
+	});
+});
+
 </script>

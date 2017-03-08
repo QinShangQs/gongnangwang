@@ -13,6 +13,8 @@ use DB;
 use Gregwar\Captcha\CaptchaBuilder;
 use Session;
 use Illuminate\Support\Facades\Redis as Redis;
+use App\Http\Model\JobDelivers;
+use App\Http\Model\JobInvisted;
 
 header("Content-Type:text/html;charset=utf-8");
 class MyController extends Controller
@@ -167,8 +169,19 @@ class MyController extends Controller
             $Ren = new Ren();
             $pos_data = $Ren->partnerPosition($id);
 
-            return view('my/my',['user_data'=>$user_data,'name'=>$name,'chou_data'=>$chou_data,'pos_data'=>$pos_data]);
+            $jobDeliversModel = new JobDelivers();
+            $delivers = $jobDeliversModel->getMyDelivers($id);
+            
+            return view('my/my',['user_data'=>$user_data,'name'=>$name,
+            		'chou_data'=>$chou_data,'pos_data'=>$pos_data ,"delivers"=> $delivers]);
         }
+    }
+    
+    public function invisted(Request $request){
+    	$invisted_id = $request->input('invisted_id');
+    	$jobInvitedModel = new JobInvisted();
+    	$inst = $jobInvitedModel->getById($invisted_id);
+    	return response()->json($inst);
     }
 
 

@@ -127,6 +127,7 @@
 .main_hhr_zhize{width: 1138px;height: 100px;border-left: 4px solid #01a590;margin: 0 auto;margin-top: 40px;}
 .main_hhr_zhize p{font-size: 20px;margin:10px 0 0 10px;}
 .main_hhr_zhize ul li{font-size: 14px;margin:5px 0 0 10px;}
+.main_hhr_zhize ul li.time{color: #7e7e7e;}
 .main_hhr_zhize ul li span{font-size: 14px;color: #01A590;float: right;margin-left: 20px;cursor: pointer;}
 .wdgn{display: none;}
 /*我的简历*/

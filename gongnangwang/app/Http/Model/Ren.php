@@ -178,7 +178,7 @@ class Ren extends Model
              ->join('gon_userinfo','gon_userinfo.id','=','gon_partner.user_id')
              ->join('gon_partner_extend','gon_partner_extend.par_id','=','gon_partner.id')
              ->where('gon_userinfo.user_id','=',$user_id)
-             ->select('gon_partner_extend.id','gon_partner_extend.line_status','gon_partner_extend.publish_status','par_position','par_duty','gon_partner.par_proname')
+             ->select('gon_partner_extend.*','par_position','par_duty','gon_partner.par_proname')
              //->take(4)
              ->orderby('gon_partner_extend.id','desc')
              ->get();
