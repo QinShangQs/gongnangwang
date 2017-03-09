@@ -174,4 +174,36 @@ class LoginController extends Controller
 
         return redirect("/");
     }
+    
+    public function forget(Request $request){
+    	if ($request->isMethod('post')){
+    		$userName = $request->input('phone');
+    		$userVerify = $request->input('verify');
+    		$password = $request->input('password');   		
+    		$checkVerify = Redis::get($userName.'verify');
+    		
+    		if(empty($userName) || empty($password)){
+    			return ["code"=>-1,"msg"=>'参数错误'];
+    		}
+    		
+    		if($checkVerify != $userVerify){
+    			return ["code"=>1, "msg"=>'验证码错误！'];
+    		}
+    		
+    		$userModel = new User();
+    		$userIds = $userModel->getUserId($userName);
+    		if(empty($userIds)){
+    			return ["code"=>2, "msg"=>'您尚未注册！',"href"=>'/register'];
+    		}
+    		$userId = $userIds[0]->id;
+    		$result = $userModel->updatePassword($userId, $password);
+    		if(empty($result)){
+    			return ["code"=>3, "msg"=>"系统忙，请稍后重试！"];
+    		}
+    		
+    		return ["code"=>0,"msg"=>"密码已重置，请您使用新密码登录！","href"=>"/login"];
+    	}
+    	
+    	return view('login/forget');
+    }
 }

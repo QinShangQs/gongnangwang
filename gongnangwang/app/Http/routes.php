@@ -20,6 +20,7 @@ Route::get('register', 'LoginController@register');
 Route::any('register_do', 'LoginController@register_do');
 Route::any('exit', 'LoginController@user_exit');
 Route::any('mobile', 'LoginController@mobile');
+Route::any('forget', 'LoginController@forget');
 
 //众筹
 Route::get('chou', 'ChouController@chou');
