@@ -120,8 +120,13 @@
     			</a></p>
     			<ul>
     				<li>
-    					{{_getParModeById($val->par_mode)}}
-    					&nbsp;/&nbsp;{{($val->par_pay)}}
+    					
+    					@if($val->deliver_count)
+    						<span ><a style="color: #01a590" href="/ren/resumes/{{$val->id}}/{{$val->par_id}}" target="_blank">应聘简历({{$val->deliver_count}})</a></span>
+    					@endif
+    				</li>
+    				<li>
+    					{{_getParModeById($val->par_mode)}}&nbsp;/&nbsp;{{($val->par_pay)}}
     					&nbsp;/&nbsp;{{_getParWorkById($val->par_work)}}
     					&nbsp;/&nbsp;{{_getParEducationById($val->par_education)}}
     				</li>

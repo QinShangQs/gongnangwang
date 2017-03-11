@@ -22,6 +22,10 @@ class JobInvisted extends Model {
 		return $id;
 	}
 	
+	public function add($data){
+		$id = DB::table($this->_table)->insertGetId($data);
+		return $id;
+	}
 
 	public function getById($id) {
 		$inst = DB::table ($this->_table )

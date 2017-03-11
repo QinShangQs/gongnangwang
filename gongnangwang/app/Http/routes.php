@@ -62,6 +62,8 @@ Route::any('position_edit', 'RenController@position_edit');
 Route::any('position_edit_do', 'RenController@position_edit_do');
 Route::any('position_line', 'RenController@position_line');
 Route::post('ren/deliver', 'RenController@deliver');
+Route::get('ren/resumes/{extend_id}/{par_id}', 'RenController@resumes');
+Route::post('ren/resumes/sendinvited', 'RenController@sendinvited');
 
 Route::any('comment', 'RenController@comment');
 

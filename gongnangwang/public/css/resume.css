@@ -1,0 +1,30 @@
+/*简历管理*/
+.resume_main{margin-top: 45px;}
+.shop_title{width: 100%;height: 60px;line-height: 60px;color: #01A590;border-bottom: 1px solid #f4f4f4;}
+.shop_title h3{margin-left: 20px;}
+/*.shop_title h1{margin-left: 20px;}*/
+
+.apply_list{width: 50%;height: 160px;margin-top: 30px;}
+.apply_list a{color: #333;display: block;}
+.apply_list_head{width: 103px;height: 103px;border-radius: 50%;overflow: hidden;margin-left: 20px;}
+.apply_list_head img{width: 103px;height: 103px;}
+.apply_list_sumary{margin-left: 25px;}
+.apply_list_sumary li{line-height: 25px;clear: both;font-size: 14px;}
+.apply_list_sumary li span{margin: 0 5px;}
+.list_title{margin-top: 13px;}
+.list_title span{float: left;font-size: 16px;}
+.apply_list_sumary li.list_title img{width: 18px;height: 18px;float: left;margin: 5px 5px;}
+
+
+/*简历预览*/
+.resume_head{width:100%;height: 320px;text-align: center;border-bottom: 2px solid #101010;margin: 10px 0;}
+.resume_head p{font-size: 24px;line-height: 50px;}
+.smallfont{color: #e0e0e0;}
+.resume_head span{margin: 0 30px;color: #333;}
+
+.resume_containe p{line-height: 25px;}
+.contain_title{margin-top: 35px;}
+.contain_title span{width: 10px;height: 15px;display: block;border: 2px solid #000;margin-right: 8px;margin-top: 3px;}
+.firm_name{font-size: 16px;font-weight: bold;margin: 20px 0;}
+.job_name{margin: 20px 0;}
+.job_time{float: right;margin-right: 60px;}

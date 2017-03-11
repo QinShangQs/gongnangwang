@@ -67,7 +67,6 @@ class Ren extends Model
     public function positionSelect($pid,$par_id)
     {
         $users = DB::table('gon_partner_extend')
-            //->join('gon_partner_extend', 'gon_partner.id', '=', 'gon_partner_extend.par_id')
             ->where('gon_partner_extend.par_id', '=', $par_id)
             ->where('gon_partner_extend.id', '=', $pid)
             ->first();
@@ -93,6 +92,8 @@ class Ren extends Model
             ->select('gon_partner_extend.id','gon_partner_extend.par_position')
             ->where('gon_partner.par_proname', '=', $par_proname)
             ->where('gon_partner.id', '=', $id)
+            //上线且已审核通过
+            ->where(["gon_partner_extend.line_status"=>"on", "gon_partner_extend.publish_status" => 2])
             ->select('gon_partner_extend.id','gon_partner_extend.par_position')
             ->get();
         return $users;
@@ -123,6 +124,8 @@ class Ren extends Model
         $users = DB::table('gon_partner_extend')
             ->join('gon_partner', 'gon_partner.id', '=', 'gon_partner_extend.par_id')
             ->select('gon_partner_extend.id','gon_partner_extend.par_position','gon_partner_extend.par_mode','gon_partner.par_protype','gon_partner.par_title','gon_partner.par_proname','gon_partner.par_address','gon_partner_extend.par_browse','gon_partner_extend.par_datetime')
+            //上线且已审核通过
+            ->where(["gon_partner_extend.line_status"=>"on", "gon_partner_extend.publish_status" => 2])
             ->orderBy('gon_partner_extend.par_browse', 'desc')
             ->paginate(5);
         return $users;
@@ -182,7 +185,12 @@ class Ren extends Model
              //->take(4)
              ->orderby('gon_partner_extend.id','desc')
              ->get();
-        return $data;
+
+         foreach ($data as $k=>$v){
+         	$data[$k]->deliver_count = $this->countDeliversByExtendId($v->id);
+         }
+         
+         return $data;
     }
 
     /*合伙人职位删除*/
@@ -318,6 +326,15 @@ class Ren extends Model
     	return $count;
     }
 
+    public function countDeliversByExtendId($extend_id){
+    	$count = DB::table('gon_job_delivers as jd')
+    	->where('jd.extend_id', '=', $extend_id)
+    	->count();
+    	 
+    	return $count;
+    }
+    
+    
     //ren  职位ajax分页
     public function position_page($page=1,$number=5)
     {

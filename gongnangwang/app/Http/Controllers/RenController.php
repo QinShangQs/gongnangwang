@@ -13,6 +13,7 @@ use DB;
 use Session;
 use Illuminate\Support\Facades\Redis as Redis;
 use App\Http\Model\JobDeliver;
+use App\Http\Model\JobInvisted;
 
 header("Content-Type:text/html;charset=utf-8");
 class RenController extends Controller
@@ -28,10 +29,6 @@ class RenController extends Controller
         $Ren = new Ren();
         $data = $Ren->positionMoreSelect();
         $ren_data = $Ren->partnerIndexSelect();
-
-//        print_r($data);
-//        die;
-       // $arr = get_object_vars($data);
         return view('ren/ren',['data'=>$data,'ren_data'=>$ren_data]);
     }
 
@@ -168,12 +165,9 @@ class RenController extends Controller
 
         $Ren = new Ren();
         $data = $Ren->extendParID($val[3]);
-
+		
         $par_data = $Ren->partnerSelect($val[2],$data[0]->par_id);
         $pname = $Ren->positionName($val[2],$data[0]->par_id);
-
-        //$arr = $chou->partnerExtendSelect();
-        //$a=array_merge_recursive($data,$arr);
         return view('ren.ren_m',['data'=>$par_data,'pname'=>$pname,'partner_extend_id'=>$val[3]]);
     }
 
@@ -399,6 +393,11 @@ class RenController extends Controller
         echo $res;
     }
     
+    /**
+     * 投递简历
+     * @author lizq
+     * @param Request $request
+     */
     public function deliver(Request $request){
     	$input = $request->all();
     	$par_id = $input['par_id'];
@@ -407,8 +406,7 @@ class RenController extends Controller
     	$user_name = Session::get('user_name');
     	
     	if(!isset($user_id) || !isset($user_name)){
-    		echo json_encode(array('code'=> 1,"msg" =>'请您登录后投递简历','href'=>'/login' ));
-    		exit;
+    		return ['code'=> 1,"msg" =>'请您登录后投递简历','href'=>'/login'];
     	}
     	
     	$userModel = new User();
@@ -421,7 +419,7 @@ class RenController extends Controller
     	$jobDeliversModel = new JobDelivers();
     	$oldDeliver = $jobDeliversModel->getByJobId($exnted_id, $user_id);
     	if(!empty($oldDeliver)){
-    		echo json_encode(array('code'=> 3,"msg" =>'您已投递过了！','href'=>'' ));
+    		return ['code'=> 3,"msg" =>'您已投递过了！','href'=>''];
     	}else{
     		$data = array();
     		$data['user_id'] = $user_id;
@@ -431,12 +429,39 @@ class RenController extends Controller
     		$newId = $jobDeliversModel->insert($data);
     		
     		if($newId){
-    			echo json_encode(array('code'=> 0,"msg" =>'简历投递成功！','href'=>'' ));
-    			exit;
+    			return ['code'=> 0,"msg" =>'简历投递成功！','href'=>'' ];
     		}else{
-    			echo json_encode(array('code'=> 4,"msg" =>'简历投递失败，请稍后重试！','href'=>'' ));
-    			exit;
+    			return ['code'=> 4,"msg" =>'简历投递失败，请稍后重试！','href'=>''];
     		}
     	}
+    }
+    
+    public function resumes($extend_id,$par_id){
+    	$renModel = new Ren();
+    	$position = $renModel->positionSelect($extend_id, $par_id);
+    	
+    	$jobDeliverModel = new JobDelivers();
+    	$datas = $jobDeliverModel->getPositionDelivers($extend_id);
+    	
+    	return view('ren/resumes',['position'=>$position,'datas'=>$datas]);
+    }
+    
+    public function sendinvited(Request $request){
+    	$data = array();
+    	$data['job_deliver_id'] = $request->input('job_deliver_id');
+    	$data['interview_time'] = $request->input('interview_time');
+    	$data['interview_address'] = $request->input('interview_address');
+    	$data['interview_contact'] = $request->input('interview_contact');
+    	$data['interview_remark'] = $request->input('interview_remark');
+    	
+    	$jobInvistedModel = new JobInvisted();
+    	$newId = $jobInvistedModel->add($data);
+    	if($newId){
+    		$jobDeliversModel =	new JobDelivers();
+    		$jobDeliversModel->changeInvitedId($data['job_deliver_id'], $newId);
+    		
+    		return ['code'=> 0, 'msg'=>'成功！'];
+    	}
+    	return ['code'=>1,'msg'=>'系统繁忙请稍后重试！'];
     }
 }
